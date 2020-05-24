@@ -1,0 +1,311 @@
+\hypertarget{util__lib_8c}{}\doxysection{util\+\_\+lib.\+c Bestand Referentie}
+\label{util__lib_8c}\index{util\_lib.c@{util\_lib.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include afhankelijkheidsgraaf voor util\+\_\+lib.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{util__lib_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functies}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{util__lib_8c_a5536923a606fb457a87150a9e613cc09}{log2}} (double a)
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{util__lib_8c_abda1f5b59156796bbd775359d171d921}{dmatrix}} (int num\+\_\+row, int num\+\_\+col)
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{util__lib_8c_aa4be6d2998bec55044c271fea2ae7176}{imatrix}} (int num\+\_\+row, int num\+\_\+col)
+\item 
+double $\ast$ \mbox{\hyperlink{util__lib_8c_abd5fe78d731314dedfc83195699fbe7e}{dvector}} (int nh)
+\item 
+int $\ast$ \mbox{\hyperlink{util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495}{ivector}} (int nh)
+\item 
+void \mbox{\hyperlink{util__lib_8c_ac2288cb3514168160c68cec8f09a99be}{free\+\_\+dvector}} (double $\ast$v)
+\item 
+void \mbox{\hyperlink{util__lib_8c_afd89b5e675116707ce66556b376bc41a}{free\+\_\+ivector}} (int $\ast$v)
+\item 
+void \mbox{\hyperlink{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}{free\+\_\+dmatrix}} (double $\ast$$\ast$m, int num\+\_\+row)
+\item 
+void \mbox{\hyperlink{util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e}{free\+\_\+imatrix}} (int $\ast$$\ast$m, int num\+\_\+row)
+\item 
+int \mbox{\hyperlink{util__lib_8c_af63cd754beea7a1122a0eaca769b62d9}{tr2int}} (char $\ast$tr)
+\item 
+int \mbox{\hyperlink{util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535}{nt2int}} (char nt)
+\item 
+int \mbox{\hyperlink{util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728}{nt2int\+\_\+rc}} (char nt)
+\item 
+int \mbox{\hyperlink{util__lib_8c_a2952b88dfbbdb0fe37929e128a771855}{nt2int\+\_\+rc\+\_\+indel}} (char nt)
+\item 
+int \mbox{\hyperlink{util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f}{trinucleotide}} (char a, char b, char c)
+\item 
+int \mbox{\hyperlink{util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d}{trinucleotide\+\_\+pep}} (char a, char b, char c)
+\item 
+void \mbox{\hyperlink{util__lib_8c_a4bb170d07b8af8e326242f06b922bd80}{get\+\_\+rc\+\_\+dna}} (char $\ast$dna, char $\ast$dna1)
+\item 
+void \mbox{\hyperlink{util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61}{get\+\_\+rc\+\_\+dna\+\_\+indel}} (char $\ast$dna, char $\ast$dna1)
+\item 
+void \mbox{\hyperlink{util__lib_8c_a66ceabacbfe397e6d70025814a0c3882}{get\+\_\+protein}} (char $\ast$dna, char $\ast$protein, int strand, int whole\+\_\+genome)
+\item 
+void \mbox{\hyperlink{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\+usage}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentatie van functies}
+\mbox{\Hypertarget{util__lib_8c_abda1f5b59156796bbd775359d171d921}\label{util__lib_8c_abda1f5b59156796bbd775359d171d921}} 
+\index{util\_lib.c@{util\_lib.c}!dmatrix@{dmatrix}}
+\index{dmatrix@{dmatrix}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{dmatrix()}{dmatrix()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ dmatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_abda1f5b59156796bbd775359d171d921_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_abd5fe78d731314dedfc83195699fbe7e}\label{util__lib_8c_abd5fe78d731314dedfc83195699fbe7e}} 
+\index{util\_lib.c@{util\_lib.c}!dvector@{dvector}}
+\index{dvector@{dvector}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{dvector()}{dvector()}}
+{\footnotesize\ttfamily double$\ast$ dvector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}\label{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}} 
+\index{util\_lib.c@{util\_lib.c}!free\_dmatrix@{free\_dmatrix}}
+\index{free\_dmatrix@{free\_dmatrix}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{free\_dmatrix()}{free\_dmatrix()}}
+{\footnotesize\ttfamily void free\+\_\+dmatrix (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{m,  }\item[{int}]{num\+\_\+row }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_ac2288cb3514168160c68cec8f09a99be}\label{util__lib_8c_ac2288cb3514168160c68cec8f09a99be}} 
+\index{util\_lib.c@{util\_lib.c}!free\_dvector@{free\_dvector}}
+\index{free\_dvector@{free\_dvector}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{free\_dvector()}{free\_dvector()}}
+{\footnotesize\ttfamily void free\+\_\+dvector (\begin{DoxyParamCaption}\item[{double $\ast$}]{v }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{util__lib_8c_ac2288cb3514168160c68cec8f09a99be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e}\label{util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e}} 
+\index{util\_lib.c@{util\_lib.c}!free\_imatrix@{free\_imatrix}}
+\index{free\_imatrix@{free\_imatrix}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{free\_imatrix()}{free\_imatrix()}}
+{\footnotesize\ttfamily void free\+\_\+imatrix (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{m,  }\item[{int}]{num\+\_\+row }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_afd89b5e675116707ce66556b376bc41a}\label{util__lib_8c_afd89b5e675116707ce66556b376bc41a}} 
+\index{util\_lib.c@{util\_lib.c}!free\_ivector@{free\_ivector}}
+\index{free\_ivector@{free\_ivector}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{free\_ivector()}{free\_ivector()}}
+{\footnotesize\ttfamily void free\+\_\+ivector (\begin{DoxyParamCaption}\item[{int $\ast$}]{v }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_afd89b5e675116707ce66556b376bc41a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a66ceabacbfe397e6d70025814a0c3882}\label{util__lib_8c_a66ceabacbfe397e6d70025814a0c3882}} 
+\index{util\_lib.c@{util\_lib.c}!get\_protein@{get\_protein}}
+\index{get\_protein@{get\_protein}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{get\_protein()}{get\_protein()}}
+{\footnotesize\ttfamily void get\+\_\+protein (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{protein,  }\item[{int}]{strand,  }\item[{int}]{whole\+\_\+genome }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a4bb170d07b8af8e326242f06b922bd80}\label{util__lib_8c_a4bb170d07b8af8e326242f06b922bd80}} 
+\index{util\_lib.c@{util\_lib.c}!get\_rc\_dna@{get\_rc\_dna}}
+\index{get\_rc\_dna@{get\_rc\_dna}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{get\_rc\_dna()}{get\_rc\_dna()}}
+{\footnotesize\ttfamily void get\+\_\+rc\+\_\+dna (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{dna1 }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61}\label{util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61}} 
+\index{util\_lib.c@{util\_lib.c}!get\_rc\_dna\_indel@{get\_rc\_dna\_indel}}
+\index{get\_rc\_dna\_indel@{get\_rc\_dna\_indel}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{get\_rc\_dna\_indel()}{get\_rc\_dna\_indel()}}
+{\footnotesize\ttfamily void get\+\_\+rc\+\_\+dna\+\_\+indel (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{dna1 }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_aa4be6d2998bec55044c271fea2ae7176}\label{util__lib_8c_aa4be6d2998bec55044c271fea2ae7176}} 
+\index{util\_lib.c@{util\_lib.c}!imatrix@{imatrix}}
+\index{imatrix@{imatrix}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{imatrix()}{imatrix()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ imatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495}\label{util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495}} 
+\index{util\_lib.c@{util\_lib.c}!ivector@{ivector}}
+\index{ivector@{ivector}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{ivector()}{ivector()}}
+{\footnotesize\ttfamily int$\ast$ ivector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a5536923a606fb457a87150a9e613cc09}\label{util__lib_8c_a5536923a606fb457a87150a9e613cc09}} 
+\index{util\_lib.c@{util\_lib.c}!log2@{log2}}
+\index{log2@{log2}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{log2()}{log2()}}
+{\footnotesize\ttfamily double log2 (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535}\label{util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535}} 
+\index{util\_lib.c@{util\_lib.c}!nt2int@{nt2int}}
+\index{nt2int@{nt2int}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{nt2int()}{nt2int()}}
+{\footnotesize\ttfamily int nt2int (\begin{DoxyParamCaption}\item[{char}]{nt }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728}\label{util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728}} 
+\index{util\_lib.c@{util\_lib.c}!nt2int\_rc@{nt2int\_rc}}
+\index{nt2int\_rc@{nt2int\_rc}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{nt2int\_rc()}{nt2int\_rc()}}
+{\footnotesize\ttfamily int nt2int\+\_\+rc (\begin{DoxyParamCaption}\item[{char}]{nt }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a2952b88dfbbdb0fe37929e128a771855}\label{util__lib_8c_a2952b88dfbbdb0fe37929e128a771855}} 
+\index{util\_lib.c@{util\_lib.c}!nt2int\_rc\_indel@{nt2int\_rc\_indel}}
+\index{nt2int\_rc\_indel@{nt2int\_rc\_indel}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{nt2int\_rc\_indel()}{nt2int\_rc\_indel()}}
+{\footnotesize\ttfamily int nt2int\+\_\+rc\+\_\+indel (\begin{DoxyParamCaption}\item[{char}]{nt }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a2952b88dfbbdb0fe37929e128a771855_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}\label{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}} 
+\index{util\_lib.c@{util\_lib.c}!print\_usage@{print\_usage}}
+\index{print\_usage@{print\_usage}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{print\_usage()}{print\_usage()}}
+{\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_af63cd754beea7a1122a0eaca769b62d9}\label{util__lib_8c_af63cd754beea7a1122a0eaca769b62d9}} 
+\index{util\_lib.c@{util\_lib.c}!tr2int@{tr2int}}
+\index{tr2int@{tr2int}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{tr2int()}{tr2int()}}
+{\footnotesize\ttfamily int tr2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{tr }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{util__lib_8c_af63cd754beea7a1122a0eaca769b62d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f}\label{util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f}} 
+\index{util\_lib.c@{util\_lib.c}!trinucleotide@{trinucleotide}}
+\index{trinucleotide@{trinucleotide}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{trinucleotide()}{trinucleotide()}}
+{\footnotesize\ttfamily int trinucleotide (\begin{DoxyParamCaption}\item[{char}]{a,  }\item[{char}]{b,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d}\label{util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d}} 
+\index{util\_lib.c@{util\_lib.c}!trinucleotide\_pep@{trinucleotide\_pep}}
+\index{trinucleotide\_pep@{trinucleotide\_pep}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{trinucleotide\_pep()}{trinucleotide\_pep()}}
+{\footnotesize\ttfamily int trinucleotide\+\_\+pep (\begin{DoxyParamCaption}\item[{char}]{a,  }\item[{char}]{b,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph}
+\end{center}
+\end{figure}

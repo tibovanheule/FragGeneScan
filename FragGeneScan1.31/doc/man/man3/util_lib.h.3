@@ -1,0 +1,99 @@
+.TH "util_lib.h" 3 "Za 25 Apr 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+util_lib.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Functies"
+
+.in +1c
+.ti -1c
+.RI "double ** \fBdmatrix\fP (int num_row, int num_col)"
+.br
+.ti -1c
+.RI "double * \fBdvector\fP (int nh)"
+.br
+.ti -1c
+.RI "int ** \fBimatrix\fP (int num_row, int num_col)"
+.br
+.ti -1c
+.RI "int * \fBivector\fP (int nh)"
+.br
+.ti -1c
+.RI "void \fBfree_dvector\fP (double *v)"
+.br
+.ti -1c
+.RI "void \fBfree_dmatrix\fP (double **m, int num_row)"
+.br
+.ti -1c
+.RI "void \fBfree_ivector\fP (int *v)"
+.br
+.ti -1c
+.RI "void \fBfree_imatrix\fP (int **m, int num_row)"
+.br
+.ti -1c
+.RI "int \fBtr2int\fP (char *nt)"
+.br
+.ti -1c
+.RI "int \fBnt2int\fP (char nt)"
+.br
+.ti -1c
+.RI "int \fBnt2int_rc\fP (char nt)"
+.br
+.ti -1c
+.RI "int \fBtrinucleotide\fP (char a, char b, char c)"
+.br
+.ti -1c
+.RI "double \fBlog2\fP (double a)"
+.br
+.ti -1c
+.RI "void \fBget_protein\fP (char *dna, char *protein, int strand, int whole_genome)"
+.br
+.ti -1c
+.RI "void \fBprint_usage\fP ()"
+.br
+.in -1c
+.SH "Documentatie van functies"
+.PP 
+.SS "double** dmatrix (int num_row, int num_col)"
+
+.SS "double* dvector (int nh)"
+
+.SS "void free_dmatrix (double ** m, int num_row)"
+
+.SS "void free_dvector (double * v)"
+
+.SS "void free_imatrix (int ** m, int num_row)"
+
+.SS "void free_ivector (int * v)"
+
+.SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
+
+.SS "int** imatrix (int num_row, int num_col)"
+
+.SS "int* ivector (int nh)"
+
+.SS "double log2 (double a)"
+
+.SS "int nt2int (char nt)"
+
+.SS "int nt2int_rc (char nt)"
+
+.SS "void print_usage ()"
+
+.SS "int tr2int (char * nt)"
+
+.SS "int trinucleotide (char a, char b, char c)"
+
+.SH "Auteur"
+.PP 
+Automatisch gegenereerd door Doxygen voor FragScanTibo uit de programmatekst\&.

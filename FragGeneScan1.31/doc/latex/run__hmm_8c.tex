@@ -1,0 +1,110 @@
+\hypertarget{run__hmm_8c}{}\doxysection{run\+\_\+hmm.\+c Bestand Referentie}
+\label{run__hmm_8c}\index{run\_hmm.c@{run\_hmm.c}}
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hmm.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{run__hmm_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{run__hmm_8c_ab76fbb1f1b2031f52c2a805e49aaa23b}{A\+D\+D\+\_\+\+L\+EN}}~1024
+\item 
+\#define \mbox{\hyperlink{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}{S\+T\+R\+I\+N\+G\+L\+EN}}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} \mbox{\hyperlink{run__hmm_8c_afff3f9ce037efdce79ae2411f6f79714}{thread\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functies}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{run__hmm_8c_ae686d5c06520e747df43d8f28e814962}{thread\+\_\+func}} (void $\ast$threadarr)
+\item 
+int \mbox{\hyperlink{run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\item 
+int \mbox{\hyperlink{run__hmm_8c_a36990146ac199f3f956edc7bdab2a95f}{append\+Seq}} (char $\ast$input, char $\ast$$\ast$seq, int input\+\_\+max)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentatie van macro\textquotesingle{}s}
+\mbox{\Hypertarget{run__hmm_8c_ab76fbb1f1b2031f52c2a805e49aaa23b}\label{run__hmm_8c_ab76fbb1f1b2031f52c2a805e49aaa23b}} 
+\index{run\_hmm.c@{run\_hmm.c}!ADD\_LEN@{ADD\_LEN}}
+\index{ADD\_LEN@{ADD\_LEN}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{ADD\_LEN}{ADD\_LEN}}
+{\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+L\+EN~1024}
+
+\mbox{\Hypertarget{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}\label{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}} 
+\index{run\_hmm.c@{run\_hmm.c}!STRINGLEN@{STRINGLEN}}
+\index{STRINGLEN@{STRINGLEN}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{STRINGLEN}{STRINGLEN}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+L\+EN~4096}
+
+
+
+\doxysubsection{Documentatie van typedefs}
+\mbox{\Hypertarget{run__hmm_8c_afff3f9ce037efdce79ae2411f6f79714}\label{run__hmm_8c_afff3f9ce037efdce79ae2411f6f79714}} 
+\index{run\_hmm.c@{run\_hmm.c}!thread\_data@{thread\_data}}
+\index{thread\_data@{thread\_data}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{thread\_data}{thread\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} \mbox{\hyperlink{structthread__data}{thread\+\_\+data}}}
+
+
+
+\doxysubsection{Documentatie van functies}
+\mbox{\Hypertarget{run__hmm_8c_a36990146ac199f3f956edc7bdab2a95f}\label{run__hmm_8c_a36990146ac199f3f956edc7bdab2a95f}} 
+\index{run\_hmm.c@{run\_hmm.c}!appendSeq@{appendSeq}}
+\index{appendSeq@{appendSeq}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{appendSeq()}{appendSeq()}}
+{\footnotesize\ttfamily int append\+Seq (\begin{DoxyParamCaption}\item[{char $\ast$}]{input,  }\item[{char $\ast$$\ast$}]{seq,  }\item[{int}]{input\+\_\+max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{run\_hmm.c@{run\_hmm.c}!main@{main}}
+\index{main@{main}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{run__hmm_8c_ae686d5c06520e747df43d8f28e814962}\label{run__hmm_8c_ae686d5c06520e747df43d8f28e814962}} 
+\index{run\_hmm.c@{run\_hmm.c}!thread\_func@{thread\_func}}
+\index{thread\_func@{thread\_func}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{thread\_func()}{thread\_func()}}
+{\footnotesize\ttfamily void $\ast$ thread\+\_\+func (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadarr }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{run__hmm_8c_ae686d5c06520e747df43d8f28e814962_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{run__hmm_8c_ae686d5c06520e747df43d8f28e814962_icgraph}
+\end{center}
+\end{figure}
