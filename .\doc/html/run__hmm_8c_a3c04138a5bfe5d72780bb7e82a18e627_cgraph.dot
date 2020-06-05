@@ -1,0 +1,47 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_train_from_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hmm_8h.html#acef94cf960e200f7ec1b4619510461a1",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="nt2int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tr2int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="print_usage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="thread_func",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$run__hmm_8c.html#ae686d5c06520e747df43d8f28e814962",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="get_prob_from_cg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hmm_8h.html#aa5d13d79b8ed4466bcacfcc4184ee399",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="viterbi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="dmatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#abda1f5b59156796bbd775359d171d921",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="free_dmatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#a314ff0abb6d5444bd2037acbede4f0ed",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="free_imatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#af6b81a4eebc7d8772422bfdd05f5834e",tooltip=" "];
+  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="free_ivector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#afd89b5e675116707ce66556b376bc41a",tooltip=" "];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="get_protein",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hmm_8h.html#a66ceabacbfe397e6d70025814a0c3882",tooltip=" "];
+  Node8 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="get_rc_dna",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hmm_8h.html#a4bb170d07b8af8e326242f06b922bd80",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="nt2int_rc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728",tooltip=" "];
+  Node8 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="get_rc_dna_indel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#ace3dceb07b9556e404f8eedde73e4d61",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="nt2int_rc_indel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855",tooltip=" "];
+  Node8 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="imatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#aa4be6d2998bec55044c271fea2ae7176",tooltip=" "];
+  Node8 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="ivector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495",tooltip=" "];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="trinucleotide",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util__lib_8c.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f",tooltip=" "];
+}
