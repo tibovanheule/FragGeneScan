@@ -1,0 +1,74 @@
+.TH "FragGeneScan1.31/run_hmm.h" 3 "Vr 5 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FragGeneScan1.31/run_hmm.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'hmm\&.h'\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+
+.SS "Klassen"
+
+.in +1c
+.ti -1c
+.RI "struct \fBthread_data\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBthread_data\fP \fBthread_data\fP"
+.br
+.in -1c
+.SS "Functies"
+
+.in +1c
+.ti -1c
+.RI "void * \fBthread_func\fP (void *threadarr)"
+.br
+.ti -1c
+.RI "void \fBprint_error\fP (const char *error_message,\&.\&.\&.)"
+.br
+.in -1c
+.SH "Documentatie van typedefs"
+.PP 
+.SS "typedef struct \fBthread_data\fP \fBthread_data\fP"
+
+.SH "Documentatie van functies"
+.PP 
+.SS "void print_error (const char * error_message,  \&.\&.\&.)"
+Error function:
+.IP "1." 4
+Print error message
+.IP "2." 4
+Print usage
+.IP "3." 4
+EXIT program 
+.PP
+
+.SS "void* thread_func (void * threadarr)"
+
+.SH "Auteur"
+.PP 
+Automatisch gegenereerd door Doxygen voor FragScanTibo uit de programmatekst\&.

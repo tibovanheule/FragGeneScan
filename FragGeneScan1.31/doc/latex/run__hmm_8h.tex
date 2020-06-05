@@ -1,0 +1,106 @@
+\hypertarget{run__hmm_8h}{}\doxysection{Frag\+Gene\+Scan1.31/run\+\_\+hmm.h Bestand Referentie}
+\label{run__hmm_8h}\index{FragGeneScan1.31/run\_hmm.h@{FragGeneScan1.31/run\_hmm.h}}
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hmm.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{run__hmm_8h__incl}
+\end{center}
+\end{figure}
+Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{run__hmm_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} \mbox{\hyperlink{run__hmm_8h_afff3f9ce037efdce79ae2411f6f79714}{thread\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functies}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8}{thread\+\_\+func}} (void $\ast$threadarr)
+\item 
+void \mbox{\hyperlink{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}{print\+\_\+error}} (const char $\ast$error\+\_\+message,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentatie van typedefs}
+\mbox{\Hypertarget{run__hmm_8h_afff3f9ce037efdce79ae2411f6f79714}\label{run__hmm_8h_afff3f9ce037efdce79ae2411f6f79714}} 
+\index{run\_hmm.h@{run\_hmm.h}!thread\_data@{thread\_data}}
+\index{thread\_data@{thread\_data}!run\_hmm.h@{run\_hmm.h}}
+\doxysubsubsection{\texorpdfstring{thread\_data}{thread\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} \mbox{\hyperlink{structthread__data}{thread\+\_\+data}}}
+
+
+
+\doxysubsection{Documentatie van functies}
+\mbox{\Hypertarget{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}\label{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}} 
+\index{run\_hmm.h@{run\_hmm.h}!print\_error@{print\_error}}
+\index{print\_error@{print\_error}!run\_hmm.h@{run\_hmm.h}}
+\doxysubsubsection{\texorpdfstring{print\_error()}{print\_error()}}
+{\footnotesize\ttfamily void print\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{error\+\_\+message,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Error function\+:
+\begin{DoxyEnumerate}
+\item Print error message
+\item Print usage
+\item E\+X\+IT program 
+\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8}\label{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8}} 
+\index{run\_hmm.h@{run\_hmm.h}!thread\_func@{thread\_func}}
+\index{thread\_func@{thread\_func}!run\_hmm.h@{run\_hmm.h}}
+\doxysubsubsection{\texorpdfstring{thread\_func()}{thread\_func()}}
+{\footnotesize\ttfamily void$\ast$ thread\+\_\+func (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadarr }\end{DoxyParamCaption})}
+
+Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph}
+\end{center}
+\end{figure}
