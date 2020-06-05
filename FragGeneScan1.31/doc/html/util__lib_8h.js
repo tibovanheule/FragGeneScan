@@ -9,7 +9,6 @@ var util__lib_8h =
     [ "get_protein", "util__lib_8h.html#a66ceabacbfe397e6d70025814a0c3882", null ],
     [ "imatrix", "util__lib_8h.html#aa4be6d2998bec55044c271fea2ae7176", null ],
     [ "ivector", "util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495", null ],
-    [ "log2", "util__lib_8h.html#a5536923a606fb457a87150a9e613cc09", null ],
     [ "nt2int", "util__lib_8h.html#a4de49e3fa34734f20dcd2443a8a4d535", null ],
     [ "nt2int_rc", "util__lib_8h.html#a463ba3bb94808100d5c8d9ffea2a3728", null ],
     [ "print_usage", "util__lib_8h.html#ae5ad5cbeccaedc03a48d3c7eaa803e79", null ],
