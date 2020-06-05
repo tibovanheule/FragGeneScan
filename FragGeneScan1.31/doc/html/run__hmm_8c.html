@@ -141,6 +141,8 @@ Functies</h2></td></tr>
 <tr class="separator:a36990146ac199f3f956edc7bdab2a95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262">print_error</a> (const char *error_message,...)</td></tr>
 <tr class="separator:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256">print_file_error</a> (const char *error_message, char *file)</td></tr>
+<tr class="separator:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentatie van macro's</h2>
 <a id="ab76fbb1f1b2031f52c2a805e49aaa23b"></a>
@@ -242,15 +244,16 @@ Functies</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,113,56,140"/>
-<area shape="rect" href="hmm_8h.html#acef94cf960e200f7ec1b4619510461a1" title=" " alt="" coords="104,60,233,87"/>
-<area shape="rect" href="run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262" title=" " alt="" coords="129,113,209,140"/>
-<area shape="rect" href="run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8" title=" " alt="" coords="123,171,214,197"/>
+<area shape="rect" title=" " alt="" coords="5,132,56,159"/>
+<area shape="rect" href="hmm_8h.html#acef94cf960e200f7ec1b4619510461a1" title=" " alt="" coords="104,56,233,83"/>
+<area shape="rect" href="run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262" title=" " alt="" coords="129,107,209,133"/>
+<area shape="rect" href="run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256" title=" " alt="" coords="117,157,221,184"/>
+<area shape="rect" href="run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8" title=" " alt="" coords="123,208,214,235"/>
 <area shape="rect" href="util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535" title=" " alt="" coords="489,5,543,32"/>
-<area shape="rect" href="util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9" title=" " alt="" coords="319,60,370,87"/>
-<area shape="rect" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79" title=" " alt="" coords="300,113,389,140"/>
-<area shape="rect" href="hmm_8h.html#aa5d13d79b8ed4466bcacfcc4184ee399" title=" " alt="" coords="281,171,408,197"/>
-<area shape="rect" href="hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36" title=" " alt="" coords="316,233,373,260"/>
+<area shape="rect" href="util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9" title=" " alt="" coords="319,56,370,83"/>
+<area shape="rect" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79" title=" " alt="" coords="300,107,389,133"/>
+<area shape="rect" href="hmm_8h.html#aa5d13d79b8ed4466bcacfcc4184ee399" title=" " alt="" coords="281,208,408,235"/>
+<area shape="rect" href="hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36" title=" " alt="" coords="316,259,373,285"/>
 <area shape="rect" href="util__lib_8c.html#abda1f5b59156796bbd775359d171d921" title=" " alt="" coords="483,56,549,83"/>
 <area shape="rect" href="util__lib_8c.html#a314ff0abb6d5444bd2037acbede4f0ed" title=" " alt="" coords="469,107,563,133"/>
 <area shape="rect" href="util__lib_8c.html#af6b81a4eebc7d8772422bfdd05f5834e" title=" " alt="" coords="471,157,561,184"/>
@@ -295,7 +298,7 @@ Functies</h2></td></tr>
 </div><div class="memdoc">
 <p>Error function:</p><ol type="1">
 <li>Print error message</li>
-<li>Print usage</li>
+<li>Call <a class="el" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79">print_usage()</a> from util_lib</li>
 <li>EXIT program </li>
 </ol>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -323,6 +326,49 @@ Functies</h2></td></tr>
 
 </div>
 </div>
+<a id="a8ba3959a9af3a709d5ac2d90d6c7d256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ba3959a9af3a709d5ac2d90d6c7d256">&#9670;&nbsp;</a></span>print_file_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_file_error </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>error_message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error function:</p><ol type="1">
+<li>Print error message</li>
+<li>EXIT program </li>
+</ol>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph.png" border="0" usemap="#run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph" alt=""/></div>
+<map name="run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph" id="run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,208,32"/>
+<area shape="rect" href="run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="af48b9cd1d1b40f874fae9bcfc15abad8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af48b9cd1d1b40f874fae9bcfc15abad8">&#9670;&nbsp;</a></span>thread_func()</h2>
 
@@ -338,11 +384,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph.png" border="0" usemap="#run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph" alt=""/></div>
 <map name="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph" id="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,233,96,260"/>
@@ -363,11 +409,11 @@ Functies</h2></td></tr>
 <area shape="rect" href="util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855" title=" " alt="" coords="487,309,593,336"/>
 </map>
 </div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph.png" border="0" usemap="#run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph" alt=""/></div>
 <map name="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph" id="run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,195,32"/>
@@ -383,7 +429,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_32a88c243d984b4ed4350e0e53d366c4.html">FragGeneScan1.31</a></li><li class="navelem"><a class="el" href="run__hmm_8c.html">run_hmm.c</a></li>
-    <li class="footer">Gegenereerd op Vr 5 Jun 2020 23:53:58 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Za 6 Jun 2020 00:25:54 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

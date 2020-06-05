@@ -1,4 +1,4 @@
-.TH "FragGeneScan1.31/run_hmm.c" 3 "Vr 5 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "FragGeneScan1.31/run_hmm.c" 3 "Za 6 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,6 +52,9 @@ FragGeneScan1.31/run_hmm.c
 .ti -1c
 .RI "void \fBprint_error\fP (const char *error_message,\&.\&.\&.)"
 .br
+.ti -1c
+.RI "void \fBprint_file_error\fP (const char *error_message, char *file)"
+.br
 .in -1c
 .SH "Documentatie van macro's"
 .PP 
@@ -76,8 +79,16 @@ Error function:
 .IP "1." 4
 Print error message
 .IP "2." 4
-Print usage
+Call \fBprint_usage()\fP from util_lib
 .IP "3." 4
+EXIT program 
+.PP
+
+.SS "void print_file_error (const char * error_message, char * file)"
+Error function:
+.IP "1." 4
+Print error message
+.IP "2." 4
 EXIT program 
 .PP
 

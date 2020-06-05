@@ -5,5 +5,6 @@ var run__hmm_8c =
     [ "appendSeq", "run__hmm_8c.html#a36990146ac199f3f956edc7bdab2a95f", null ],
     [ "main", "run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
     [ "print_error", "run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262", null ],
+    [ "print_file_error", "run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256", null ],
     [ "thread_func", "run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8", null ]
 ];

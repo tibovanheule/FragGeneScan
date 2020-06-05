@@ -34,6 +34,8 @@ void $\ast$ \mbox{\hyperlink{run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8}{thre
 int \mbox{\hyperlink{run__hmm_8c_a36990146ac199f3f956edc7bdab2a95f}{append\+Seq}} (char $\ast$input, char $\ast$$\ast$seq, int input\+\_\+max)
 \item 
 void \mbox{\hyperlink{run__hmm_8c_a5f590f6cc7bf5db3ae40e2e1c34f2262}{print\+\_\+error}} (const char $\ast$error\+\_\+message,...)
+\item 
+void \mbox{\hyperlink{run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256}{print\+\_\+file\+\_\+error}} (const char $\ast$error\+\_\+message, char $\ast$file)
 \end{DoxyCompactItemize}
 
 
@@ -69,7 +71,8 @@ Entry point of program
 \begin{DoxyEnumerate}
 \item Initialization of variables and datatypes
 \item Check File acessiblity 
-\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:\nopagebreak
+\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -85,7 +88,7 @@ Entry point of program
 Error function\+:
 \begin{DoxyEnumerate}
 \item Print error message
-\item Print usage
+\item Call \mbox{\hyperlink{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\+usage()}} from util\+\_\+lib
 \item E\+X\+IT program 
 \end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
@@ -99,6 +102,24 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{run__hmm_8c_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256}\label{run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256}} 
+\index{run\_hmm.c@{run\_hmm.c}!print\_file\_error@{print\_file\_error}}
+\index{print\_file\_error@{print\_file\_error}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{print\_file\_error()}{print\_file\_error()}}
+{\footnotesize\ttfamily void print\+\_\+file\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{error\+\_\+message,  }\item[{char $\ast$}]{file }\end{DoxyParamCaption})}
+
+Error function\+:
+\begin{DoxyEnumerate}
+\item Print error message
+\item E\+X\+IT program 
+\end{DoxyEnumerate}Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8}\label{run__hmm_8c_af48b9cd1d1b40f874fae9bcfc15abad8}} 
