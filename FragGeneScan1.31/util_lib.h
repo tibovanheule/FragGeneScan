@@ -1,3 +1,5 @@
+#ifndef UTIL_LIB_H
+#define UTIL_LIB_H
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -18,6 +20,7 @@ int nt2int_rc (char nt);
 
 
 int trinucleotide (char a, char b, char c);
-double log2(double a);
 void get_protein(char *dna, char *protein, int strand, int whole_genome);
 void print_usage();
+
+#endif

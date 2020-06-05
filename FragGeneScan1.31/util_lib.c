@@ -3,11 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-double log2(double a){
-  return log(a)/log(2);
-}
-
-
 double **dmatrix(int num_row, int num_col){
 
   int i, j;
@@ -44,7 +39,7 @@ int **imatrix(int num_row, int num_col){
     fprintf(stderr, "%s\n", "ERROR: Allocation failure for points to rows in imatrix()");
     exit(EXIT_FAILURE);
   }
-  
+
   for(i=0; i<num_row; i++) {
     m[i]=(int *) malloc(num_col * sizeof(int));
     if (!m[i]) {
@@ -61,9 +56,9 @@ int **imatrix(int num_row, int num_col){
 
 
 double *dvector(int nh){
-  
+
   int j;
-  double *v;  
+  double *v;
 
   v=(double *)malloc(nh * sizeof(double));
 
@@ -80,7 +75,7 @@ double *dvector(int nh){
 
 
 int *ivector(int nh){
-  
+
   int j;
   int *v;
 
@@ -99,13 +94,13 @@ int *ivector(int nh){
 
 
 void free_dvector(double *v){
-  
+
   free(v);
 }
 
 
 void free_ivector(int *v){
-  
+
   free(v);
 }
 
@@ -114,18 +109,18 @@ void free_dmatrix(double **m, int num_row){
 
   int i;
 
-  for(i=num_row-1; i>=0; i--) 
+  for(i=num_row-1; i>=0; i--)
     free(m[i]);
 
   free(m);
 }
 
 
-void free_imatrix(int **m,int num_row){  
+void free_imatrix(int **m,int num_row){
 
   int i;
 
-  for(i=num_row-1; i>=0; i--) 
+  for(i=num_row-1; i>=0; i--)
     free(m[i]);
 
   free(m);
@@ -150,7 +145,7 @@ int tr2int (char *tr){
   else if (strcmp(tr, "RR")==0){   result = 11;}
   else if (strcmp(tr, "ES")==0){   result = 12;}    /* ES: E+ -> S+, E- -> S- */
   else if (strcmp(tr, "ES1")==0){   result = 13;}   /* ES1: E+ -> S-, E- -> S+ */
-  
+
   return result;
 }
 
@@ -261,7 +256,7 @@ void get_rc_dna(char *dna, char *dna1){
   int i;
   int dna_len = strlen(dna);
   for (i=0; i<dna_len; i++){
-    
+
     dna1[dna_len-i-1] =codon[nt2int_rc(dna[i])];
   }
 }
@@ -272,7 +267,7 @@ void get_rc_dna_indel(char *dna, char *dna1){
   int i;
   int dna_len = strlen(dna);
   for (i=0; i<dna_len; i++){
-    
+
     dna1[dna_len-i-1] =codon[nt2int_rc_indel(dna[i])];
   }
 }
@@ -298,7 +293,7 @@ void get_protein(char *dna, char *protein,  int strand, int whole_genome){
 			 '*','C','W','C',
 			 'L','F','L','F', 'X'};
 
-  char anti_codon_code[65] = {'F','V','L','I',  
+  char anti_codon_code[65] = {'F','V','L','I',
 			 'C','G','R','S',
 			 'S','A','P','T',
 			 'Y','D','H','N',
@@ -347,13 +342,13 @@ void get_protein(char *dna, char *protein,  int strand, int whole_genome){
   //only consider two major alternative ones, GTG and TTG
   if(whole_genome == 0) return; //short reads, skip
   if(strand == 1) {
-  	int s = trinucleotide_pep(dna[0], dna[1], dna[2]); 
+  	int s = trinucleotide_pep(dna[0], dna[1], dna[2]);
 	if(s == trinucleotide_pep('G', 'T', 'G') || s == trinucleotide_pep('T', 'T', 'G')){
 		protein[0] = 'M';
 	}
   }
   else {
-  	int s = trinucleotide_pep(dna[dna_len - 3], dna[dna_len - 2], dna[dna_len - 1]); 
+  	int s = trinucleotide_pep(dna[dna_len - 3], dna[dna_len - 2], dna[dna_len - 1]);
 	if(s == trinucleotide_pep('C', 'A', 'C') || s == trinucleotide_pep('C', 'A', 'A')) {
 		protein[0] = 'M';
 	}

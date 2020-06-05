@@ -1,3 +1,5 @@
+#ifndef HMM_H
+#define HMM_H
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -110,3 +112,7 @@ void free_hmm(HMM *hmm);
 void get_protein(char *dna, char *protein, int strand, int whole_genome);
 void get_rc_dna(char *dna, char *dna1);
 void get_corrected_dna(char *dna, char *dna_f);
+
+
+
+#endif

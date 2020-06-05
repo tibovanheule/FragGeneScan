@@ -1,49 +1,50 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <unistd.h>
 #include <string.h>
 #include <time.h>
 #include "hmm.h"
+#include "run_hmm.h"
+#include "util_lib.h"
 
 #include <pthread.h>
 
 #define ADD_LEN 1024
 #define STRINGLEN 4096
 
-typedef struct thread_data
-{
-	FILE *out;
-	FILE *aa;
-	FILE *dna;
-	char *obs_head;
-	char *obs_seq;
-	int wholegenome;
-	int cg;
-	int format;
-	HMM *hmm;
-	TRAIN *train;
-} thread_data;
-
-void* thread_func(void *threadarr);
-
+/**
+* Entry point of program
+* 1. Initialization of variables and datatypes
+* 2. Check File acessiblity
+*/
 int main (int argc, char **argv)
 {
+    /*Initialization datastructures*/
+  FILE *fp_out, *fp_aa, *fp_dna, *fp;
+  TRAIN train;
+  HMM hmm;
+  thread_data *threadarr;
+
   clock_t start = clock();
   int i, j, c, max;
-  HMM hmm;
-  char *obs_seq, *obs_head;
-  TRAIN train;
   int wholegenome;
   int format=0;
-  FILE *fp_out, *fp_aa, *fp_dna, *fp;
+  int count=0;
+  int currcount = 0;
+  int total = 0;
+  int *obs_seq_len;
+  int bp_count;  /* count the length of each line in input file */
+  int threadnum = 1;
+  int rc;
+
+  char *obs_seq, *obs_head;
   char hmm_file[STRINGLEN] = "";
   char out_header[STRINGLEN] = "";
   char aa_file[STRINGLEN] = "";
   char seq_file[STRINGLEN] = "";
   char out_file[STRINGLEN] = "";
-  char dna_file[STRINGLEN] = ""; 
+  char dna_file[STRINGLEN] = "";
   char train_file[STRINGLEN] = "";
   char mstate_file[STRINGLEN] = "";
   char rstate_file[STRINGLEN] = "";
@@ -54,17 +55,7 @@ int main (int argc, char **argv)
   char p1state_file[STRINGLEN] = "";
   char dstate_file[STRINGLEN] = "";
   char train_dir[STRINGLEN] = "";
-  int count=0;
-  int currcount = 0;
-  int total = 0;
   char mystring[STRINGLEN] = "";
-  int *obs_seq_len;
-  int bp_count;  /* count the length of each line in input file */
-
-  int threadnum = 1;
-  int rc;
-
-  thread_data *threadarr;
   char **lastline, **currline;
 
   strncpy(train_dir, argv[0], strlen(argv[0])-12);
@@ -87,38 +78,24 @@ int main (int argc, char **argv)
   strcat(dstate_file, "pwm");
 
 
-  /* read command line argument */
-  if (argc <= 8){    
-    fprintf(stderr, "ERROR: You missed some parameters for input\n");
-    print_usage();
-    exit(EXIT_FAILURE);
+  /* If there is less then 9 arguments, then we halt because not everything is given. */
+  if (argc <= 8){
+    print_error("ERROR: You missed some parameters for input\n");
   }
 
   while ((c=getopt(argc, argv, "fs:o:w:t:p:")) != -1){
     switch (c){
     case 's':
       strcpy(seq_file, optarg);
-      if (access(seq_file, F_OK)==-1){
-	fprintf(stderr, "ERROR: Sequence file [%s] does not exist\n", seq_file);
-	print_usage();
-	exit(EXIT_FAILURE);
-      }
-      break;  
+      if (access(seq_file, F_OK)==-1) print_error("ERROR: Sequence file [%s] does not exist\n",seq_file);
+      break;
     case 'w':
       wholegenome = atoi(optarg);
-      if (wholegenome != 0 && wholegenome != 1){
-	fprintf(stderr, "ERROR: An incorrect value for the option -w was entered\n");
-	print_usage();
-	exit(EXIT_FAILURE);
-      }
+      if (wholegenome != 0 && wholegenome != 1)	print_error("ERROR: An incorrect value for the option -w was entered\n");
       break;
     case 'p':
       threadnum = atoi(optarg);
-      if (threadnum < 1){
-	fprintf(stderr, "ERROR: An incorrect value [%d] for the option -p was entered\n", threadnum);
-	print_usage();
-	exit(EXIT_FAILURE);
-      }
+      if (threadnum < 1) print_error("ERROR: An incorrect value [%d] for the option -p was entered\n", threadnum);
       printf("Using %d threads.\n", threadnum);
       break;
     case 'o':
@@ -128,12 +105,7 @@ int main (int argc, char **argv)
       strcpy(train_file, optarg);
       strcpy(hmm_file, train_dir);
       strcat(hmm_file, train_file);
-
-      if (access(hmm_file, F_OK)==-1){
-	fprintf(stderr, "ERROR: The file for model parameters [%s] does not exist\n", hmm_file);
-	print_usage();
-	exit(EXIT_FAILURE);
-      }
+      if (access(hmm_file, F_OK)==-1) print_error("ERROR: The file for model parameters [%s] does not exist\n", hmm_file);
       break;
     case 'f':
       format = 1;
@@ -141,45 +113,18 @@ int main (int argc, char **argv)
     }
   }
 
-  
+
   /* check whether the specified files exist */
-  if (access(mstate_file, F_OK)==-1){
-    fprintf(stderr, "Forward prob. file [%s] does not exist\n", mstate_file);
-    exit(1);
-  }
-  if (access(rstate_file, F_OK)==-1){
-    fprintf(stderr, "Backward prob. file [%s] does not exist\n", rstate_file);
-    exit(1);
-  }
-  if (access(nstate_file, F_OK)==-1){
-    fprintf(stderr, "noncoding prob. file [%s] does not exist\n", nstate_file);
-    exit(1);
-  }
-  if (access(sstate_file, F_OK)==-1){
-    fprintf(stderr, "start prob. file [%s] does not exist\n", sstate_file);
-    exit(1);
-  }
-  if (access(pstate_file, F_OK)==-1){
-    fprintf(stderr, "stop prob. file [%s] does not exist\n", pstate_file);
-    exit(1);
-  }
-  if (access(s1state_file, F_OK)==-1){
-    fprintf(stderr, "start1 prob. file [%s] does not exist\n", s1state_file);
-    exit(1);
-  }
-  if (access(p1state_file, F_OK)==-1){
-    fprintf(stderr, "stop1 prob. file [%s] does not exist\n", p1state_file);
-    exit(1);
-  }
-  if (access(dstate_file, F_OK)==-1){
-    fprintf(stderr, "pwm dist. file [%s] does not exist\n", dstate_file);
-    exit(1);
-  }
-  if (access(hmm_file, F_OK)==-1){
-    fprintf(stderr, "hmm file [%s] does not exist\n", hmm_file);
-    exit(1);
-  }
-  
+  if (access(mstate_file, F_OK)==-1) print_file_error("Forward prob. file [%s] does not exist\n", mstate_file);
+  if (access(rstate_file, F_OK)==-1) print_file_error("Backward prob. file [%s] does not exist\n", rstate_file);
+  if (access(nstate_file, F_OK)==-1) print_file_error("noncoding prob. file [%s] does not exist\n", nstate_file);
+  if (access(sstate_file, F_OK)==-1) print_file_error("start prob. file [%s] does not exist\n", sstate_file);
+  if (access(pstate_file, F_OK)==-1) print_file_error("stop prob. file [%s] does not exist\n", pstate_file);
+  if (access(s1state_file, F_OK)==-1) print_file_error("start1 prob. file [%s] does not exist\n", s1state_file);
+  if (access(p1state_file, F_OK)==-1) print_file_error("stop1 prob. file [%s] does not exist\n", p1state_file);
+  if (access(dstate_file, F_OK)==-1) print_file_error("pwm dist. file [%s] does not exist\n", dstate_file);
+  if (access(hmm_file, F_OK)==-1) print_file_error("hmm file [%s] does not exist\n", hmm_file);
+
   /* read all initial model */
   hmm.N=NUM_STATE;
   get_train_from_file(hmm_file, &hmm, mstate_file, rstate_file, nstate_file, sstate_file, pstate_file,s1state_file, p1state_file, dstate_file, &train);
@@ -190,7 +135,7 @@ int main (int argc, char **argv)
   for (i = 0; i < threadnum; i++)
   {
     if(threadnum > 1) sprintf(mystring, "%s.out.tmp.%d", out_header, i);
-    else sprintf(mystring, "%s.out", out_header); 
+    else sprintf(mystring, "%s.out", out_header);
     threadarr[i].out = fopen(mystring, "w");
     if(threadnum > 1) sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
     else sprintf(mystring, "%s.faa", out_header);
@@ -222,7 +167,7 @@ int main (int argc, char **argv)
     }
   }
   obs_seq_len = (int *)malloc(count * sizeof(int));
-  printf("no. of seqs: %d\n", count);  
+  printf("no. of seqs: %d\n", count);
 
   i = 0;
   count = 0;
@@ -439,29 +384,21 @@ int main (int argc, char **argv)
     }
 
     // Organize dna file
-    for (i = 0; i < threadnum; i++)
-    {
+    for (i = 0; i < threadnum; i++){
       lastline[i][0] = '\0';
     }
-    while (1)
-    {
+    while (j != threadnum){
       j = 0;
-      for (i = 0; i < threadnum; i++)
-      {
-        if (lastline[i][0] != '\0')
-        {
+      for (i = 0; i < threadnum; i++){
+        if (lastline[i][0] != '\0'){
           fputs(lastline[i], fp_dna);
           lastline[i][0] = '\0';
         }
-        while(fgets(currline[i], STRINGLEN, threadarr[i].dna))
-        {
-          if (currline[i][0] == '>')
-          {
+        while(fgets(currline[i], STRINGLEN, threadarr[i].dna)){
+          if (currline[i][0] == '>'){
             memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
             break;
-          }
-          else
-          {
+          }else{
             fputs(currline[i], fp_dna);
           }
         }
@@ -469,10 +406,6 @@ int main (int argc, char **argv)
         {
           j++;
         }
-      }
-      if (j == threadnum)
-      {
-        break;
       }
     }
 
@@ -495,7 +428,7 @@ int main (int argc, char **argv)
     free(threadarr);
     free(lastline);
     free(currline);
-  
+
     free(obs_seq_len);
     //free(obs_head);
     fclose(fp_out);
@@ -503,23 +436,18 @@ int main (int argc, char **argv)
     fclose(fp_dna);
     fclose(fp);
   }
-  clock_t end = clock();
-  printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (end - start) / (60.0 * CLOCKS_PER_SEC));
+  printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
+  return 0;
 }
 
 
-void* thread_func(void *threadarr)
-{
-  thread_data *d;
-  d = (thread_data*)threadarr;
-  d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq); //cg - 26 Ye April 16, 2016
-  if (strlen(d->obs_seq)>70){
-    viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, d->cg, d->format);
-  }
+void* thread_func(void *threadarr){
+  thread_data *d = (thread_data*)threadarr;
+  d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq); /* cg - 26 Ye April 16, 2016 */
+  if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, d->cg, d->format);
 }
 
-int appendSeq(char *input, char **seq, int input_max)
-{
+int appendSeq(char *input, char **seq, int input_max){
 	int len, inputlen, max;
 	char *tmp;
 
@@ -552,3 +480,27 @@ int appendSeq(char *input, char **seq, int input_max)
 	return max;
 }
 
+/**
+* Error function:
+* 1. Print error message
+* 2. Call print_usage() from util_lib
+* 3. EXIT program
+*/
+void print_error(const char* error_message, ...){
+    va_list list;
+    va_start(list,error_message);
+    vfprintf(stderr, error_message,list);
+    va_end(list);
+	print_usage();
+	exit(EXIT_FAILURE);
+}
+
+/**
+* Error function:
+* 1. Print error message
+* 2. EXIT program
+*/
+void print_file_error(const char* error_message, char* file){
+    fprintf(stderr, error_message,file);
+	exit(EXIT_FAILURE);
+}
