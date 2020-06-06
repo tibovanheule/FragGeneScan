@@ -1,3 +1,6 @@
+/** \file hmm.h
+* This is the header file for the hmm datastructure.
+*/
 #ifndef HMM_H
 #define HMM_H
 #include <stdlib.h>
@@ -58,7 +61,9 @@
 #define TR_ES 12
 #define TR_ES1 13
 
-
+/**
+*
+*/
 typedef struct {
 
   double  pi[29];    /* pi[1..N] pi[i] is the initial state distribution. */
@@ -112,7 +117,6 @@ void free_hmm(HMM *hmm);
 void get_protein(char *dna, char *protein, int strand, int whole_genome);
 void get_rc_dna(char *dna, char *dna1);
 void get_corrected_dna(char *dna, char *dna_f);
-
 
 
 #endif

@@ -5,8 +5,7 @@
 #include <ctype.h>
 #include "hmm.h"
 #include "util_lib.h"
-
-void dump_memory(void *p, int size);
+#include "hmm_lib.h"
 
 void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna,
 char *head, int whole_genome, int cg, int format){
@@ -777,18 +776,13 @@ probability */
 
   /* find the state for O[N] with the highest probability */
   prob = max_dbl;
-  for (i = 0; i < hmm_ptr->N; i++){
-
-    if (alpha[i][len_seq-1] < prob){
+  for (i = 0; i < hmm_ptr->N; i++) if (alpha[i][len_seq-1] < prob){
       prob = alpha[i][len_seq-1];
       vpath[len_seq-1] = i;
-    }
   }
 
   /* backtrack the optimal path */
-  for(t=len_seq-2; t>=0; t--){
-    vpath[t] = path[vpath[t+1]][t+1];
-  }
+  for(t=len_seq-2; t>=0; t--) vpath[t] = path[vpath[t+1]][t+1];
 
   print_save = 0;
   codon_start=0;
@@ -798,17 +792,12 @@ probability */
   char codon[4], utr[65];
   for (t=0; t<len_seq; t++){
 
-    if (codon_start==0 && start_t < 0 &&
-	((vpath[t]>=M1_STATE && vpath[t]<=M6_STATE) ||
-	 (vpath[t]>=M1_STATE_1 && vpath[t]<=M6_STATE_1) ||
-	 vpath[t] == S_STATE || vpath[t] == S_STATE_1 )){
+    if (codon_start==0 && start_t < 0 && ((vpath[t]>=M1_STATE && vpath[t]<=M6_STATE) || (vpath[t]>=M1_STATE_1 && vpath[t]<=M6_STATE_1) || vpath[t] == S_STATE || vpath[t] == S_STATE_1 )){
       dna_start_t_withstop=dna_start_t=start_t=t+1;
       //introduce dna_start_t_withstop YY July 2018
     }
 
-    if (codon_start==0 &&
-	(vpath[t]==M1_STATE || vpath[t]==M4_STATE ||
-	 vpath[t]==M1_STATE_1 || vpath[t]==M4_STATE_1)){
+    if (codon_start==0 && (vpath[t]==M1_STATE || vpath[t]==M4_STATE || vpath[t]==M1_STATE_1 || vpath[t]==M4_STATE_1)){
 
       memset(dna,0,300000);
       memset(dna1,0,300000);
@@ -978,13 +967,9 @@ probability */
 	  dna_end_t = end_t;
 	  fprintf(fp_out, "%d\t%d\t-\t%d\t%lf\t", dna_start_t_withstop, dna_end_t, frame, final_score);
 	  fprintf(fp_out, "I:");
-	  for (i=0; i<insert_id; i++){
-	    fprintf(fp_out, "%d,", insert[i]);
-	  }
+	  for (i=0; i<insert_id; i++) fprintf(fp_out, "%d,", insert[i]);
 	  fprintf(fp_out, "\tD:");
-	  for (i=0; i<delete_id; i++){
-	    fprintf(fp_out, "%d,", delete[i]);
-	  }
+	  for (i=0; i<delete_id; i++) fprintf(fp_out, "%d,", delete[i]);
 	  fprintf(fp_out, "\n");
 
 	  //update dna before calling get_protein, YY July 2018
@@ -1066,7 +1051,11 @@ probability */
   free_ivector(vpath);
 }
 
-int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O){ //change from void to int, Ye, April 18, 2016
+/* get_prob_from_cg
+* takes a pointer to HMM datastructure and a point to a Train datastructure
+*
+*/
+int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O){
   int cg_id = -1;
   int cg_count=0;
   int len_seq;
@@ -1086,30 +1075,24 @@ int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O){ //change from voi
    }
 
   memcpy(hmm_ptr->e_M, train_ptr->trans[cg_count], sizeof(hmm_ptr->e_M));
-  memcpy(hmm_ptr->e_M_1, train_ptr->rtrans[cg_count],
-sizeof(hmm_ptr->e_M_1));
-  memcpy(hmm_ptr->tr_R_R, train_ptr->noncoding[cg_count],
-sizeof(hmm_ptr->tr_R_R));
+  memcpy(hmm_ptr->e_M_1, train_ptr->rtrans[cg_count], sizeof(hmm_ptr->e_M_1));
+  memcpy(hmm_ptr->tr_R_R, train_ptr->noncoding[cg_count], sizeof(hmm_ptr->tr_R_R));
   memcpy(hmm_ptr->tr_S, train_ptr->start[cg_count], sizeof(hmm_ptr->tr_S));
   memcpy(hmm_ptr->tr_E, train_ptr->stop[cg_count], sizeof(hmm_ptr->tr_E));
-  memcpy(hmm_ptr->tr_S_1, train_ptr->start1[cg_count],
-sizeof(hmm_ptr->tr_S_1));
-  memcpy(hmm_ptr->tr_E_1, train_ptr->stop1[cg_count],
-sizeof(hmm_ptr->tr_E_1));
-  memcpy(hmm_ptr->S_dist, train_ptr->S_dist[cg_count],
-sizeof(hmm_ptr->S_dist));
-  memcpy(hmm_ptr->E_dist, train_ptr->E_dist[cg_count],
-sizeof(hmm_ptr->E_dist));
-  memcpy(hmm_ptr->S1_dist, train_ptr->S1_dist[cg_count],
-sizeof(hmm_ptr->S1_dist));
-  memcpy(hmm_ptr->E1_dist, train_ptr->E1_dist[cg_count],
-sizeof(hmm_ptr->E1_dist));
+  memcpy(hmm_ptr->tr_S_1, train_ptr->start1[cg_count], sizeof(hmm_ptr->tr_S_1));
+  memcpy(hmm_ptr->tr_E_1, train_ptr->stop1[cg_count], sizeof(hmm_ptr->tr_E_1));
+  memcpy(hmm_ptr->S_dist, train_ptr->S_dist[cg_count], sizeof(hmm_ptr->S_dist));
+  memcpy(hmm_ptr->E_dist, train_ptr->E_dist[cg_count], sizeof(hmm_ptr->E_dist));
+  memcpy(hmm_ptr->S1_dist, train_ptr->S1_dist[cg_count], sizeof(hmm_ptr->S1_dist));
+  memcpy(hmm_ptr->E1_dist, train_ptr->E1_dist[cg_count], sizeof(hmm_ptr->E1_dist));
  
   return cg_count;
 }
 
 
-
+/** 
+* Reads files given to main and returns a train datastructure.
+*/
 void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename,
 			 char *sfilename,char *pfilename,char *s1filename,char *p1filename,char *dfilename, TRAIN *train_ptr){
 
@@ -1310,7 +1293,6 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
 }
 
 void free_hmm(HMM *hmm_ptr){
-
   free_dvector(hmm_ptr->pi);
 }
 

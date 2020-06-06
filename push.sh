@@ -5,9 +5,9 @@
 # generate doxygen
 doxygen "./doxygen/Doxyfile mac"
 # add new doc files to a commmit
-git add "./FragGeneScan1.31/doc/" && git commit -m"new doc (auto generated)"
+git add "./src/doc/" && git commit -m"new doc (auto generated)"
 # navigate to latex doc folder
-cd ./FragGeneScan1.31/doc/latex/
+cd ./src/doc/latex/
 # generate new pdf
 pdflatex -halt-on-error -output-directory=../../../ -jobname="Fraggenescan documentation" refman.tex
 cd ../../../
