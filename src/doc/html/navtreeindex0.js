@@ -76,6 +76,7 @@ var NAVTREEINDEX0 =
 "hmm__lib_8c.html#ad1a2d8fdd497952e5e2bbcb857bc4750":[1,0,0,1,1],
 "hmm__lib_8h.html":[1,0,0,2],
 "hmm__lib_8h.html#a4d9812bf63644537146f7a8dcf848125":[1,0,0,2,0],
+"hmm__lib_8h.html#a7f0771f2de6bd26833d2435b88f3c8c9":[1,0,0,2,1],
 "hmm__lib_8h_source.html":[1,0,0,2],
 "index.html":[],
 "pages.html":[],

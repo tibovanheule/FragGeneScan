@@ -8,8 +8,7 @@
 {\ttfamily \#include \char`\"{}hmm.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}util\+\_\+lib.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}hmm\+\_\+lib.\+h\char`\"{}}\newline
-Include afhankelijkheidsgraaf voor hmm\+\_\+lib.\+c\+:
-\nopagebreak
+Include afhankelijkheidsgraaf voor hmm\+\_\+lib.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,8 +18,6 @@ Include afhankelijkheidsgraaf voor hmm\+\_\+lib.\+c\+:
 \doxysubsection*{Functies}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{hmm__lib_8c_a4d9812bf63644537146f7a8dcf848125}{dump\+\_\+memory}} (void $\ast$p, int size)
-\item 
 void \mbox{\hyperlink{hmm__lib_8c_a66a36ec378618afca39e44147b742270}{viterbi}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr, char $\ast$O, F\+I\+LE $\ast$fp\+\_\+out, F\+I\+LE $\ast$fp\+\_\+aa, F\+I\+LE $\ast$fp\+\_\+dna, char $\ast$head, int whole\+\_\+genome, int cg, int format)
 \item 
 int \mbox{\hyperlink{hmm__lib_8c_a74ab9667dd58ee40b21f227394b5e54f}{get\+\_\+prob\+\_\+from\+\_\+cg}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr, char $\ast$O)
@@ -28,6 +25,8 @@ int \mbox{\hyperlink{hmm__lib_8c_a74ab9667dd58ee40b21f227394b5e54f}{get\+\_\+pro
 void \mbox{\hyperlink{hmm__lib_8c_acef94cf960e200f7ec1b4619510461a1}{get\+\_\+train\+\_\+from\+\_\+file}} (char $\ast$filename, \mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, char $\ast$mfilename, char $\ast$mfilename1, char $\ast$nfilename, char $\ast$sfilename, char $\ast$pfilename, char $\ast$s1filename, char $\ast$p1filename, char $\ast$dfilename, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr)
 \item 
 void \mbox{\hyperlink{hmm__lib_8c_ad1a2d8fdd497952e5e2bbcb857bc4750}{free\+\_\+hmm}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr)
+\item 
+void \mbox{\hyperlink{hmm__lib_8c_a4d9812bf63644537146f7a8dcf848125}{dump\+\_\+memory}} (void $\ast$p, int size)
 \end{DoxyCompactItemize}
 
 
@@ -70,7 +69,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{get\_train\_from\_file()}{get\_train\_from\_file()}}
 {\footnotesize\ttfamily void get\+\_\+train\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{char $\ast$}]{mfilename,  }\item[{char $\ast$}]{mfilename1,  }\item[{char $\ast$}]{nfilename,  }\item[{char $\ast$}]{sfilename,  }\item[{char $\ast$}]{pfilename,  }\item[{char $\ast$}]{s1filename,  }\item[{char $\ast$}]{p1filename,  }\item[{char $\ast$}]{dfilename,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Reads files given to main and returns a train datastructure. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -90,11 +89,12 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{viterbi()}{viterbi()}}
 {\footnotesize\ttfamily void viterbi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr,  }\item[{char $\ast$}]{O,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+out,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+aa,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+dna,  }\item[{char $\ast$}]{head,  }\item[{int}]{whole\+\_\+genome,  }\item[{int}]{cg,  }\item[{int}]{format }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{hmm__lib_8c_a66a36ec378618afca39e44147b742270_cgraph}
+\includegraphics[width=339pt]{hmm__lib_8c_a66a36ec378618afca39e44147b742270_cgraph}
 \end{center}
 \end{figure}
 Hier is de caller graaf voor deze functie\+:\nopagebreak
