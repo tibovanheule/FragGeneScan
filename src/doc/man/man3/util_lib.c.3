@@ -1,4 +1,4 @@
-.TH "src/util_lib.c" 3 "Za 6 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/util_lib.c" 3 "Zo 7 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -76,17 +76,17 @@ src/util_lib.c
 .SH "Documentatie van functies"
 .PP 
 .SS "double** dmatrix (int num_row, int num_col)"
-
+Makes an matrix with datatype double\&. Elements are double pointers en matrix is a double double pointer (**pointer)\&. Exits when allocation fails\&. 
 .SS "double* dvector (int nh)"
-
+Makes an vector (array) with datatype double\&. Elements are doubles en vector is a double pointer\&. Exits when allocation fails\&. 
 .SS "void free_dmatrix (double ** m, int num_row)"
-
+Frees the memory allocation of an matrix with datatype double\&. 
 .SS "void free_dvector (double * v)"
-
+Frees the memory allocation of an vector with datatype double\&. 
 .SS "void free_imatrix (int ** m, int num_row)"
-
+Frees the memory allocation of an matrix with datatype int\&. 
 .SS "void free_ivector (int * v)"
-
+Frees the memory allocation of an vector with datatype int\&. 
 .SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
 
 .SS "void get_rc_dna (char * dna, char * dna1)"
@@ -94,9 +94,9 @@ src/util_lib.c
 .SS "void get_rc_dna_indel (char * dna, char * dna1)"
 
 .SS "int** imatrix (int num_row, int num_col)"
-
+Makes an matrix with datatype int\&. Elements are int pointers en matrix is a double int pointer\&. Exits when allocation fails\&. 
 .SS "int* ivector (int nh)"
-
+Makes an vector array) with datatype int\&. Elements are ints en vector is a int pointer\&. Exits when allocation fails\&. 
 .SS "int nt2int (char nt)"
 
 .SS "int nt2int_rc (char nt)"
@@ -106,7 +106,7 @@ src/util_lib.c
 .SS "void print_usage ()"
 
 .SS "int tr2int (char * tr)"
-
+Converts a given transition to int\&. Use for example as indexing 
 .SS "int trinucleotide (char a, char b, char c)"
 
 .SS "int trinucleotide_pep (char a, char b, char c)"

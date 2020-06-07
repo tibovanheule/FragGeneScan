@@ -1,4 +1,4 @@
-.TH "src/util_lib.h" 3 "Za 6 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/util_lib.h" 3 "Zo 7 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,6 +13,13 @@ src/util_lib.h
 \fC#include <math\&.h>\fP
 .br
 
+.SS "Enumeraties"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtrenum\fP { \fBMM\fP = 0, \fBMI\fP = 1, \fBMD\fP = 2, \fBII\fP = 3, \fBIM\fP = 4, \fBDD\fP = 5, \fBDM\fP = 6, \fBGE\fP = 7, \fBGG\fP = 8, \fBER\fP = 9, \fBRS\fP = 10, \fBRR\fP = 11, \fBES\fP = 12, \fBES1\fP = 13 }"
+.br
+.in -1c
 .SS "Functies"
 
 .in +1c
@@ -59,34 +66,69 @@ src/util_lib.h
 .RI "void \fBprint_usage\fP ()"
 .br
 .in -1c
+.SH "Documentatie van enumeratie types"
+.PP 
+.SS "enum \fBtrenum\fP"
+
+.PP
+\fBEnumeratie waarden\fP
+.in +1c
+.TP
+\fB\fIMM \fP\fP
+.TP
+\fB\fIMI \fP\fP
+.TP
+\fB\fIMD \fP\fP
+.TP
+\fB\fIII \fP\fP
+.TP
+\fB\fIIM \fP\fP
+.TP
+\fB\fIDD \fP\fP
+.TP
+\fB\fIDM \fP\fP
+.TP
+\fB\fIGE \fP\fP
+.TP
+\fB\fIGG \fP\fP
+.TP
+\fB\fIER \fP\fP
+.TP
+\fB\fIRS \fP\fP
+.TP
+\fB\fIRR \fP\fP
+.TP
+\fB\fIES \fP\fP
+.TP
+\fB\fIES1 \fP\fP
 .SH "Documentatie van functies"
 .PP 
 .SS "double** dmatrix (int num_row, int num_col)"
-
+Makes an matrix with datatype double\&. Elements are double pointers en matrix is a double double pointer (**pointer)\&. Exits when allocation fails\&. 
 .SS "double* dvector (int nh)"
-
+Makes an vector (array) with datatype double\&. Elements are doubles en vector is a double pointer\&. Exits when allocation fails\&. 
 .SS "void free_dmatrix (double ** m, int num_row)"
-
+Frees the memory allocation of an matrix with datatype double\&. 
 .SS "void free_dvector (double * v)"
-
+Frees the memory allocation of an vector with datatype double\&. 
 .SS "void free_imatrix (int ** m, int num_row)"
-
+Frees the memory allocation of an matrix with datatype int\&. 
 .SS "void free_ivector (int * v)"
-
+Frees the memory allocation of an vector with datatype int\&. 
 .SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
 
 .SS "int** imatrix (int num_row, int num_col)"
-
+Makes an matrix with datatype int\&. Elements are int pointers en matrix is a double int pointer\&. Exits when allocation fails\&. 
 .SS "int* ivector (int nh)"
-
+Makes an vector array) with datatype int\&. Elements are ints en vector is a int pointer\&. Exits when allocation fails\&. 
 .SS "int nt2int (char nt)"
 
 .SS "int nt2int_rc (char nt)"
 
 .SS "void print_usage ()"
 
-.SS "int tr2int (char * nt)"
-
+.SS "int tr2int (char * tr)"
+Converts a given transition to int\&. Use for example as indexing 
 .SS "int trinucleotide (char a, char b, char c)"
 
 .SH "Auteur"

@@ -59,7 +59,7 @@ void \mbox{\hyperlink{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\
 \doxysubsubsection{\texorpdfstring{dmatrix()}{dmatrix()}}
 {\footnotesize\ttfamily double$\ast$$\ast$ dmatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer ($\ast$$\ast$pointer). Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -72,13 +72,13 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{dvector()}{dvector()}}
 {\footnotesize\ttfamily double$\ast$ dvector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}\label{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}} 
+Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. \mbox{\Hypertarget{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}\label{util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed}} 
 \index{util\_lib.c@{util\_lib.c}!free\_dmatrix@{free\_dmatrix}}
 \index{free\_dmatrix@{free\_dmatrix}!util\_lib.c@{util\_lib.c}}
 \doxysubsubsection{\texorpdfstring{free\_dmatrix()}{free\_dmatrix()}}
 {\footnotesize\ttfamily void free\+\_\+dmatrix (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{m,  }\item[{int}]{num\+\_\+row }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Frees the memory allocation of an matrix with datatype double. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -91,7 +91,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{free\_dvector()}{free\_dvector()}}
 {\footnotesize\ttfamily void free\+\_\+dvector (\begin{DoxyParamCaption}\item[{double $\ast$}]{v }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Frees the memory allocation of an vector with datatype double. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,7 +104,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{free\_imatrix()}{free\_imatrix()}}
 {\footnotesize\ttfamily void free\+\_\+imatrix (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{m,  }\item[{int}]{num\+\_\+row }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Frees the memory allocation of an matrix with datatype int. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -117,7 +117,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{free\_ivector()}{free\_ivector()}}
 {\footnotesize\ttfamily void free\+\_\+ivector (\begin{DoxyParamCaption}\item[{int $\ast$}]{v }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Frees the memory allocation of an vector with datatype int. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,7 +183,7 @@ Hier is de call graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{imatrix()}{imatrix()}}
 {\footnotesize\ttfamily int$\ast$$\ast$ imatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,7 +196,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ivector()}{ivector()}}
 {\footnotesize\ttfamily int$\ast$ ivector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -235,8 +235,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{nt2int\_rc\_indel()}{nt2int\_rc\_indel()}}
 {\footnotesize\ttfamily int nt2int\+\_\+rc\+\_\+indel (\begin{DoxyParamCaption}\item[{char}]{nt }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:
-\nopagebreak
+Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -262,7 +261,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tr2int()}{tr2int()}}
 {\footnotesize\ttfamily int tr2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{tr }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Converts a given transition to int. Use for example as indexing Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

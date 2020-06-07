@@ -69,7 +69,10 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{get\_train\_from\_file()}{get\_train\_from\_file()}}
 {\footnotesize\ttfamily void get\+\_\+train\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{char $\ast$}]{mfilename,  }\item[{char $\ast$}]{mfilename1,  }\item[{char $\ast$}]{nfilename,  }\item[{char $\ast$}]{sfilename,  }\item[{char $\ast$}]{pfilename,  }\item[{char $\ast$}]{s1filename,  }\item[{char $\ast$}]{p1filename,  }\item[{char $\ast$}]{dfilename,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr }\end{DoxyParamCaption})}
 
-Reads files given to main and returns a train datastructure. Hier is de call graaf voor deze functie\+:\nopagebreak
+Reads files.
+\begin{DoxyEnumerate}
+\item Reads trasition file and store in hmm datastructure 
+\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -89,8 +92,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{viterbi()}{viterbi()}}
 {\footnotesize\ttfamily void viterbi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr,  }\item[{char $\ast$}]{O,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+out,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+aa,  }\item[{F\+I\+LE $\ast$}]{fp\+\_\+dna,  }\item[{char $\ast$}]{head,  }\item[{int}]{whole\+\_\+genome,  }\item[{int}]{cg,  }\item[{int}]{format }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
