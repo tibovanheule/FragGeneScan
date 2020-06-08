@@ -14,6 +14,7 @@ var util__lib_8c =
     [ "nt2int", "util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535", null ],
     [ "nt2int_rc", "util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728", null ],
     [ "nt2int_rc_indel", "util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855", null ],
+    [ "print_allocation_error", "util__lib_8c.html#a77d6581715c5162c69476c05dc132a93", null ],
     [ "print_usage", "util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79", null ],
     [ "tr2int", "util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9", null ],
     [ "trinucleotide", "util__lib_8c.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f", null ],

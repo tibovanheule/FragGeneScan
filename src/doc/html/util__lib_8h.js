@@ -27,6 +27,7 @@ var util__lib_8h =
     [ "ivector", "util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495", null ],
     [ "nt2int", "util__lib_8h.html#a4de49e3fa34734f20dcd2443a8a4d535", null ],
     [ "nt2int_rc", "util__lib_8h.html#a463ba3bb94808100d5c8d9ffea2a3728", null ],
+    [ "print_allocation_error", "util__lib_8h.html#a77d6581715c5162c69476c05dc132a93", null ],
     [ "print_usage", "util__lib_8h.html#ae5ad5cbeccaedc03a48d3c7eaa803e79", null ],
     [ "tr2int", "util__lib_8h.html#a843ecc458c3d68506fb7475f012e51d5", null ],
     [ "trinucleotide", "util__lib_8h.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f", null ]

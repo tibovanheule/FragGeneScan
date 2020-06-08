@@ -1,4 +1,4 @@
-.TH "src/util_lib.h" 3 "Zo 7 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/util_lib.h" 3 "Ma 8 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,6 +11,8 @@ src/util_lib.h
 \fC#include <stdio\&.h>\fP
 .br
 \fC#include <math\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
 .br
 
 .SS "Enumeraties"
@@ -64,6 +66,9 @@ src/util_lib.h
 .br
 .ti -1c
 .RI "void \fBprint_usage\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint_allocation_error\fP (const char *format,\&.\&.\&.)"
 .br
 .in -1c
 .SH "Documentatie van enumeratie types"
@@ -124,6 +129,8 @@ Makes an vector array) with datatype int\&. Elements are ints en vector is a int
 .SS "int nt2int (char nt)"
 
 .SS "int nt2int_rc (char nt)"
+
+.SS "void print_allocation_error (const char * format,  \&.\&.\&.)"
 
 .SS "void print_usage ()"
 

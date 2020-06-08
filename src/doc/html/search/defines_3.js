@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_229',['G',['../hmm_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54',1,'hmm.h']]]
+  ['g_231',['G',['../hmm_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54',1,'hmm.h']]]
 ];

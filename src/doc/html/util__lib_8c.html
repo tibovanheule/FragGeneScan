@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('util__lib_8c.html',''); initResizable(
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="util__lib_8h_source.html">util_lib.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include afhankelijkheidsgraaf voor util_lib.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -101,11 +102,13 @@ $(document).ready(function(){initNavTree('util__lib_8c.html',''); initResizable(
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c__incl.png" border="0" usemap="#src_2util__lib_8c" alt=""/></div>
 <map name="src_2util__lib_8c" id="src_2util__lib_8c">
-<area shape="rect" title=" " alt="" coords="121,5,213,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,67,107"/>
-<area shape="rect" title=" " alt="" coords="91,80,154,107"/>
-<area shape="rect" title=" " alt="" coords="179,80,243,107"/>
-<area shape="rect" title=" " alt="" coords="267,80,333,107"/>
+<area shape="rect" title=" " alt="" coords="150,5,242,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,67,181"/>
+<area shape="rect" title=" " alt="" coords="91,155,154,181"/>
+<area shape="rect" title=" " alt="" coords="272,155,336,181"/>
+<area shape="rect" title=" " alt="" coords="307,80,373,107"/>
+<area shape="rect" href="util__lib_8h.html" title=" " alt="" coords="161,80,231,107"/>
+<area shape="rect" title=" " alt="" coords="179,155,248,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -147,6 +150,8 @@ Functies</h2></td></tr>
 <tr class="separator:a66ceabacbfe397e6d70025814a0c3882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ad5cbeccaedc03a48d3c7eaa803e79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79">print_usage</a> ()</td></tr>
 <tr class="separator:ae5ad5cbeccaedc03a48d3c7eaa803e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d6581715c5162c69476c05dc132a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93">print_allocation_error</a> (const char *format,...)</td></tr>
+<tr class="separator:a77d6581715c5162c69476c05dc132a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentatie van functies</h2>
 <a id="abda1f5b59156796bbd775359d171d921"></a>
@@ -176,10 +181,21 @@ Functies</h2></td></tr>
 </div><div class="memdoc">
 <p>Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer (**pointer). Exits when allocation fails. </p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="util__lib_8c_abda1f5b59156796bbd775359d171d921_cgraph.png" border="0" usemap="#util__lib_8c_abda1f5b59156796bbd775359d171d921_cgraph" alt=""/></div>
+<map name="util__lib_8c_abda1f5b59156796bbd775359d171d921_cgraph" id="util__lib_8c_abda1f5b59156796bbd775359d171d921_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,71,32"/>
+<area shape="rect" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93" title=" " alt="" coords="119,5,261,32"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_abda1f5b59156796bbd775359d171d921_icgraph.png" border="0" usemap="#util__lib_8c_abda1f5b59156796bbd775359d171d921_icgraph" alt=""/></div>
 <map name="util__lib_8c_abda1f5b59156796bbd775359d171d921_icgraph" id="util__lib_8c_abda1f5b59156796bbd775359d171d921_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,413,32"/>
@@ -207,6 +223,17 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. </p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="util__lib_8c_abd5fe78d731314dedfc83195699fbe7e_cgraph.png" border="0" usemap="#util__lib_8c_abd5fe78d731314dedfc83195699fbe7e_cgraph" alt=""/></div>
+<map name="util__lib_8c_abd5fe78d731314dedfc83195699fbe7e_cgraph" id="util__lib_8c_abd5fe78d731314dedfc83195699fbe7e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,71,32"/>
+<area shape="rect" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93" title=" " alt="" coords="119,5,261,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -236,11 +263,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Frees the memory allocation of an matrix with datatype double. </p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed_icgraph.png" border="0" usemap="#util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed_icgraph" alt=""/></div>
 <map name="util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed_icgraph" id="util__lib_8c_a314ff0abb6d5444bd2037acbede4f0ed_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,443,32"/>
@@ -268,11 +295,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Frees the memory allocation of an vector with datatype double. </p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_ac2288cb3514168160c68cec8f09a99be_icgraph.png" border="0" usemap="#util__lib_8c_ac2288cb3514168160c68cec8f09a99be_icgraph" alt=""/></div>
 <map name="util__lib_8c_ac2288cb3514168160c68cec8f09a99be_icgraph" id="util__lib_8c_ac2288cb3514168160c68cec8f09a99be_icgraph">
 <area shape="rect" title=" " alt="" coords="133,5,228,32"/>
@@ -308,11 +335,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Frees the memory allocation of an matrix with datatype int. </p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e_icgraph.png" border="0" usemap="#util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e_icgraph" alt=""/></div>
 <map name="util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e_icgraph" id="util__lib_8c_af6b81a4eebc7d8772422bfdd05f5834e_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,439,32"/>
@@ -340,11 +367,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Frees the memory allocation of an vector with datatype int. </p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_afd89b5e675116707ce66556b376bc41a_icgraph.png" border="0" usemap="#util__lib_8c_afd89b5e675116707ce66556b376bc41a_icgraph" alt=""/></div>
 <map name="util__lib_8c_afd89b5e675116707ce66556b376bc41a_icgraph" id="util__lib_8c_afd89b5e675116707ce66556b376bc41a_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,439,32"/>
@@ -393,22 +420,22 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_cgraph.png" border="0" usemap="#util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_cgraph" alt=""/></div>
 <map name="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_cgraph" id="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,92,32"/>
 <area shape="rect" href="util__lib_8c.html#a9f526cfd3ce7777d8144aed9ecc53b8d" title=" " alt="" coords="140,5,260,32"/>
 </map>
 </div>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_icgraph.png" border="0" usemap="#util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_icgraph" alt=""/></div>
 <map name="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_icgraph" id="util__lib_8c_a66ceabacbfe397e6d70025814a0c3882_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,435,32"/>
@@ -445,22 +472,22 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_cgraph.png" border="0" usemap="#util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_cgraph" alt=""/></div>
 <map name="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_cgraph" id="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,92,32"/>
 <area shape="rect" href="util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728" title=" " alt="" coords="140,5,212,32"/>
 </map>
 </div>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_icgraph.png" border="0" usemap="#util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_icgraph" alt=""/></div>
 <map name="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_icgraph" id="util__lib_8c_a4bb170d07b8af8e326242f06b922bd80_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,435,32"/>
@@ -497,11 +524,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_cgraph.png" border="0" usemap="#util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_cgraph" alt=""/></div>
 <map name="util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_cgraph" id="util__lib_8c_ace3dceb07b9556e404f8eedde73e4d61_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,125,32"/>
@@ -537,11 +564,22 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. </p>
-<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_cgraph.png" border="0" usemap="#util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_cgraph" alt=""/></div>
+<map name="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_cgraph" id="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,67,32"/>
+<area shape="rect" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93" title=" " alt="" coords="115,5,257,32"/>
+</map>
+</div>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_icgraph.png" border="0" usemap="#util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_icgraph" alt=""/></div>
 <map name="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_icgraph" id="util__lib_8c_aa4be6d2998bec55044c271fea2ae7176_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,409,32"/>
@@ -569,11 +607,22 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. </p>
-<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_cgraph.png" border="0" usemap="#util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_cgraph" alt=""/></div>
+<map name="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_cgraph" id="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,67,32"/>
+<area shape="rect" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93" title=" " alt="" coords="115,5,257,32"/>
+</map>
+</div>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_icgraph.png" border="0" usemap="#util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_icgraph" alt=""/></div>
 <map name="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_icgraph" id="util__lib_8c_aacdd22a5bafdab2b445e84bbc01eb495_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,409,32"/>
@@ -600,11 +649,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535_icgraph.png" border="0" usemap="#util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535_icgraph" alt=""/></div>
 <map name="util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535_icgraph" id="util__lib_8c_a4de49e3fa34734f20dcd2443a8a4d535_icgraph">
 <area shape="rect" title=" " alt="" coords="387,31,441,57"/>
@@ -632,11 +681,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728_icgraph.png" border="0" usemap="#util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728_icgraph" alt=""/></div>
 <map name="util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728_icgraph" id="util__lib_8c_a463ba3bb94808100d5c8d9ffea2a3728_icgraph">
 <area shape="rect" title=" " alt="" coords="483,5,555,32"/>
@@ -664,15 +713,60 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a2952b88dfbbdb0fe37929e128a771855_icgraph.png" border="0" usemap="#util__lib_8c_a2952b88dfbbdb0fe37929e128a771855_icgraph" alt=""/></div>
 <map name="util__lib_8c_a2952b88dfbbdb0fe37929e128a771855_icgraph" id="util__lib_8c_a2952b88dfbbdb0fe37929e128a771855_icgraph">
 <area shape="rect" title=" " alt="" coords="173,5,280,32"/>
 <area shape="rect" href="util__lib_8c.html#ace3dceb07b9556e404f8eedde73e4d61" title=" " alt="" coords="5,5,125,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a77d6581715c5162c69476c05dc132a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d6581715c5162c69476c05dc132a93">&#9670;&nbsp;</a></span>print_allocation_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_allocation_error </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="util__lib_8c_a77d6581715c5162c69476c05dc132a93_icgraph.png" border="0" usemap="#util__lib_8c_a77d6581715c5162c69476c05dc132a93_icgraph" alt=""/></div>
+<map name="util__lib_8c_a77d6581715c5162c69476c05dc132a93_icgraph" id="util__lib_8c_a77d6581715c5162c69476c05dc132a93_icgraph">
+<area shape="rect" title=" " alt="" coords="461,81,604,108"/>
+<area shape="rect" href="util__lib_8h.html#abda1f5b59156796bbd775359d171d921" title=" " alt="" coords="348,5,413,32"/>
+<area shape="rect" href="util__lib_8h.html#abd5fe78d731314dedfc83195699fbe7e" title=" " alt="" coords="348,56,413,83"/>
+<area shape="rect" href="util__lib_8h.html#aa4be6d2998bec55044c271fea2ae7176" title=" " alt="" coords="350,107,411,133"/>
+<area shape="rect" href="util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495" title=" " alt="" coords="350,157,411,184"/>
+<area shape="rect" href="hmm__lib_8c.html#a66a36ec378618afca39e44147b742270" title=" " alt="" coords="243,107,300,133"/>
+<area shape="rect" href="run__hmm_8h.html#af48b9cd1d1b40f874fae9bcfc15abad8" title=" " alt="" coords="104,107,195,133"/>
+<area shape="rect" href="run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,107,56,133"/>
 </map>
 </div>
 
@@ -692,11 +786,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79_icgraph.png" border="0" usemap="#util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79_icgraph" alt=""/></div>
 <map name="util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79_icgraph" id="util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79_icgraph">
 <area shape="rect" title=" " alt="" coords="232,5,321,32"/>
@@ -723,11 +817,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Converts a given transition to int. Use for example as indexing </p>
-<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_af63cd754beea7a1122a0eaca769b62d9_icgraph.png" border="0" usemap="#util__lib_8c_af63cd754beea7a1122a0eaca769b62d9_icgraph" alt=""/></div>
 <map name="util__lib_8c_af63cd754beea7a1122a0eaca769b62d9_icgraph" id="util__lib_8c_af63cd754beea7a1122a0eaca769b62d9_icgraph">
 <area shape="rect" title=" " alt="" coords="281,5,332,32"/>
@@ -769,11 +863,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph.png" border="0" usemap="#util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph" alt=""/></div>
 <map name="util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph" id="util__lib_8c_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,440,32"/>
@@ -816,11 +910,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph.png" border="0" usemap="#util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph" alt=""/></div>
 <map name="util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph" id="util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph">
 <area shape="rect" title=" " alt="" coords="140,5,260,32"/>
@@ -836,7 +930,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="util__lib_8c.html">util_lib.c</a></li>
-    <li class="footer">Gegenereerd op Zo 7 Jun 2020 15:02:46 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Ma 8 Jun 2020 13:39:14 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

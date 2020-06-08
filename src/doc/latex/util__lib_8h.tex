@@ -3,18 +3,21 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
-Include afhankelijkheidsgraaf voor util\+\_\+lib.\+h\+:\nopagebreak
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+Include afhankelijkheidsgraaf voor util\+\_\+lib.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=258pt]{util__lib_8h__incl}
+\includegraphics[width=328pt]{util__lib_8h__incl}
 \end{center}
 \end{figure}
-Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:\nopagebreak
+Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=258pt]{util__lib_8h__dep__incl}
+\includegraphics[width=346pt]{util__lib_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Enumeraties}
@@ -70,6 +73,8 @@ int \mbox{\hyperlink{util__lib_8h_a6c3f6a6a60ce5b7eedea9fd18c377f6f}{trinucleoti
 void \mbox{\hyperlink{util__lib_8h_a66ceabacbfe397e6d70025814a0c3882}{get\+\_\+protein}} (char $\ast$dna, char $\ast$protein, int strand, int whole\+\_\+genome)
 \item 
 void \mbox{\hyperlink{util__lib_8h_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\+usage}} ()
+\item 
+void \mbox{\hyperlink{util__lib_8h_a77d6581715c5162c69476c05dc132a93}{print\+\_\+allocation\+\_\+error}} (const char $\ast$format,...)
 \end{DoxyCompactItemize}
 
 
@@ -147,7 +152,15 @@ E\+S1&\\
 \doxysubsubsection{\texorpdfstring{dmatrix()}{dmatrix()}}
 {\footnotesize\ttfamily double$\ast$$\ast$ dmatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer ($\ast$$\ast$pointer). Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer ($\ast$$\ast$pointer). Exits when allocation fails. Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{util__lib_8h_abda1f5b59156796bbd775359d171d921_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,7 +173,15 @@ Makes an matrix with datatype double. Elements are double pointers en matrix is 
 \doxysubsubsection{\texorpdfstring{dvector()}{dvector()}}
 {\footnotesize\ttfamily double$\ast$ dvector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. \mbox{\Hypertarget{util__lib_8h_a314ff0abb6d5444bd2037acbede4f0ed}\label{util__lib_8h_a314ff0abb6d5444bd2037acbede4f0ed}} 
+Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{util__lib_8h_abd5fe78d731314dedfc83195699fbe7e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8h_a314ff0abb6d5444bd2037acbede4f0ed}\label{util__lib_8h_a314ff0abb6d5444bd2037acbede4f0ed}} 
 \index{util\_lib.h@{util\_lib.h}!free\_dmatrix@{free\_dmatrix}}
 \index{free\_dmatrix@{free\_dmatrix}!util\_lib.h@{util\_lib.h}}
 \doxysubsubsection{\texorpdfstring{free\_dmatrix()}{free\_dmatrix()}}
@@ -231,7 +252,15 @@ Hier is de call graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{imatrix()}{imatrix()}}
 {\footnotesize\ttfamily int$\ast$$\ast$ imatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{util__lib_8h_aa4be6d2998bec55044c271fea2ae7176_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -244,7 +273,15 @@ Makes an matrix with datatype int. Elements are int pointers en matrix is a doub
 \doxysubsubsection{\texorpdfstring{ivector()}{ivector()}}
 {\footnotesize\ttfamily int$\ast$ ivector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. Hier is de caller graaf voor deze functie\+:\nopagebreak
+Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{util__lib_8h_aacdd22a5bafdab2b445e84bbc01eb495_cgraph}
+\end{center}
+\end{figure}
+Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -275,6 +312,20 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{util__lib_8h_a463ba3bb94808100d5c8d9ffea2a3728_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util__lib_8h_a77d6581715c5162c69476c05dc132a93}\label{util__lib_8h_a77d6581715c5162c69476c05dc132a93}} 
+\index{util\_lib.h@{util\_lib.h}!print\_allocation\_error@{print\_allocation\_error}}
+\index{print\_allocation\_error@{print\_allocation\_error}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{print\_allocation\_error()}{print\_allocation\_error()}}
+{\footnotesize\ttfamily void print\+\_\+allocation\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util__lib_8h_a77d6581715c5162c69476c05dc132a93_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{util__lib_8h_ae5ad5cbeccaedc03a48d3c7eaa803e79}\label{util__lib_8h_ae5ad5cbeccaedc03a48d3c7eaa803e79}} 
