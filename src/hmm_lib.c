@@ -1131,21 +1131,21 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
 
   /* TransitionMI */
   fscanf(fp, "%s", head);
-  for (i=0; i<16; i++){
+  for (int i=0; i<16; i++){
     fscanf(fp, "%s %s %lf\n", start, end, &prob);
     hmm_ptr->tr_M_I[nt2int(start[0])][nt2int(end[0])] = log(prob);
   }
 
   /* TransitionII */
   fscanf(fp, "%s", head);
-  for (i=0; i<16; i++){
+  for (int i=0; i<16; i++){
     fscanf(fp, "%s %s %lf", start, end, &prob);
     hmm_ptr->tr_I_I[nt2int(start[0])][nt2int(end[0])] = log(prob);
  }
 
   /* PI */
   fscanf(fp, "%s", head);
-  for (i=0; i<NUM_STATE; i++){
+  for (int i=0; i<NUM_STATE; i++){
     fscanf(fp, "%s %lf", name, &prob);
     hmm_ptr->pi[i] = log(prob);
   }
