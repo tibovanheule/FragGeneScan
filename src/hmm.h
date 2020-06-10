@@ -12,6 +12,9 @@
 #define G 2
 #define T 3
 
+/**
+* Total number of states, mainly used in for loops.
+*/
 #define NUM_STATE 29
 
 #define NOSTATE -1
