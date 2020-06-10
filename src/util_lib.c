@@ -5,12 +5,12 @@
 #include "util_lib.h"
 #define TR_SIZE 14
 
-const char* tr_list[TR_SIZE] = { "MM","MI","MD","II","IM","DD","DM","GE","GG","ER","RS","RR","ES","ES1" };
+ char* tr_list[TR_SIZE] = { "MM","MI","MD","II","IM","DD","DM","GE","GG","ER","RS","RR","ES","ES1" };
 
-const char codon5[5] = { 'A', 'C', 'G', 'T', 'N' };
-const char codon11[11] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
+ char codon5[5] = { 'A', 'C', 'G', 'T', 'N' };
+ char codon11[11] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
 
-const char codon_code[65] = { 'K','N','K','N',
+ char codon_code[65] = { 'K','N','K','N',
              'T','T','T','T',
              'R','S','R','S',
              'I','I','M','I',
@@ -27,7 +27,7 @@ const char codon_code[65] = { 'K','N','K','N',
              '*','C','W','C',
              'L','F','L','F', 'X' };
 
-const char anti_codon_code[65] = { 'F','V','L','I',
+char anti_codon_code[65] = { 'F','V','L','I',
              'C','G','R','S',
              'S','A','P','T',
              'Y','D','H','N',
