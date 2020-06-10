@@ -1,10 +1,7 @@
 #include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <time.h>
-#include "hmm.h"
 #include "run_hmm.h"
 #include "util_lib.h"
 
@@ -27,14 +24,16 @@ int main (int argc, char **argv)
   thread_data *threadarr;
 
   clock_t start = clock();
-  int i, j, c, max;
+  int i, j, max;
   int wholegenome;
   int format=0;
   int count=0;
   int currcount = 0;
   int total = 0;
   int *obs_seq_len;
-  int bp_count;  /* count the length of each line in input file */
+/* count the length of each line in input file */
+  int bp_count;  
+  /* number of threads */
   int threadnum = 1;
   int rc;
 
@@ -83,6 +82,7 @@ int main (int argc, char **argv)
     print_error("ERROR: You missed some parameters for input\n");
   }
 
+  int c;
   while ((c=getopt(argc, argv, "fs:o:w:t:p:")) != -1){
     switch (c){
     case 's':
@@ -269,8 +269,7 @@ int main (int argc, char **argv)
       break;
     }
   }
-  for (i = 0; i < threadnum; i++)
-  {
+  for (i = 0; i < threadnum; i++)  {
     fclose(threadarr[i].out);
     fclose(threadarr[i].aa);
     fclose(threadarr[i].dna);

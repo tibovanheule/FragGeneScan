@@ -1091,13 +1091,15 @@ int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O){
 
 
 /** 
-* Reads files given to main and returns a train datastructure.
+* Reads files.
+* 1. Reads trasition file and store in hmm datastructure
 */
 void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename,
 			 char *sfilename,char *pfilename,char *s1filename,char *p1filename,char *dfilename, TRAIN *train_ptr){
 
   int i, j, k, p;
   double prob;
+  // All file handlers
   FILE *fp, *fpm, *fpm1, *fpn, *fps, *fpp, *fps1, *fpp1, *fpd;
 
   char name[10];
@@ -1155,12 +1157,12 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     fscanf(fpm, "%s", head);
     for (i=0; i<6; i++){                       /* period */
       for (j=0; j<16; j++){                    /* condition */
-	for (k=0; k<4; k++){                   /* emission */
-	  fscanf(fpm, "%lf", &prob);
-	  train_ptr->trans[p][i][j][k] = log(prob);
-	}
+		for (k=0; k<4; k++){                   /* emission */
+		  fscanf(fpm, "%lf", &prob);
+		  train_ptr->trans[p][i][j][k] = log(prob);
+		}
       }
-    }
+    } 
   }
   fclose(fpm);
 
