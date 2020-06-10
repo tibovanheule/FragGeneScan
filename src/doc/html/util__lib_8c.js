@@ -1,5 +1,6 @@
 var util__lib_8c =
 [
+    [ "TR_SIZE", "util__lib_8c.html#a37dc6f78e69e89fc0b67db00eeef7a62", null ],
     [ "dmatrix", "util__lib_8c.html#abda1f5b59156796bbd775359d171d921", null ],
     [ "dvector", "util__lib_8c.html#abd5fe78d731314dedfc83195699fbe7e", null ],
     [ "free_dmatrix", "util__lib_8c.html#a314ff0abb6d5444bd2037acbede4f0ed", null ],

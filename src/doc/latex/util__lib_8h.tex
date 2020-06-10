@@ -4,44 +4,24 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdarg.\+h$>$}\newline
-Include afhankelijkheidsgraaf voor util\+\_\+lib.\+h\+:
-\nopagebreak
+Include afhankelijkheidsgraaf voor util\+\_\+lib.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=328pt]{util__lib_8h__incl}
 \end{center}
 \end{figure}
-Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:
-\nopagebreak
+Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=346pt]{util__lib_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Enumeraties}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42d}{trenum}} \{ \newline
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da519a4a8945cef24205e65dbbc404da73}{MM}} = 0, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da8b9857852eaaa2816b407b5de9348565}{MI}} = 1, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da800ab8d25820e3e9fe503340561b0ca6}{MD}} = 2, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daf046d047b37df605060725565cb190f3}{II}} = 3, 
-\newline
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da162f8ad933bb692377c68dae033e50a5}{IM}} = 4, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42dadff9e1be2198e2d0c8cfae5075a01a93}{DD}} = 5, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da999a690381b7476ed2263b21c0dcdadc}{DM}} = 6, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da558711b4a2a25070b970d85f5926d5ce}{GE}} = 7, 
-\newline
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3e7701979c53c57c85b3bcfa7003cd83}{GG}} = 8, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3393079bc83c76ada2e8e686986d99ab}{ER}} = 9, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da7c1dca0addd3da052405a264b9d8f333}{RS}} = 10, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daea4586c054afe1678864fa75dfb1787d}{RR}} = 11, 
-\newline
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da5a0892a1c7e395be57cf5b9f1cd9c76f}{ES}} = 12, 
-\mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da87faf680c6215f731a5704b6299366e8}{E\+S1}} = 13
- \}
+\#define \mbox{\hyperlink{util__lib_8h_a37dc6f78e69e89fc0b67db00eeef7a62}{T\+R\+\_\+\+S\+I\+ZE}}~14
 \end{DoxyCompactItemize}
 \doxysubsection*{Functies}
 \begin{DoxyCompactItemize}
@@ -76,73 +56,28 @@ void \mbox{\hyperlink{util__lib_8h_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\
 \item 
 void \mbox{\hyperlink{util__lib_8h_a77d6581715c5162c69476c05dc132a93}{print\+\_\+allocation\+\_\+error}} (const char $\ast$format,...)
 \end{DoxyCompactItemize}
+\doxysubsection*{Variabelen}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{util__lib_8h_acf0699bcd6609f43eac4f6a71600dd36}{tr\+\_\+list}} \mbox{[}\mbox{\hyperlink{util__lib_8h_a37dc6f78e69e89fc0b67db00eeef7a62}{T\+R\+\_\+\+S\+I\+ZE}}\mbox{]} = \{\char`\"{}MM\char`\"{},\char`\"{}MI\char`\"{},\char`\"{}MD\char`\"{},\char`\"{}II\char`\"{},\char`\"{}IM\char`\"{},\char`\"{}DD\char`\"{},\char`\"{}DM\char`\"{},\char`\"{}GE\char`\"{},\char`\"{}GG\char`\"{},\char`\"{}ER\char`\"{},\char`\"{}RS\char`\"{},\char`\"{}RR\char`\"{},\char`\"{}ES\char`\"{},\char`\"{}E\+S1\char`\"{}\}
+\item 
+const char \mbox{\hyperlink{util__lib_8h_ab2d5b9ef5e743c6e715176da234f9f0a}{codon5}} \mbox{[}5\mbox{]} = \{\textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}\}
+\item 
+const char \mbox{\hyperlink{util__lib_8h_a13c97452ae67b7e18e246531c19dd493}{codon11}} \mbox{[}11\mbox{]} = \{\textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}g\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}x\textquotesingle{}\}
+\item 
+const char \mbox{\hyperlink{util__lib_8h_a12c95f7ae9aae3d4cb7b85831376cc68}{codon\+\_\+code}} \mbox{[}65\mbox{]}
+\item 
+const char \mbox{\hyperlink{util__lib_8h_a9e46fe3bea9ea975e18b3c8452cd7c3a}{anti\+\_\+codon\+\_\+code}} \mbox{[}65\mbox{]}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Documentatie van enumeratie types}
-\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42d}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42d}} 
-\index{util\_lib.h@{util\_lib.h}!trenum@{trenum}}
-\index{trenum@{trenum}!util\_lib.h@{util\_lib.h}}
-\doxysubsubsection{\texorpdfstring{trenum}{trenum}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42d}{trenum}}}
+\doxysubsection{Documentatie van macro\textquotesingle{}s}
+\mbox{\Hypertarget{util__lib_8h_a37dc6f78e69e89fc0b67db00eeef7a62}\label{util__lib_8h_a37dc6f78e69e89fc0b67db00eeef7a62}} 
+\index{util\_lib.h@{util\_lib.h}!TR\_SIZE@{TR\_SIZE}}
+\index{TR\_SIZE@{TR\_SIZE}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{TR\_SIZE}{TR\_SIZE}}
+{\footnotesize\ttfamily \#define T\+R\+\_\+\+S\+I\+ZE~14}
 
-\begin{DoxyEnumFields}{Enumeratie waarden}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM@{MM}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!MM@{MM}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da519a4a8945cef24205e65dbbc404da73}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da519a4a8945cef24205e65dbbc404da73}} 
-MM&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MI@{MI}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!MI@{MI}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da8b9857852eaaa2816b407b5de9348565}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da8b9857852eaaa2816b407b5de9348565}} 
-MI&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MD@{MD}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!MD@{MD}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da800ab8d25820e3e9fe503340561b0ca6}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da800ab8d25820e3e9fe503340561b0ca6}} 
-MD&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{II@{II}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!II@{II}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daf046d047b37df605060725565cb190f3}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daf046d047b37df605060725565cb190f3}} 
-II&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{IM@{IM}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!IM@{IM}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da162f8ad933bb692377c68dae033e50a5}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da162f8ad933bb692377c68dae033e50a5}} 
-IM&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DD@{DD}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!DD@{DD}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42dadff9e1be2198e2d0c8cfae5075a01a93}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42dadff9e1be2198e2d0c8cfae5075a01a93}} 
-DD&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DM@{DM}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!DM@{DM}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da999a690381b7476ed2263b21c0dcdadc}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da999a690381b7476ed2263b21c0dcdadc}} 
-DM&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{GE@{GE}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!GE@{GE}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da558711b4a2a25070b970d85f5926d5ce}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da558711b4a2a25070b970d85f5926d5ce}} 
-GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{GG@{GG}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!GG@{GG}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3e7701979c53c57c85b3bcfa7003cd83}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3e7701979c53c57c85b3bcfa7003cd83}} 
-GG&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ER@{ER}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!ER@{ER}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3393079bc83c76ada2e8e686986d99ab}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da3393079bc83c76ada2e8e686986d99ab}} 
-ER&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RS@{RS}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!RS@{RS}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da7c1dca0addd3da052405a264b9d8f333}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da7c1dca0addd3da052405a264b9d8f333}} 
-RS&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RR@{RR}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!RR@{RR}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daea4586c054afe1678864fa75dfb1787d}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42daea4586c054afe1678864fa75dfb1787d}} 
-RR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ES@{ES}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!ES@{ES}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da5a0892a1c7e395be57cf5b9f1cd9c76f}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da5a0892a1c7e395be57cf5b9f1cd9c76f}} 
-ES&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ES1@{ES1}!util\_lib.h@{util\_lib.h}}\index{util\_lib.h@{util\_lib.h}!ES1@{ES1}}}\mbox{\Hypertarget{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da87faf680c6215f731a5704b6299366e8}\label{util__lib_8h_a8ddfa66bd5a686fd4d7e94f9fd05b42da87faf680c6215f731a5704b6299366e8}} 
-E\+S1&\\
-\hline
-
-\end{DoxyEnumFields}
 
 
 \doxysubsection{Documentatie van functies}
@@ -152,8 +87,7 @@ E\+S1&\\
 \doxysubsubsection{\texorpdfstring{dmatrix()}{dmatrix()}}
 {\footnotesize\ttfamily double$\ast$$\ast$ dmatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer ($\ast$$\ast$pointer). Exits when allocation fails. Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Makes an matrix with datatype double. Elements are double pointers en matrix is a double double pointer ($\ast$$\ast$pointer). Exits when allocation fails. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -173,8 +107,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{dvector()}{dvector()}}
 {\footnotesize\ttfamily double$\ast$ dvector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Makes an vector (array) with datatype double. Elements are doubles en vector is a double pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,7 +172,7 @@ Frees the memory allocation of an vector with datatype int. Hier is de caller gr
 \doxysubsubsection{\texorpdfstring{get\_protein()}{get\_protein()}}
 {\footnotesize\ttfamily void get\+\_\+protein (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{protein,  }\item[{int}]{strand,  }\item[{int}]{whole\+\_\+genome }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short read and stop early. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,8 +185,7 @@ Hier is de call graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{imatrix()}{imatrix()}}
 {\footnotesize\ttfamily int$\ast$$\ast$ imatrix (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+row,  }\item[{int}]{num\+\_\+col }\end{DoxyParamCaption})}
 
-Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Makes an matrix with datatype int. Elements are int pointers en matrix is a double int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -273,8 +205,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ivector()}{ivector()}}
 {\footnotesize\ttfamily int$\ast$ ivector (\begin{DoxyParamCaption}\item[{int}]{nh }\end{DoxyParamCaption})}
 
-Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Makes an vector array) with datatype int. Elements are ints en vector is a int pointer. Exits when allocation fails. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -320,8 +251,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{print\_allocation\_error()}{print\_allocation\_error()}}
 {\footnotesize\ttfamily void print\+\_\+allocation\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:
-\nopagebreak
+Custom error function to print allocation errors. Mostly called from matrix or vector functions. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -334,7 +264,7 @@ Hier is de caller graaf voor deze functie\+:
 \doxysubsubsection{\texorpdfstring{print\_usage()}{print\_usage()}}
 {\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Print how the program should be used. called mainly on help or error. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -347,7 +277,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tr2int()}{tr2int()}}
 {\footnotesize\ttfamily int tr2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{tr }\end{DoxyParamCaption})}
 
-Converts a given transition to int. Use for example as indexing Hier is de caller graaf voor deze functie\+:\nopagebreak
+Converts a given transition to int. Use for example as indexing. switch case not possible due the fact that strings are not constonant. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -367,3 +297,76 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \includegraphics[width=350pt]{util__lib_8h_a6c3f6a6a60ce5b7eedea9fd18c377f6f_icgraph}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Documentatie van variabelen}
+\mbox{\Hypertarget{util__lib_8h_a9e46fe3bea9ea975e18b3c8452cd7c3a}\label{util__lib_8h_a9e46fe3bea9ea975e18b3c8452cd7c3a}} 
+\index{util\_lib.h@{util\_lib.h}!anti\_codon\_code@{anti\_codon\_code}}
+\index{anti\_codon\_code@{anti\_codon\_code}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{anti\_codon\_code}{anti\_codon\_code}}
+{\footnotesize\ttfamily const char anti\+\_\+codon\+\_\+code\mbox{[}65\mbox{]}}
+
+{\bfseries Initi\"{e}le waarde\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{charliteral}{'F'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'C'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Y'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'M'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'W'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'K'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'F'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'C'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Y'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'K'},\textcolor{charliteral}{'X'}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{util__lib_8h_a13c97452ae67b7e18e246531c19dd493}\label{util__lib_8h_a13c97452ae67b7e18e246531c19dd493}} 
+\index{util\_lib.h@{util\_lib.h}!codon11@{codon11}}
+\index{codon11@{codon11}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{codon11}{codon11}}
+{\footnotesize\ttfamily const char codon11\mbox{[}11\mbox{]} = \{\textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}g\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}x\textquotesingle{}\}}
+
+\mbox{\Hypertarget{util__lib_8h_ab2d5b9ef5e743c6e715176da234f9f0a}\label{util__lib_8h_ab2d5b9ef5e743c6e715176da234f9f0a}} 
+\index{util\_lib.h@{util\_lib.h}!codon5@{codon5}}
+\index{codon5@{codon5}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{codon5}{codon5}}
+{\footnotesize\ttfamily const char codon5\mbox{[}5\mbox{]} = \{\textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}\}}
+
+\mbox{\Hypertarget{util__lib_8h_a12c95f7ae9aae3d4cb7b85831376cc68}\label{util__lib_8h_a12c95f7ae9aae3d4cb7b85831376cc68}} 
+\index{util\_lib.h@{util\_lib.h}!codon\_code@{codon\_code}}
+\index{codon\_code@{codon\_code}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{codon\_code}{codon\_code}}
+{\footnotesize\ttfamily const char codon\+\_\+code\mbox{[}65\mbox{]}}
+
+{\bfseries Initi\"{e}le waarde\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{charliteral}{'K'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'K'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'I'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Q'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'H'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'E'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'D'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'*'},\textcolor{charliteral}{'Y'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'W'},\textcolor{charliteral}{'C'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'F'}, \textcolor{charliteral}{'X'}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{util__lib_8h_acf0699bcd6609f43eac4f6a71600dd36}\label{util__lib_8h_acf0699bcd6609f43eac4f6a71600dd36}} 
+\index{util\_lib.h@{util\_lib.h}!tr\_list@{tr\_list}}
+\index{tr\_list@{tr\_list}!util\_lib.h@{util\_lib.h}}
+\doxysubsubsection{\texorpdfstring{tr\_list}{tr\_list}}
+{\footnotesize\ttfamily const char$\ast$ tr\+\_\+list\mbox{[}\mbox{\hyperlink{util__lib_8h_a37dc6f78e69e89fc0b67db00eeef7a62}{T\+R\+\_\+\+S\+I\+ZE}}\mbox{]} = \{\char`\"{}MM\char`\"{},\char`\"{}MI\char`\"{},\char`\"{}MD\char`\"{},\char`\"{}II\char`\"{},\char`\"{}IM\char`\"{},\char`\"{}DD\char`\"{},\char`\"{}DM\char`\"{},\char`\"{}GE\char`\"{},\char`\"{}GG\char`\"{},\char`\"{}ER\char`\"{},\char`\"{}RS\char`\"{},\char`\"{}RR\char`\"{},\char`\"{}ES\char`\"{},\char`\"{}E\+S1\char`\"{}\}}
+

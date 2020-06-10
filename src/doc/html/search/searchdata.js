@@ -6,9 +6,7 @@ var indexSectionsWithContent =
   3: "adfgimnptv",
   4: "acdefhnoprstw",
   5: "t",
-  6: "t",
-  7: "degimr",
-  8: "acegimnrst"
+  6: "acegimnrst"
 };
 
 var indexSectionNames =
@@ -19,9 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "enums",
-  7: "enumvalues",
-  8: "defines"
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -32,8 +28,6 @@ var indexSectionLabels =
   3: "Functies",
   4: "Variabelen",
   5: "Typedefs",
-  6: "Enumeraties",
-  7: "Enumeratie waarden",
-  8: "Macros"
+  6: "Macros"
 };
 

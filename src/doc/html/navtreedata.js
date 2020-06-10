@@ -38,9 +38,8 @@ var NAVTREE =
       [ "Bestand members", "globals.html", [
         [ "Alle", "globals.html", null ],
         [ "Functies", "globals_func.html", null ],
+        [ "Variabelen", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Enumeraties", "globals_enum.html", null ],
-        [ "Enumeratie waarden", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]

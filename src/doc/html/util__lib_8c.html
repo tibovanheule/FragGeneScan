@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('util__lib_8c.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functies</a>  </div>
   <div class="headertitle">
 <div class="title">util_lib.c Bestand Referentie</div>  </div>
@@ -112,6 +113,11 @@ $(document).ready(function(){initNavTree('util__lib_8c.html',''); initResizable(
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a37dc6f78e69e89fc0b67db00eeef7a62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util__lib_8c.html#a37dc6f78e69e89fc0b67db00eeef7a62">TR_SIZE</a>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a37dc6f78e69e89fc0b67db00eeef7a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functies</h2></td></tr>
 <tr class="memitem:abda1f5b59156796bbd775359d171d921"><td class="memItemLeft" align="right" valign="top">double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util__lib_8c.html#abda1f5b59156796bbd775359d171d921">dmatrix</a> (int num_row, int num_col)</td></tr>
@@ -153,6 +159,21 @@ Functies</h2></td></tr>
 <tr class="memitem:a77d6581715c5162c69476c05dc132a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="util__lib_8c.html#a77d6581715c5162c69476c05dc132a93">print_allocation_error</a> (const char *format,...)</td></tr>
 <tr class="separator:a77d6581715c5162c69476c05dc132a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Documentatie van macro's</h2>
+<a id="a37dc6f78e69e89fc0b67db00eeef7a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37dc6f78e69e89fc0b67db00eeef7a62">&#9670;&nbsp;</a></span>TR_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TR_SIZE&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Documentatie van functies</h2>
 <a id="abda1f5b59156796bbd775359d171d921"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abda1f5b59156796bbd775359d171d921">&#9670;&nbsp;</a></span>dmatrix()</h2>
@@ -420,6 +441,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get a protein of dna if Whole_genome equals to zero, then we want a short read and stop early. </p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -472,6 +494,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>copies dna to dna1 in reverse. and </p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -524,6 +547,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>copies dna to dna1 in reverse. and </p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -752,6 +776,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Custom error function to print allocation errors. Mostly called from matrix or vector functions. </p>
 <div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
@@ -786,6 +811,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print how the program should be used. called mainly on help or error. </p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
@@ -816,7 +842,7 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Converts a given transition to int. Use for example as indexing </p>
+<p>Converts a given transition to int. Use for example as indexing. switch case not possible due the fact that strings are not constonant. </p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
@@ -930,7 +956,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="util__lib_8c.html">util_lib.c</a></li>
-    <li class="footer">Gegenereerd op Ma 8 Jun 2020 13:39:14 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Wo 10 Jun 2020 08:38:25 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>
