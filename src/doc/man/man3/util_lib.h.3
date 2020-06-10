@@ -15,13 +15,6 @@ src/util_lib.h
 \fC#include <stdarg\&.h>\fP
 .br
 
-.SS "Macros"
-
-.in +1c
-.ti -1c
-.RI "#define \fBTR_SIZE\fP   14"
-.br
-.in -1c
 .SS "Functies"
 
 .in +1c
@@ -71,29 +64,6 @@ src/util_lib.h
 .RI "void \fBprint_allocation_error\fP (const char *format,\&.\&.\&.)"
 .br
 .in -1c
-.SS "Variabelen"
-
-.in +1c
-.ti -1c
-.RI "const char * \fBtr_list\fP [\fBTR_SIZE\fP] = {'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1'}"
-.br
-.ti -1c
-.RI "const char \fBcodon5\fP [5] = {'\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N'}"
-.br
-.ti -1c
-.RI "const char \fBcodon11\fP [11] = {'\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x'}"
-.br
-.ti -1c
-.RI "const char \fBcodon_code\fP [65]"
-.br
-.ti -1c
-.RI "const char \fBanti_codon_code\fP [65]"
-.br
-.in -1c
-.SH "Documentatie van macro's"
-.PP 
-.SS "#define TR_SIZE   14"
-
 .SH "Documentatie van functies"
 .PP 
 .SS "double** dmatrix (int num_row, int num_col)"
@@ -125,56 +95,6 @@ Print how the program should be used\&. called mainly on help or error\&.
 .SS "int tr2int (char * tr)"
 Converts a given transition to int\&. Use for example as indexing\&. switch case not possible due the fact that strings are not constonant\&. 
 .SS "int trinucleotide (char a, char b, char c)"
-
-.SH "Documentatie van variabelen"
-.PP 
-.SS "const char anti_codon_code[65]"
-\fBInitie\*(4le waarde:\fP
-.PP
-.nf
-= {'F','V','L','I',
-             'C','G','R','S',
-             'S','A','P','T',
-             'Y','D','H','N',
-             'L','V','L','M',
-             'W','G','R','R',
-             'S','A','P','T',
-             '*','E','Q','K',
-             'F','V','L','I',
-             'C','G','R','S',
-             'S','A','P','T',
-             'Y','D','H','N',
-             'L','V','L','I',
-             '*','G','R','R',
-             'S','A','P','T',
-             '*','E','Q','K','X'}
-.fi
-.SS "const char codon11[11] = {'\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x'}"
-
-.SS "const char codon5[5] = {'\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N'}"
-
-.SS "const char codon_code[65]"
-\fBInitie\*(4le waarde:\fP
-.PP
-.nf
-= {'K','N','K','N',
-             'T','T','T','T',
-             'R','S','R','S',
-             'I','I','M','I',
-             'Q','H','Q','H',
-             'P','P','P','P',
-             'R','R','R','R',
-             'L','L','L','L',
-             'E','D','E','D',
-             'A','A','A','A',
-             'G','G','G','G',
-             'V','V','V','V',
-             '*','Y','*','Y',
-             'S','S','S','S',
-             '*','C','W','C',
-             'L','F','L','F', 'X'}
-.fi
-.SS "const char* tr_list[\fBTR_SIZE\fP] = {'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1'}"
 
 .SH "Auteur"
 .PP 

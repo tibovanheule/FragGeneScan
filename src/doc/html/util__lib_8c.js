@@ -19,5 +19,10 @@ var util__lib_8c =
     [ "print_usage", "util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79", null ],
     [ "tr2int", "util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9", null ],
     [ "trinucleotide", "util__lib_8c.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f", null ],
-    [ "trinucleotide_pep", "util__lib_8c.html#a9f526cfd3ce7777d8144aed9ecc53b8d", null ]
+    [ "trinucleotide_pep", "util__lib_8c.html#a9f526cfd3ce7777d8144aed9ecc53b8d", null ],
+    [ "anti_codon_code", "util__lib_8c.html#a9e46fe3bea9ea975e18b3c8452cd7c3a", null ],
+    [ "codon11", "util__lib_8c.html#a13c97452ae67b7e18e246531c19dd493", null ],
+    [ "codon5", "util__lib_8c.html#ab2d5b9ef5e743c6e715176da234f9f0a", null ],
+    [ "codon_code", "util__lib_8c.html#a12c95f7ae9aae3d4cb7b85831376cc68", null ],
+    [ "tr_list", "util__lib_8c.html#acf0699bcd6609f43eac4f6a71600dd36", null ]
 ];

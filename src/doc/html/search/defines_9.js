@@ -15,5 +15,5 @@ var searchData=
   ['tr_5fmm_255',['TR_MM',['../hmm_8h.html#a764745eaa637e08769fc7c4aaf759409',1,'hmm.h']]],
   ['tr_5frr_256',['TR_RR',['../hmm_8h.html#a6977cb40a8d178555195839255398534',1,'hmm.h']]],
   ['tr_5frs_257',['TR_RS',['../hmm_8h.html#a3a7382013253690708c1ecc02319c1ea',1,'hmm.h']]],
-  ['tr_5fsize_258',['TR_SIZE',['../util__lib_8c.html#a37dc6f78e69e89fc0b67db00eeef7a62',1,'TR_SIZE():&#160;util_lib.c'],['../util__lib_8h.html#a37dc6f78e69e89fc0b67db00eeef7a62',1,'TR_SIZE():&#160;util_lib.h']]]
+  ['tr_5fsize_258',['TR_SIZE',['../util__lib_8c.html#a37dc6f78e69e89fc0b67db00eeef7a62',1,'util_lib.c']]]
 ];

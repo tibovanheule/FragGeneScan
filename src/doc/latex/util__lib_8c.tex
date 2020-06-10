@@ -58,6 +58,19 @@ void \mbox{\hyperlink{util__lib_8c_ae5ad5cbeccaedc03a48d3c7eaa803e79}{print\+\_\
 \item 
 void \mbox{\hyperlink{util__lib_8c_a77d6581715c5162c69476c05dc132a93}{print\+\_\+allocation\+\_\+error}} (const char $\ast$format,...)
 \end{DoxyCompactItemize}
+\doxysubsection*{Variabelen}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{util__lib_8c_acf0699bcd6609f43eac4f6a71600dd36}{tr\+\_\+list}} \mbox{[}\mbox{\hyperlink{util__lib_8c_a37dc6f78e69e89fc0b67db00eeef7a62}{T\+R\+\_\+\+S\+I\+ZE}}\mbox{]} = \{ \char`\"{}MM\char`\"{},\char`\"{}MI\char`\"{},\char`\"{}MD\char`\"{},\char`\"{}II\char`\"{},\char`\"{}IM\char`\"{},\char`\"{}DD\char`\"{},\char`\"{}DM\char`\"{},\char`\"{}GE\char`\"{},\char`\"{}GG\char`\"{},\char`\"{}ER\char`\"{},\char`\"{}RS\char`\"{},\char`\"{}RR\char`\"{},\char`\"{}ES\char`\"{},\char`\"{}E\+S1\char`\"{} \}
+\item 
+const char \mbox{\hyperlink{util__lib_8c_ab2d5b9ef5e743c6e715176da234f9f0a}{codon5}} \mbox{[}5\mbox{]} = \{ \textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{} \}
+\item 
+const char \mbox{\hyperlink{util__lib_8c_a13c97452ae67b7e18e246531c19dd493}{codon11}} \mbox{[}11\mbox{]} = \{ \textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}g\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}x\textquotesingle{} \}
+\item 
+const char \mbox{\hyperlink{util__lib_8c_a12c95f7ae9aae3d4cb7b85831376cc68}{codon\+\_\+code}} \mbox{[}65\mbox{]}
+\item 
+const char \mbox{\hyperlink{util__lib_8c_a9e46fe3bea9ea975e18b3c8452cd7c3a}{anti\+\_\+codon\+\_\+code}} \mbox{[}65\mbox{]}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentatie van macro\textquotesingle{}s}
@@ -352,3 +365,76 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \includegraphics[width=271pt]{util__lib_8c_a9f526cfd3ce7777d8144aed9ecc53b8d_icgraph}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Documentatie van variabelen}
+\mbox{\Hypertarget{util__lib_8c_a9e46fe3bea9ea975e18b3c8452cd7c3a}\label{util__lib_8c_a9e46fe3bea9ea975e18b3c8452cd7c3a}} 
+\index{util\_lib.c@{util\_lib.c}!anti\_codon\_code@{anti\_codon\_code}}
+\index{anti\_codon\_code@{anti\_codon\_code}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{anti\_codon\_code}{anti\_codon\_code}}
+{\footnotesize\ttfamily const char anti\+\_\+codon\+\_\+code\mbox{[}65\mbox{]}}
+
+{\bfseries Initi\"{e}le waarde\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ \textcolor{charliteral}{'F'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'C'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Y'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'M'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'W'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'K'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'F'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'C'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Y'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'K'},\textcolor{charliteral}{'X'} \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{util__lib_8c_a13c97452ae67b7e18e246531c19dd493}\label{util__lib_8c_a13c97452ae67b7e18e246531c19dd493}} 
+\index{util\_lib.c@{util\_lib.c}!codon11@{codon11}}
+\index{codon11@{codon11}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{codon11}{codon11}}
+{\footnotesize\ttfamily const char codon11\mbox{[}11\mbox{]} = \{ \textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{}, \textquotesingle{}a\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}g\textquotesingle{}, \textquotesingle{}t\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}x\textquotesingle{} \}}
+
+\mbox{\Hypertarget{util__lib_8c_ab2d5b9ef5e743c6e715176da234f9f0a}\label{util__lib_8c_ab2d5b9ef5e743c6e715176da234f9f0a}} 
+\index{util\_lib.c@{util\_lib.c}!codon5@{codon5}}
+\index{codon5@{codon5}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{codon5}{codon5}}
+{\footnotesize\ttfamily const char codon5\mbox{[}5\mbox{]} = \{ \textquotesingle{}\mbox{\hyperlink{hmm_8h_a955f504eccf76b4eb2489c0adab03121}{A}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_ac4cf4b2ab929bd23951a8676eeac086b}{C}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_aed9ea78689ecce0b7264c02c7f8a9a54}{G}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{hmm_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}\textquotesingle{}, \textquotesingle{}N\textquotesingle{} \}}
+
+\mbox{\Hypertarget{util__lib_8c_a12c95f7ae9aae3d4cb7b85831376cc68}\label{util__lib_8c_a12c95f7ae9aae3d4cb7b85831376cc68}} 
+\index{util\_lib.c@{util\_lib.c}!codon\_code@{codon\_code}}
+\index{codon\_code@{codon\_code}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{codon\_code}{codon\_code}}
+{\footnotesize\ttfamily const char codon\+\_\+code\mbox{[}65\mbox{]}}
+
+{\bfseries Initi\"{e}le waarde\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ \textcolor{charliteral}{'K'},\textcolor{charliteral}{'N'},\textcolor{charliteral}{'K'},\textcolor{charliteral}{'N'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},\textcolor{charliteral}{'T'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'I'},\textcolor{charliteral}{'I'},\textcolor{charliteral}{'M'},\textcolor{charliteral}{'I'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'Q'},\textcolor{charliteral}{'H'},\textcolor{charliteral}{'Q'},\textcolor{charliteral}{'H'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},\textcolor{charliteral}{'P'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},\textcolor{charliteral}{'R'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'L'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'E'},\textcolor{charliteral}{'D'},\textcolor{charliteral}{'E'},\textcolor{charliteral}{'D'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},\textcolor{charliteral}{'A'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},\textcolor{charliteral}{'G'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},\textcolor{charliteral}{'V'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'Y'},\textcolor{charliteral}{'*'},\textcolor{charliteral}{'Y'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},\textcolor{charliteral}{'S'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'*'},\textcolor{charliteral}{'C'},\textcolor{charliteral}{'W'},\textcolor{charliteral}{'C'},}
+\DoxyCodeLine{             \textcolor{charliteral}{'L'},\textcolor{charliteral}{'F'},\textcolor{charliteral}{'L'},\textcolor{charliteral}{'F'}, \textcolor{charliteral}{'X'} \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{util__lib_8c_acf0699bcd6609f43eac4f6a71600dd36}\label{util__lib_8c_acf0699bcd6609f43eac4f6a71600dd36}} 
+\index{util\_lib.c@{util\_lib.c}!tr\_list@{tr\_list}}
+\index{tr\_list@{tr\_list}!util\_lib.c@{util\_lib.c}}
+\doxysubsubsection{\texorpdfstring{tr\_list}{tr\_list}}
+{\footnotesize\ttfamily const char$\ast$ tr\+\_\+list\mbox{[}\mbox{\hyperlink{util__lib_8c_a37dc6f78e69e89fc0b67db00eeef7a62}{T\+R\+\_\+\+S\+I\+ZE}}\mbox{]} = \{ \char`\"{}MM\char`\"{},\char`\"{}MI\char`\"{},\char`\"{}MD\char`\"{},\char`\"{}II\char`\"{},\char`\"{}IM\char`\"{},\char`\"{}DD\char`\"{},\char`\"{}DM\char`\"{},\char`\"{}GE\char`\"{},\char`\"{}GG\char`\"{},\char`\"{}ER\char`\"{},\char`\"{}RS\char`\"{},\char`\"{}RR\char`\"{},\char`\"{}ES\char`\"{},\char`\"{}E\+S1\char`\"{} \}}
+
