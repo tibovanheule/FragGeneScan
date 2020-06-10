@@ -25,4 +25,13 @@ void get_protein(char *dna, char *protein, int strand, int whole_genome);
 void print_usage();
 void print_allocation_error(const char *format, ...);
 
+extern const char* tr_list[TR_SIZE];
+
+extern const char codon5[5];
+extern const char codon11[11];
+
+extern const char codon_code[65];
+
+extern const char anti_codon_code[65];
+
 #endif
