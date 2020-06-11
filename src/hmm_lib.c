@@ -1059,20 +1059,14 @@ int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O){
   int cg_id = -1;
   int cg_count=0;
   int len_seq;
-  int i,j,k;
 
   len_seq = strlen(O);
-  for (i=0; i<len_seq; i++){
-    if ((O[i] == 'C'||O[i] =='c') || (O[i] == 'G'||O[i] == 'g') ){
-      cg_count++;
-    }
+  for (int i=0; i<len_seq; i++){
+    if ((O[i] == 'C'||O[i] =='c') || (O[i] == 'G'||O[i] == 'g') ) cg_count++;
   }
    cg_count = floor((cg_count*1.0/len_seq)*100)-26;
-   if (cg_count < 0){
-     cg_count = 0;
-   }else if (cg_count > 43){
-     cg_count = 43;
-   }
+   if (cg_count < 0) cg_count = 0;
+   else if (cg_count > 43)     cg_count = 43;
 
   memcpy(hmm_ptr->e_M, train_ptr->trans[cg_count], sizeof(hmm_ptr->e_M));
   memcpy(hmm_ptr->e_M_1, train_ptr->rtrans[cg_count], sizeof(hmm_ptr->e_M_1));
@@ -1301,20 +1295,13 @@ void free_hmm(HMM *hmm_ptr){
   free_dvector(hmm_ptr->pi);
 }
 
-void dump_memory(void *p, int size)
-{
-	int i, s;
-	double *c;
-	c = (double*)p;
-	s = size / sizeof(double);
+void dump_memory(void *p, int size){
+	double *c = (double*) p;
+	int s = size / sizeof(double);
 
 	printf("Dump size %d\n", size);
-	for (i = 0; i < s; i++)
-	{
-		if (i > 0 && i % 10 == 0)
-		{
-			printf("\n");
-		}
+	for (int i = 0; i < s; i++)	{
+		if (i > 0 && i % 10 == 0) printf("\n");
 		printf("%f ", *c);
 		c++;
 	}
