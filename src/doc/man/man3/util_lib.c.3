@@ -1,4 +1,4 @@
-.TH "src/util_lib.c" 3 "Do 11 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/util_lib.c" 3 "Vr 12 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -89,19 +89,19 @@ src/util_lib.c
 
 .in +1c
 .ti -1c
-.RI "const char * \fBtr_list\fP [\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
+.RI "char * \fBtr_list\fP [\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
 .br
 .ti -1c
-.RI "const char \fBcodon5\fP [5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
+.RI "char \fBcodon5\fP [5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
 .br
 .ti -1c
-.RI "const char \fBcodon11\fP [11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
+.RI "char \fBcodon11\fP [11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
 .br
 .ti -1c
-.RI "const char \fBcodon_code\fP [65]"
+.RI "char \fBcodon_code\fP [65]"
 .br
 .ti -1c
-.RI "const char \fBanti_codon_code\fP [65]"
+.RI "char \fBanti_codon_code\fP [65]"
 .br
 .in -1c
 .SH "Documentatie van macro's"
@@ -150,7 +150,7 @@ Converts a given transition to int\&. Use for example as indexing\&. switch case
 
 .SH "Documentatie van variabelen"
 .PP 
-.SS "const char anti_codon_code[65]"
+.SS "char anti_codon_code[65]"
 \fBInitie\*(4le waarde:\fP
 .PP
 .nf
@@ -171,11 +171,11 @@ Converts a given transition to int\&. Use for example as indexing\&. switch case
              'S','A','P','T',
              '*','E','Q','K','X' }
 .fi
-.SS "const char codon11[11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
+.SS "char codon11[11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
 
-.SS "const char codon5[5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
+.SS "char codon5[5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
 
-.SS "const char codon_code[65]"
+.SS "char codon_code[65]"
 \fBInitie\*(4le waarde:\fP
 .PP
 .nf
@@ -196,7 +196,7 @@ Converts a given transition to int\&. Use for example as indexing\&. switch case
              '*','C','W','C',
              'L','F','L','F', 'X' }
 .fi
-.SS "const char* tr_list[\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
+.SS "char* tr_list[\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
 
 .SH "Auteur"
 .PP 
