@@ -7,29 +7,25 @@
 #include "util_lib.h"
 #include "hmm_lib.h"
 
-void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna,
-             char *head, int whole_genome, int cg, int format) {
+void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format) {
     double max_dbl = 10000000000.0;
     int debug=0;
 
     int *vpath;                          /* optimal path after backtracking */
-    double **alpha;                      /* viterbi prob array */
-    int **path;                          /* viterbi path array */
+    double ** alpha;                      /* viterbi prob array */
+    int ** path;                          /* viterbi path array */
     int i,j,l,m,n, x,y,z,t,jj,kk;
     int temp_t;
     int ag_num;
-
     int orf_start=0;
     int orf_strand=0;
     int print_save;
     int frame_save;
     int orf_save;
     double prob_save, start_freq;
-
     int best;
     int from, from0, to;   /*from0: i-2 position, from: i-1 position */
-    int from2;             /* from2: i-2, i-1 for condition in emission
-probability */
+    int from2;             /* from2: i-2, i-1 for condition in emission probability */
     double temp_alpha, temp, prob, prob2;
     int len_seq;
     int gene_len;
@@ -41,12 +37,12 @@ probability */
     double h_kd, r_kd, p_kd;
 
     int codon_start;
-    char dna_tmp[300000];
-    char dna[300000];
-    char dna1[300000];
-    char dna_f[300000];
-    char dna_f1[300000];
-    char protein[100000];
+    char *dna_tmp = malloc(300000*sizeof(char));
+    char *dna = malloc(300000*sizeof(char));
+    char *dna1 = malloc(300000*sizeof(char));
+    char *dna_f = malloc(300000*sizeof(char));
+    char *dna_f1 = malloc(300000*sizeof(char));
+    char *protein = malloc(300000*sizeof(char));
     int dna_id=0;
     int dna_f_id=0;
     int out_nt;
@@ -77,11 +73,10 @@ probability */
     } else {
         gene_len = 60;
     }
-
     len_seq = strlen(O);
-    alpha = (double **)dmatrix(hmm_ptr->N, len_seq);
-    path = (int **)imatrix(hmm_ptr->N, len_seq);
-    vpath = (int *)ivector(len_seq);
+    alpha = (double **) dmatrix(hmm_ptr->N, len_seq);
+    path = (int **) imatrix(hmm_ptr->N, len_seq);
+    vpath = (int *) ivector(len_seq);
 
     for (i=0; i<hmm_ptr->N; i++) {
         alpha[i][0] = -1 * hmm_ptr->pi[i];
@@ -1071,6 +1066,12 @@ probability */
     free_dmatrix(alpha, hmm_ptr->N);
     free_imatrix(path, hmm_ptr->N);
     free_ivector(vpath);
+    free(dna_tmp);
+    free(dna);
+    free(dna1);
+    free(dna_f);
+    free(dna_f1);
+    free(protein);
 }
 
 /* get_prob_from_cg
