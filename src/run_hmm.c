@@ -35,8 +35,6 @@ int main (int argc, char **argv) {
     int bp_count;
     /* number of threads */
     int threadnum = 1;
-    int rc;
-
     char *obs_seq, *obs_head;
     char hmm_file[STRINGLEN] = "";
     char out_header[STRINGLEN] = "";
@@ -149,13 +147,10 @@ int main (int argc, char **argv) {
 
         threadarr[i].dna = fopen(mystring, "w");
 
-        threadarr[i].hmm = (HMM*)malloc(sizeof(HMM));
-        memcpy(threadarr[i].hmm, &hmm, sizeof(HMM));
-        threadarr[i].train = (TRAIN*)malloc(sizeof(TRAIN));
-        memcpy(threadarr[i].train, &train, sizeof(TRAIN));
-
-        //threadarr[i].hmm->N=NUM_STATE;
-        //get_train_from_file(hmm_file, threadarr[i].hmm, mstate_file, rstate_file, nstate_file, sstate_file, pstate_file,s1state_file, p1state_file, dstate_file, threadarr[i].train);
+        threadarr[i].hmm = (HMM*) malloc(sizeof(HMM));
+        threadarr[i].hmm = &hmm;
+        threadarr[i].train = (TRAIN*) malloc(sizeof(TRAIN));
+        threadarr[i].train = &train;
 
         threadarr[i].wholegenome = wholegenome;
         threadarr[i].format = format;
@@ -214,7 +209,7 @@ int main (int argc, char **argv) {
             if ((count > 0 && count % threadnum == 0) || feof(fp)) {
                 // Deal with the thread
                 for (i = 0; i < count; i++) {
-                    rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
+                    int rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
                     // TODO print error with custom error code
                     if (rc) {
                         printf("Error: Unable to create thread, %d\n", rc);
@@ -223,7 +218,7 @@ int main (int argc, char **argv) {
                 }
                 // let threads join (wait)
                 for (i = 0; i < count; i++) {
-                    rc = pthread_join(thread[i], NULL);
+                    int rc = pthread_join(thread[i], NULL);
                     if (rc) {
                         printf("Error: Unable to join threads, %d\n", rc);
                         exit(-1);
@@ -240,11 +235,9 @@ int main (int argc, char **argv) {
             }
             if (!(feof(fp))) {
                 threadarr[count].obs_head = (char *) malloc((bp_count+1)* sizeof(char));
-                memset(threadarr[count].obs_head, 0, (bp_count+1) * sizeof(char));
                 memcpy(threadarr[count].obs_head, mystring, bp_count);
                 //threadarr[count].obs_seq = NULL;
-                threadarr[count].obs_seq = (char*) malloc((obs_seq_len[total] + 1)* sizeof(char));
-                memset(threadarr[count].obs_seq, '\0', (obs_seq_len[total] + 1) * sizeof(char));
+                threadarr[count].obs_seq = (char*) calloc((obs_seq_len[total] + 1), sizeof(char));
                 total++;
                 currcount = count;
                 count++;
@@ -259,6 +252,7 @@ int main (int argc, char **argv) {
         }
         if(feof(fp)) break;
     }
+    //if (threadnum == 1) fclose(fp);
 
     for (i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
@@ -297,10 +291,8 @@ int main (int argc, char **argv) {
             sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
             threadarr[i].dna = fopen(mystring, "r");
 
-            lastline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
-            memset(lastline[i], '\0', sizeof(char) * (STRINGLEN + 1));
-            currline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
-            memset(currline[i], '\0', sizeof(char) * (STRINGLEN + 1));
+            lastline[i] = (char*) calloc(STRINGLEN + 1, sizeof(char));
+            currline[i] = (char*) calloc(STRINGLEN + 1, sizeof(char));
         }
 
         // Organize out file
@@ -385,8 +377,6 @@ int main (int argc, char **argv) {
             remove(mystring);
             sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
             remove(mystring);
-            free(threadarr[i].hmm);
-            free(threadarr[i].train);
             free(lastline[i]);
             free(currline[i]);
         }
@@ -399,9 +389,8 @@ int main (int argc, char **argv) {
         fclose(fp_out);
         fclose(fp_aa);
         fclose(fp_dna);
-        fclose(fp);
     }
-
+    fclose(fp);
     printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
     return 0;
 }
@@ -411,6 +400,7 @@ void* thread_func(void *threadarr) {
     thread_data *d = (thread_data*) threadarr;
     d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq); /* cg - 26 Ye April 16, 2016 */
     if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, d->cg, d->format);
+    return NULL;
 }
 
 /**
