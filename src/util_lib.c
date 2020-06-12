@@ -8,6 +8,48 @@ double log2(double a) {
     return log(a)/log(2);
 }
 
+#define TR_SIZE 14
+
+char* tr_list[TR_SIZE] = { "MM","MI","MD","II","IM","DD","DM","GE","GG","ER","RS","RR","ES","ES1" };
+
+char codon5[5] = { 'A', 'C', 'G', 'T', 'N' };
+char codon11[11] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
+
+char codon_code[65] = { 'K','N','K','N',
+                        'T','T','T','T',
+                        'R','S','R','S',
+                        'I','I','M','I',
+                        'Q','H','Q','H',
+                        'P','P','P','P',
+                        'R','R','R','R',
+                        'L','L','L','L',
+                        'E','D','E','D',
+                        'A','A','A','A',
+                        'G','G','G','G',
+                        'V','V','V','V',
+                        '*','Y','*','Y',
+                        'S','S','S','S',
+                        '*','C','W','C',
+                        'L','F','L','F', 'X'
+                      };
+
+char anti_codon_code[65] = { 'F','V','L','I',
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','M',
+                             'W','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K',
+                             'F','V','L','I',
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','I',
+                             '*','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K','X'
+                           };
 
 /**
 * Makes an matrix with datatype double.
@@ -108,54 +150,14 @@ void free_imatrix(int **m,int num_row) {
 }
 
 
-int tr2int (char *tr) {
-
-    int result;
-
-    if      (strcmp(tr, "MM")==0) {
-        result = 0;
-    }
-    else if (strcmp(tr, "MI")==0) {
-        result = 1;
-    }
-    else if (strcmp(tr, "MD")==0) {
-        result = 2;
-    }
-    else if (strcmp(tr, "II")==0) {
-        result = 3;
-    }
-    else if (strcmp(tr, "IM")==0) {
-        result = 4;
-    }
-    else if (strcmp(tr, "DD")==0) {
-        result = 5;
-    }
-    else if (strcmp(tr, "DM")==0) {
-        result = 6;
-    }
-    else if (strcmp(tr, "GE")==0) {
-        result = 7;
-    }
-    else if (strcmp(tr, "GG")==0) {
-        result = 8;
-    }
-    else if (strcmp(tr, "ER")==0) {
-        result = 9;
-    }
-    else if (strcmp(tr, "RS")==0) {
-        result = 10;
-    }
-    else if (strcmp(tr, "RR")==0) {
-        result = 11;
-    }
-    else if (strcmp(tr, "ES")==0) {
-        result = 12;   /* ES: E+ -> S+, E- -> S- */
-    }
-    else if (strcmp(tr, "ES1")==0) {
-        result = 13;   /* ES1: E+ -> S-, E- -> S+ */
-    }
-
-    return result;
+/**
+* Converts a given transition to int. Use for example as indexing.
+* switch case not possible due the fact that strings are not constonant.
+*/
+int tr2int(char *tr) {
+    size_t index=0;
+    while(index < TR_SIZE && (strcmp(tr, tr_list[index])!=0)) ++index;
+    return index;
 }
 
 
@@ -367,110 +369,57 @@ int trinucleotide_pep (char a, char b, char c) {
     return freq_id;
 }
 
+/**
+* copies dna to dna1 in reverse. and
+*/
 void get_rc_dna(char *dna, char *dna1) {
-
-    char codon[5] = {'A', 'C', 'G', 'T', 'N'};
-    int i;
     int dna_len = strlen(dna);
-    for (i=0; i<dna_len; i++) {
-
-        dna1[dna_len-i-1] =codon[nt2int_rc(dna[i])];
-    }
+    for (int i=0; i<dna_len; i++) dna1[dna_len-i-1] = codon5[nt2int_rc(dna[i])];
 }
 
+/**
+* copies dna to dna1 in reverse. and
+*/
 void get_rc_dna_indel(char *dna, char *dna1) {
-
-    char codon[11] = {'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x'};
-    int i;
     int dna_len = strlen(dna);
-    for (i=0; i<dna_len; i++) {
-
-        dna1[dna_len-i-1] =codon[nt2int_rc_indel(dna[i])];
-    }
+    for ( int i=0; i<dna_len; i++) dna1[dna_len-i-1] = codon11[nt2int_rc_indel(dna[i])];
 }
 
 
+/**
+* Get a protein of dna
+* if Whole_genome equals to zero, then we want a short read and stop early.
+*/
 void get_protein(char *dna, char *protein,  int strand, int whole_genome) {
 
-    int i;
-    char codon_code[65] = {'K','N','K','N',
-                           'T','T','T','T',
-                           'R','S','R','S',
-                           'I','I','M','I',
-                           'Q','H','Q','H',
-                           'P','P','P','P',
-                           'R','R','R','R',
-                           'L','L','L','L',
-                           'E','D','E','D',
-                           'A','A','A','A',
-                           'G','G','G','G',
-                           'V','V','V','V',
-                           '*','Y','*','Y',
-                           'S','S','S','S',
-                           '*','C','W','C',
-                           'L','F','L','F', 'X'
-                          };
-
-    char anti_codon_code[65] = {'F','V','L','I',
-                                'C','G','R','S',
-                                'S','A','P','T',
-                                'Y','D','H','N',
-                                'L','V','L','M',
-                                'W','G','R','R',
-                                'S','A','P','T',
-                                '*','E','Q','K',
-                                'F','V','L','I',
-                                'C','G','R','S',
-                                'S','A','P','T',
-                                'Y','D','H','N',
-                                'L','V','L','I',
-                                '*','G','R','R',
-                                'S','A','P','T',
-                                '*','E','Q','K','X'
-                               };
     int dna_len = strlen(dna);
 
-    if (strand ==1) {
-        for (i=0; i<dna_len; i+=3) {
-            protein[i/3] = codon_code[trinucleotide_pep(dna[i], dna[i+1], dna[i+2])];
-        }
+    if (strand == 1) {
+        for (int i=0; i<dna_len; i+=3) protein[i/3] = codon_code[trinucleotide_pep(dna[i], dna[i+1], dna[i+2])];
     } else {
         int protein_len = dna_len/3;
-//comment out, July 18, 2018, YY (dna fixed outside of this function)
-        /*
-            if (dna_len % 3 == 2){
-              dna_len -= 2;
-              offpos = 2;
-            }else if (dna_len % 3 == 1){
-              dna_len -= 1;
-              offpos = 1;
-            }
-        */
-        for (i=0; i<dna_len; i+=3) {
+
+        for (int i=0; i<dna_len; i+=3) {
             protein[(dna_len-i)/3-1] = anti_codon_code[trinucleotide_pep(dna[i], dna[i+1], dna[i+2])];
-            protein_len --;
+            protein_len--;
         }
     }
 
-    if(protein[strlen(protein) - 1] == '*') { //remove the ending *
-        protein[strlen(protein) - 1] = 0;
-    }
+//remove the ending *
+    if(protein[strlen(protein) - 1] == '*') protein[strlen(protein) - 1] = 0;
 
     //alternative start codons still encode for Met
     //E. coli uses 83% AUG (3542/4284), 14% (612) GUG, 3% (103) UUG and one or two others (e.g., an AUU and possibly a CUG)
-    //only consider two major alternative ones, GTG and TTG
+    //only consider two major alternative ones, GTG and TTG f
+
     if(whole_genome == 0) return; //short reads, skip
+
     if(strand == 1) {
         int s = trinucleotide_pep(dna[0], dna[1], dna[2]);
-        if(s == trinucleotide_pep('G', 'T', 'G') || s == trinucleotide_pep('T', 'T', 'G')) {
-            protein[0] = 'M';
-        }
-    }
-    else {
+        if(s == trinucleotide_pep('G', 'T', 'G') || s == trinucleotide_pep('T', 'T', 'G')) protein[0] = 'M';
+    } else {
         int s = trinucleotide_pep(dna[dna_len - 3], dna[dna_len - 2], dna[dna_len - 1]);
-        if(s == trinucleotide_pep('C', 'A', 'C') || s == trinucleotide_pep('C', 'A', 'A')) {
-            protein[0] = 'M';
-        }
+        if(s == trinucleotide_pep('C', 'A', 'C') || s == trinucleotide_pep('C', 'A', 'A')) protein[0] = 'M';
     }
 }
 
