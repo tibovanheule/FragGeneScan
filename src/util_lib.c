@@ -2,35 +2,29 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include "util_lib.h"
 
 double log2(double a){
   return log(a)/log(2);
 }
 
 
-double **dmatrix(int num_row, int num_col){
+/**
+* Makes an matrix with datatype double.
+* Elements are double pointers en matrix is a double double pointer (**pointer).
+* Exits when allocation fails.
+*/
+double **dmatrix(int num_row, int num_col) {
 
-  int i, j;
-  double **m;
+    double **m = (double **) malloc(num_row * sizeof(double*));
 
-  m=(double **) malloc(num_row * sizeof(double*));
-  if (!m) {
-    fprintf(stderr, "%s\n", "ERROR: Allocation failure for points to rows in dmatrix()");
-    exit(EXIT_FAILURE);
-  }
+    if (!m) print_allocation_error("%s\n", "ERROR: Allocation failure for points to rows in dmatrix()");
 
-  for(i=0; i<num_row; i++) {
-    m[i]=(double *) malloc(num_col * sizeof(double));
-    if (!m[i]) {
-      fprintf(stderr, "%s %d %s\n", "ERROR: Allocation failure for the row ", i, " in dmatrix()");
-      exit(EXIT_FAILURE);
+    for(int i=0; i<num_row; i++) {
+        m[i]=(double *) calloc(num_col, sizeof(double));
+        if (!m[i]) print_allocation_error("%s %d %s\n", "ERROR: Allocation failure for the row ", i, " in dmatrix()");
     }
-
-    for(j=0; j<num_col; j++){
-      m[i][j] = 0.0;
-    }
-  }
-  return m;
+    return m;
 }
 
 
@@ -380,4 +374,16 @@ void print_usage(){
   printf("%s", "                           [illumina_10] for Illumina sequencing reads with about 1% error rate\n\n");
   printf("%s", "       Optional parameter\n");
   printf("%s", "       [thread_num]:       the number of threads used by FragGeneScan; default is 1 thread.\n");
+}
+
+/**
+* Custom error function to print allocation errors.
+* Mostly called from matrix or vector functions.
+*/
+void print_allocation_error(const char * format,...) {
+    va_list list;
+    va_start(list,format);
+    vfprintf(stderr, format,list);
+    va_end(list);
+    exit(EXIT_FAILURE);
 }

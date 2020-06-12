@@ -315,8 +315,7 @@ printf("no. of seqs: %d\n", count);
                     if (currline[i][0] == '>') {
                         memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
                         break;
-                    }
-                    else fputs(currline[i], fp_out);
+                    }else fputs(currline[i], fp_out);
                 }
                 if (feof(threadarr[i].out)) j++;
             }
