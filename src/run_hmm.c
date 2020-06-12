@@ -129,8 +129,8 @@ int main (int argc, char **argv) {
     get_train_from_file(hmm_file, &hmm, mstate_file, rstate_file, nstate_file, sstate_file, pstate_file,s1state_file, p1state_file, dstate_file, &train);
 
     // Initialize thread data structure
-    threadarr = (thread_data*) calloc(sizeof(thread_data), threadnum);
-    memset(threadarr, '\0', sizeof(thread_data) * threadnum);
+    threadarr = (thread_data*) malloc(sizeof(thread_data)* threadnum);
+
     for (i = 0; i < threadnum; i++)   {
         if(threadnum > 1) sprintf(mystring, "%s.out.tmp.%d", out_header, i);
         else sprintf(mystring, "%s.out", out_header);
@@ -252,7 +252,7 @@ int main (int argc, char **argv) {
         }
         if(feof(fp)) break;
     }
-    //if (threadnum == 1) fclose(fp);
+    fclose(fp);
 
     for (i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
@@ -380,17 +380,17 @@ int main (int argc, char **argv) {
             free(lastline[i]);
             free(currline[i]);
         }
-        free(threadarr);
-        free(lastline);
-        free(currline);
 
-        free(obs_seq_len);
         //free(obs_head);
         fclose(fp_out);
         fclose(fp_aa);
         fclose(fp_dna);
     }
-    fclose(fp);
+        free(threadarr);
+        free(lastline);
+        free(currline);
+
+        free(obs_seq_len);
     printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
     return 0;
 }

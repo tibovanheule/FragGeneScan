@@ -159,92 +159,71 @@ int tr2int (char *tr) {
 }
 
 
+
 int nt2int (char nt) {
-
-    int result;
-
-    if      (nt == 'A' || nt == 'a') {
-        result = 0;
+    switch(nt) {
+    case 'A':
+    case 'a':
+        return 0;
+    case 'C':
+    case 'c':
+        return 1;
+    case 'G':
+    case 'g':
+        return 2;
+    case 'T':
+    case 't':
+        return 3;
+    default:
+        return 4;
     }
-    else if (nt == 'C' || nt == 'c') {
-        result = 1;
-    }
-    else if (nt == 'G' || nt == 'g') {
-        result = 2;
-    }
-    else if (nt == 'T' || nt == 't') {
-        result = 3;
-    }
-    else                            {
-        result = 4;
-    }
-
-    return result;
 }
 
 
 int nt2int_rc (char nt) {
-
-    int result;
-
-    if      (nt == 'A' || nt == 'a') {
-        result = 3;
+    switch(nt) {
+    case 'A':
+    case 'a':
+        return 3;
+    case 'C':
+    case 'c':
+        return 2;
+    case 'G':
+    case 'g':
+        return 1;
+    case 'T':
+    case 't':
+        return 0;
+    default:
+        return 4;
     }
-    else if (nt == 'C' || nt == 'c') {
-        result = 2;
-    }
-    else if (nt == 'G' || nt == 'g') {
-        result = 1;
-    }
-    else if (nt == 'T' || nt == 't') {
-        result = 0;
-    }
-    else                            {
-        result = 4;
-    }
-
-    return result;
 }
 
 int nt2int_rc_indel (char nt) {
-
-    int result;
-
-    if      (nt == 'A' ) {
-        result = 3;
+    switch(nt) {
+    case 'A':
+        return 3;
+    case 'C':
+        return 2;
+    case 'G':
+        return 1;
+    case 'T':
+        return 0;
+    case 'a':
+        return 8;
+    case 'c':
+        return 7;
+    case 'g':
+        return 6;
+    case 't':
+        return 5;
+    case 'n':
+        return 9;
+    case 'x':
+        return 10;
+    default:
+        return 4;
     }
-    else if (nt == 'C' ) {
-        result = 2;
-    }
-    else if (nt == 'G' ) {
-        result = 1;
-    }
-    else if (nt == 'T' ) {
-        result = 0;
-    }
-    else if (nt == 'a' ) {
-        result = 8;
-    }
-    else if (nt == 'c' ) {
-        result = 7;
-    }
-    else if (nt == 'g' ) {
-        result = 6;
-    }
-    else if (nt == 't' ) {
-        result = 5;
-    }
-    else if (nt == 'n' ) {
-        result = 9;
-    }
-    else if (nt == 'x' ) {
-        result = 10;
-    }
-    else                {
-        result = 4;
-    }
-
-    return result;
 }
 
 
@@ -252,110 +231,137 @@ int trinucleotide (char a, char b, char c) {
 
     int freq_id;
 
-    if      (a == 'A' || a == 'a') {
+    switch(a) {
+    case 'A':
+    case 'a':
         freq_id = 0;
-    }
-    else if (a == 'C' || a == 'c') {
+        break;
+    case 'C':
+    case 'c':
         freq_id = 16;
-    }
-    else if (a == 'G' || a == 'g') {
+        break;
+    case 'G':
+    case 'g':
         freq_id = 32;
-    }
-    else if (a == 'T' || a == 't') {
+        break;
+    case 'T':
+    case 't':
         freq_id = 48;
-    }
-    else {
+        break;
+    default:
         freq_id = 0;
+        break;
     }
 
-    if      (b == 'A' || b == 'a') {
-        freq_id += 0;
-    }
-    else if (b == 'C' || b == 'c') {
+    switch(b) {
+    case 'A':
+    case 'a':
+        break;
+    case 'C':
+    case 'c':
         freq_id += 4;
-    }
-    else if (b == 'G' || b == 'g') {
+        break;
+    case 'G':
+    case 'g':
         freq_id += 8;
-    }
-    else if (b == 'T' || b == 't') {
+        break;
+    case 'T':
+    case 't':
         freq_id += 12;
-    }
-    else {
-        freq_id = 0;
+        break;
+    default:
+        break;
     }
 
-    if      (c == 'A' || c == 'a') {
-        freq_id += 0;
-    }
-    else if (c == 'C' || c == 'c') {
+    switch(c) {
+    case 'A':
+    case 'a':
+        return freq_id;
+    case 'C':
+    case 'c':
         freq_id += 1;
-    }
-    else if (c == 'G' || c == 'g') {
+        return freq_id;
+    case 'G':
+    case 'g':
         freq_id += 2;
-    }
-    else if (c == 'T' || c == 't') {
+        return freq_id;
+    case 'T':
+    case 't':
         freq_id += 3;
+        return freq_id;
+    default:
+        return freq_id;
     }
-    else {
-        freq_id = 0;
-    }
-
-    return freq_id;
 }
 
 int trinucleotide_pep (char a, char b, char c) {
 
     int freq_id;
 
-    if      (a == 'A' || a == 'a') {
+    switch(a) {
+    case 'A':
+    case 'a':
         freq_id = 0;
-    }
-    else if (a == 'C' || a == 'c') {
+        break;
+    case 'C':
+    case 'c':
         freq_id = 16;
-    }
-    else if (a == 'G' || a == 'g') {
+        break;
+    case 'G':
+    case 'g':
         freq_id = 32;
-    }
-    else if (a == 'T' || a == 't') {
+        break;
+    case 'T':
+    case 't':
         freq_id = 48;
-    }
-    else {
+        break;
+    default:
         freq_id = 64;
+        break;
     }
 
-    if (freq_id <64) {
-        if      (b == 'A' || b == 'a') {
-            freq_id += 0;
-        }
-        else if (b == 'C' || b == 'c') {
+    if (freq_id < 64) {
+        switch(b) {
+        case 'A':
+        case 'a':
+            break;
+        case 'C':
+        case 'c':
             freq_id += 4;
-        }
-        else if (b == 'G' || b == 'g') {
+            break;
+        case 'G':
+        case 'g':
             freq_id += 8;
-        }
-        else if (b == 'T' || b == 't') {
+            break;
+        case 'T':
+        case 't':
             freq_id += 12;
-        }
-        else {
+            break;
+        default:
             freq_id = 64;
+            break;
         }
     }
 
     if (freq_id < 64) {
-        if      (c == 'A' || c == 'a') {
-            freq_id += 0;
-        }
-        else if (c == 'C' || c == 'c') {
+        switch(c) {
+        case 'A':
+        case 'a':
+            return freq_id;
+        case 'C':
+        case 'c':
             freq_id += 1;
-        }
-        else if (c == 'G' || c == 'g') {
+            return freq_id;
+        case 'G':
+        case 'g':
             freq_id += 2;
-        }
-        else if (c == 'T' || c == 't') {
+            return freq_id;
+        case 'T':
+        case 't':
             freq_id += 3;
-        }
-        else {
-            freq_id = 64;
+            return freq_id;
+        default:
+            return 64;
         }
     }
     return freq_id;
@@ -468,6 +474,10 @@ void get_protein(char *dna, char *protein,  int strand, int whole_genome) {
     }
 }
 
+/**
+* Print how the program should be used.
+* called mainly on help or error.
+*/
 void print_usage() {
 
     printf("%s", "USAGE: ./FragGeneScan -s [seq_file_name] -o [output_file_name] -w [1 or 0] -t [train_file_name] (-p [thread_num])\n\n");
