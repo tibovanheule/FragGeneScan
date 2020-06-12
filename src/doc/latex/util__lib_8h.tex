@@ -138,7 +138,7 @@ Frees the memory allocation of an vector with datatype int. Hier is de caller gr
 \doxysubsubsection{\texorpdfstring{get\_protein()}{get\_protein()}}
 {\footnotesize\ttfamily void get\+\_\+protein (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{protein,  }\item[{int}]{strand,  }\item[{int}]{whole\+\_\+genome }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short read and stop early. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -241,9 +241,9 @@ Print how the program should be used. called mainly on help or error. Hier is de
 \index{util\_lib.h@{util\_lib.h}!tr2int@{tr2int}}
 \index{tr2int@{tr2int}!util\_lib.h@{util\_lib.h}}
 \doxysubsubsection{\texorpdfstring{tr2int()}{tr2int()}}
-{\footnotesize\ttfamily int tr2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{nt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int tr2int (\begin{DoxyParamCaption}\item[{char $\ast$}]{tr }\end{DoxyParamCaption})}
 
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Converts a given transition to int. Use for example as indexing. switch case not possible due the fact that strings are not constonant. Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

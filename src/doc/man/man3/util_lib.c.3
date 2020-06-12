@@ -17,6 +17,13 @@ src/util_lib.c
 \fC#include 'util_lib\&.h'\fP
 .br
 
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTR_SIZE\fP   14"
+.br
+.in -1c
 .SS "Functies"
 
 .in +1c
@@ -81,6 +88,29 @@ src/util_lib.c
 .RI "void \fBprint_allocation_error\fP (const char *format,\&.\&.\&.)"
 .br
 .in -1c
+.SS "Variabelen"
+
+.in +1c
+.ti -1c
+.RI "char * \fBtr_list\fP [\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
+.br
+.ti -1c
+.RI "char \fBcodon5\fP [5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
+.br
+.ti -1c
+.RI "char \fBcodon11\fP [11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
+.br
+.ti -1c
+.RI "char \fBcodon_code\fP [65]"
+.br
+.ti -1c
+.RI "char \fBanti_codon_code\fP [65]"
+.br
+.in -1c
+.SH "Documentatie van macro's"
+.PP 
+.SS "#define TR_SIZE   14"
+
 .SH "Documentatie van functies"
 .PP 
 .SS "double** dmatrix (int num_row, int num_col)"
@@ -96,11 +126,11 @@ Frees the memory allocation of an matrix with datatype int\&.
 .SS "void free_ivector (int * v)"
 Frees the memory allocation of an vector with datatype int\&. 
 .SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
-
+Get a protein of dna if Whole_genome equals to zero, then we want a short read and stop early\&. 
 .SS "void get_rc_dna (char * dna, char * dna1)"
-
+copies dna to dna1 in reverse\&. and 
 .SS "void get_rc_dna_indel (char * dna, char * dna1)"
-
+copies dna to dna1 in reverse\&. and 
 .SS "int** imatrix (int num_row, int num_col)"
 Makes an matrix with datatype int\&. Elements are int pointers en matrix is a double int pointer\&. Exits when allocation fails\&. 
 .SS "int* ivector (int nh)"
@@ -118,10 +148,62 @@ Custom error function to print allocation errors\&. Mostly called from matrix or
 .SS "void print_usage ()"
 Print how the program should be used\&. called mainly on help or error\&. 
 .SS "int tr2int (char * tr)"
-
+Converts a given transition to int\&. Use for example as indexing\&. switch case not possible due the fact that strings are not constonant\&. 
 .SS "int trinucleotide (char a, char b, char c)"
 
 .SS "int trinucleotide_pep (char a, char b, char c)"
+
+.SH "Documentatie van variabelen"
+.PP 
+.SS "char anti_codon_code[65]"
+\fBInitie\*(4le waarde:\fP
+.PP
+.nf
+= { 'F','V','L','I',
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','M',
+                             'W','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K',
+                             'F','V','L','I',
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','I',
+                             '*','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K','X'
+                           }
+.fi
+.SS "char codon11[11] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N', 'a', 'c', 'g', 't', 'n', 'x' }"
+
+.SS "char codon5[5] = { '\fBA\fP', '\fBC\fP', '\fBG\fP', '\fBT\fP', 'N' }"
+
+.SS "char codon_code[65]"
+\fBInitie\*(4le waarde:\fP
+.PP
+.nf
+= { 'K','N','K','N',
+                        'T','T','T','T',
+                        'R','S','R','S',
+                        'I','I','M','I',
+                        'Q','H','Q','H',
+                        'P','P','P','P',
+                        'R','R','R','R',
+                        'L','L','L','L',
+                        'E','D','E','D',
+                        'A','A','A','A',
+                        'G','G','G','G',
+                        'V','V','V','V',
+                        '*','Y','*','Y',
+                        'S','S','S','S',
+                        '*','C','W','C',
+                        'L','F','L','F', 'X'
+                      }
+.fi
+.SS "char* tr_list[\fBTR_SIZE\fP] = { 'MM','MI','MD','II','IM','DD','DM','GE','GG','ER','RS','RR','ES','ES1' }"
 
 .SH "Auteur"
 .PP 

@@ -79,7 +79,7 @@ Frees the memory allocation of an matrix with datatype int\&.
 .SS "void free_ivector (int * v)"
 Frees the memory allocation of an vector with datatype int\&. 
 .SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
-
+Get a protein of dna if Whole_genome equals to zero, then we want a short read and stop early\&. 
 .SS "int** imatrix (int num_row, int num_col)"
 Makes an matrix with datatype int\&. Elements are int pointers en matrix is a double int pointer\&. Exits when allocation fails\&. 
 .SS "int* ivector (int nh)"
@@ -92,8 +92,8 @@ Makes an vector array) with datatype int\&. Elements are ints en vector is a int
 Custom error function to print allocation errors\&. Mostly called from matrix or vector functions\&. 
 .SS "void print_usage ()"
 Print how the program should be used\&. called mainly on help or error\&. 
-.SS "int tr2int (char * nt)"
-
+.SS "int tr2int (char * tr)"
+Converts a given transition to int\&. Use for example as indexing\&. switch case not possible due the fact that strings are not constonant\&. 
 .SS "int trinucleotide (char a, char b, char c)"
 
 .SH "Auteur"

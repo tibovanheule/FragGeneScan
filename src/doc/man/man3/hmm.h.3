@@ -301,9 +301,9 @@ Total number of states, mainly used in for loops\&.
 .SS "int get_prob_from_cg (\fBHMM\fP * hmm, \fBTRAIN\fP * train, char * O)"
 
 .SS "void get_protein (char * dna, char * protein, int strand, int whole_genome)"
-
+Get a protein of dna if Whole_genome equals to zero, then we want a short read and stop early\&. 
 .SS "void get_rc_dna (char * dna, char * dna1)"
-
+copies dna to dna1 in reverse\&. and 
 .SS "void get_train_from_file (char * filename, \fBHMM\fP * hmm_ptr, char * mfilename, char * mfilename1, char * nfilename, char * sfilename, char * pfilename, char * s1filename, char * p1filename, char * dfilename, \fBTRAIN\fP * train_ptr)"
 Reads files\&.
 .IP "1." 4
