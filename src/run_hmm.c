@@ -164,15 +164,15 @@ int main (int argc, char **argv) {
     pthread_t thread[threadnum];
 
     fp = fopen (seq_file, "r");
-    // tel gewoon aantal reads 
+    // tel gewoon aantal reads
     while ( fgets (mystring, sizeof mystring, fp) ) {
         if (mystring[0] == '>')      count++;
     }
-    
+
 
     // lengte van elke sequentie
     obs_seq_len = (int *) malloc(count * sizeof(int));
-printf("no. of seqs: %d\n", count);
+    printf("no. of seqs: %d\n", count);
     // TODO controle
 
     i = 0;
@@ -315,7 +315,7 @@ printf("no. of seqs: %d\n", count);
                     if (currline[i][0] == '>') {
                         memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
                         break;
-                    }else fputs(currline[i], fp_out);
+                    } else fputs(currline[i], fp_out);
                 }
                 if (feof(threadarr[i].out)) j++;
             }

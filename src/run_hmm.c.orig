@@ -15,9 +15,10 @@
 * 1. Initialization of variables and datatypes
 * 2. Check File acessiblity
 */
-int main (int argc, char **argv){
-    /*Initialization datastructures*/
+int main (int argc, char **argv) {
+    //file handlers
     FILE *fp_out, *fp_aa, *fp_dna, *fp;
+    /*Initialization datastructures*/
     TRAIN train;
     HMM hmm;
     thread_data *threadarr;
@@ -131,9 +132,8 @@ int main (int argc, char **argv){
 
     // Initialize thread data structure
     threadarr = (thread_data*) calloc(sizeof(thread_data), threadnum);
-    //memset(threadarr, '\0', sizeof(thread_data) * threadnum);
-    for (i = 0; i < threadnum; i++)
-    {
+    memset(threadarr, '\0', sizeof(thread_data) * threadnum);
+    for (i = 0; i < threadnum; i++)   {
         if(threadnum > 1) sprintf(mystring, "%s.out.tmp.%d", out_header, i);
         else sprintf(mystring, "%s.out", out_header);
 
@@ -164,14 +164,15 @@ int main (int argc, char **argv){
     pthread_t thread[threadnum];
 
     fp = fopen (seq_file, "r");
-    // tel gewoon aantal reads
+    // tel gewoon aantal reads 
     while ( fgets (mystring, sizeof mystring, fp) ) {
         if (mystring[0] == '>')      count++;
     }
-    printf("no. of seqs: %d\n", count);
+    
 
     // lengte van elke sequentie
     obs_seq_len = (int *) malloc(count * sizeof(int));
+printf("no. of seqs: %d\n", count);
     // TODO controle
 
     i = 0;
@@ -186,7 +187,6 @@ int main (int argc, char **argv){
             }
 
         } else {
-            // TODO crshed dit bij lege lijn?
             bp_count = strlen(mystring);
             while(mystring[bp_count-1] == 10 || mystring[bp_count-1]==13)	bp_count --;
             i += bp_count;
@@ -199,23 +199,23 @@ int main (int argc, char **argv){
     count = 0;
     j = 0;
 
-    while (!(feof(fp))){
+    while (!(feof(fp))) {
         memset(mystring, '\0', sizeof mystring);
         fgets (mystring, sizeof mystring, fp);
         bp_count = strlen(mystring);
-        while(mystring[bp_count - 1] == '\n' || mystring[bp_count - 1]=='\r') bp_count--;
-       
+        while(mystring[bp_count - 1] == 10 || mystring[bp_count - 1]== 13) bp_count--;
+
         if (mystring[0] == '>' || feof(fp)) {
-            if (feof(fp)){
+            if (feof(fp)) {
+                // append to seq
                 memcpy(threadarr[currcount].obs_seq + j, mystring, bp_count);
                 j += bp_count;
-                //max = appendSeq(mystring, &(threadarr[currcount].obs_seq), max);
             }
             if ((count > 0 && count % threadnum == 0) || feof(fp)) {
                 // Deal with the thread
                 for (i = 0; i < count; i++) {
                     rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
-                    // TODO print error with custom error code 
+                    // TODO print error with custom error code
                     if (rc) {
                         printf("Error: Unable to create thread, %d\n", rc);
                         exit(-1);
@@ -238,13 +238,13 @@ int main (int argc, char **argv){
                 }
                 count = 0;
             }
-            if (!(feof(fp))){
-                threadarr[count].obs_head = (char *) malloc((bp_count+10)* sizeof(char));
-                memset(threadarr[count].obs_head, 0, (bp_count+10) * sizeof(char));
+            if (!(feof(fp))) {
+                threadarr[count].obs_head = (char *) malloc((bp_count+1)* sizeof(char));
+                memset(threadarr[count].obs_head, 0, (bp_count+1) * sizeof(char));
                 memcpy(threadarr[count].obs_head, mystring, bp_count);
                 //threadarr[count].obs_seq = NULL;
-                threadarr[count].obs_seq = (char*) calloc((obs_seq_len[total] + 10), sizeof(char));
-                //memset(threadarr[count].obs_seq, '\0', (obs_seq_len[total] + 1) * sizeof(char));
+                threadarr[count].obs_seq = (char*) malloc((obs_seq_len[total] + 1)* sizeof(char));
+                memset(threadarr[count].obs_seq, '\0', (obs_seq_len[total] + 1) * sizeof(char));
                 total++;
                 currcount = count;
                 count++;
@@ -253,11 +253,11 @@ int main (int argc, char **argv){
             }
 
         } else {
-            // voeg toe aan de sequentie
+            // append aan de sequentie
             memcpy(threadarr[currcount].obs_seq + j, mystring, bp_count);
             j += bp_count;
-            //max = appendSeq(mystring, &(threadarr[currcount].obs_seq), max);
         }
+        if(feof(fp)) break;
     }
 
     for (i = 0; i < threadnum; i++)  {
@@ -285,10 +285,10 @@ int main (int argc, char **argv){
         fp_out = fopen (out_file, "w");
         fp_dna = fopen (dna_file, "w");
 
-        lastline = (char**)calloc(threadnum, sizeof(char*));
-        //memset(lastline, '\0', sizeof(char*) * threadnum);
-        currline = (char**)calloc(threadnum, sizeof(char*));
-        //memset(currline, '\0', sizeof(char*) * threadnum);
+        lastline = (char**) malloc(threadnum* sizeof(char*));
+        memset(lastline, '\0', sizeof(char*) * threadnum);
+        currline = (char**)malloc(threadnum* sizeof(char*));
+        memset(currline, '\0', sizeof(char*) * threadnum);
         for (i = 0; i < threadnum; i++) {
             sprintf(mystring, "%s.out.tmp.%d", out_header, i);
             threadarr[i].out = fopen(mystring, "r");
@@ -297,10 +297,10 @@ int main (int argc, char **argv){
             sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
             threadarr[i].dna = fopen(mystring, "r");
 
-            lastline[i] = (char*) calloc(STRINGLEN + 1, sizeof(char));
-            //memset(lastline[i], '\0', sizeof(char) * (STRINGLEN + 1));
-            currline[i] = (char*) calloc(STRINGLEN + 1, sizeof(char));
-            //memset(currline[i], '\0', sizeof(char) * (STRINGLEN + 1));
+            lastline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
+            memset(lastline[i], '\0', sizeof(char) * (STRINGLEN + 1));
+            currline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
+            memset(currline[i], '\0', sizeof(char) * (STRINGLEN + 1));
         }
 
         // Organize out file
@@ -315,8 +315,7 @@ int main (int argc, char **argv){
                     if (currline[i][0] == '>') {
                         memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
                         break;
-                    }
-                    else fputs(currline[i], fp_out);
+                    }else fputs(currline[i], fp_out);
                 }
                 if (feof(threadarr[i].out)) j++;
             }
