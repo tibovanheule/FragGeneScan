@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('run__hmm_8c.html',''); initResizable()
 Macros</h2></td></tr>
 <tr class="memitem:ab76fbb1f1b2031f52c2a805e49aaa23b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#ab76fbb1f1b2031f52c2a805e49aaa23b">ADD_LEN</a>&#160;&#160;&#160;1024</td></tr>
 <tr class="separator:ab76fbb1f1b2031f52c2a805e49aaa23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbcf7a897365acb6f5ae1750952113f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a1dbcf7a897365acb6f5ae1750952113f">STRINGLEN</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="memitem:a1dbcf7a897365acb6f5ae1750952113f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a1dbcf7a897365acb6f5ae1750952113f">STRINGLEN</a>&#160;&#160;&#160;4096+1</td></tr>
 <tr class="separator:a1dbcf7a897365acb6f5ae1750952113f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -134,8 +134,6 @@ Functies</h2></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af48b9cd1d1b40f874fae9bcfc15abad8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8">thread_func</a> (void *threadarr)</td></tr>
 <tr class="separator:af48b9cd1d1b40f874fae9bcfc15abad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36990146ac199f3f956edc7bdab2a95f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a36990146ac199f3f956edc7bdab2a95f">appendSeq</a> (char *input, char **seq, int input_max)</td></tr>
-<tr class="separator:a36990146ac199f3f956edc7bdab2a95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262">print_error</a> (const char *error_message,...)</td></tr>
 <tr class="separator:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256">print_file_error</a> (const char *error_message, char *file)</td></tr>
@@ -163,7 +161,7 @@ Functies</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STRINGLEN&#160;&#160;&#160;4096</td>
+          <td class="memname">#define STRINGLEN&#160;&#160;&#160;4096+1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -171,40 +169,6 @@ Functies</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentatie van functies</h2>
-<a id="a36990146ac199f3f956edc7bdab2a95f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36990146ac199f3f956edc7bdab2a95f">&#9670;&nbsp;</a></span>appendSeq()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int appendSeq </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>seq</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>input_max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -426,7 +390,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="run__hmm_8c.html">run_hmm.c</a></li>
-    <li class="footer">Gegenereerd op Vr 12 Jun 2020 00:18:37 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Vr 12 Jun 2020 14:19:20 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

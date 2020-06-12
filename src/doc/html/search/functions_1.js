@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['dmatrix_139',['dmatrix',['../util__lib_8c.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c']]],
-  ['dump_5fmemory_140',['dump_memory',['../hmm__lib_8c.html#a4d9812bf63644537146f7a8dcf848125',1,'dump_memory(void *p, int size):&#160;hmm_lib.c'],['../hmm__lib_8h.html#a4d9812bf63644537146f7a8dcf848125',1,'dump_memory(void *p, int size):&#160;hmm_lib.c']]],
-  ['dvector_141',['dvector',['../util__lib_8c.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c']]]
+  ['free_5fdmatrix_132',['free_dmatrix',['../util__lib_8c.html#a314ff0abb6d5444bd2037acbede4f0ed',1,'free_dmatrix(double **m, int num_row):&#160;util_lib.c'],['../util__lib_8h.html#a314ff0abb6d5444bd2037acbede4f0ed',1,'free_dmatrix(double **m, int num_row):&#160;util_lib.c']]],
+  ['free_5fdvector_133',['free_dvector',['../util__lib_8c.html#ac2288cb3514168160c68cec8f09a99be',1,'free_dvector(double *v):&#160;util_lib.c'],['../util__lib_8h.html#ac2288cb3514168160c68cec8f09a99be',1,'free_dvector(double *v):&#160;util_lib.c']]],
+  ['free_5fimatrix_134',['free_imatrix',['../util__lib_8c.html#af6b81a4eebc7d8772422bfdd05f5834e',1,'free_imatrix(int **m, int num_row):&#160;util_lib.c'],['../util__lib_8h.html#af6b81a4eebc7d8772422bfdd05f5834e',1,'free_imatrix(int **m, int num_row):&#160;util_lib.c']]],
+  ['free_5fivector_135',['free_ivector',['../util__lib_8c.html#afd89b5e675116707ce66556b376bc41a',1,'free_ivector(int *v):&#160;util_lib.c'],['../util__lib_8h.html#afd89b5e675116707ce66556b376bc41a',1,'free_ivector(int *v):&#160;util_lib.c']]]
 ];

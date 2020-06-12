@@ -134,13 +134,9 @@ void \mbox{\hyperlink{hmm_8h_acef94cf960e200f7ec1b4619510461a1}{get\+\_\+train\+
 \item 
 void \mbox{\hyperlink{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36}{viterbi}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr, char $\ast$O, F\+I\+LE $\ast$out\+\_\+filename, F\+I\+LE $\ast$log\+\_\+filename, F\+I\+LE $\ast$dna\+\_\+filename, char $\ast$head, int metagene, int cg, int format)
 \item 
-void \mbox{\hyperlink{hmm_8h_a69d9f91366d7b834ca7076283be14a89}{free\+\_\+hmm}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm)
-\item 
 void \mbox{\hyperlink{hmm_8h_a66ceabacbfe397e6d70025814a0c3882}{get\+\_\+protein}} (char $\ast$dna, char $\ast$protein, int strand, int whole\+\_\+genome)
 \item 
 void \mbox{\hyperlink{hmm_8h_a4bb170d07b8af8e326242f06b922bd80}{get\+\_\+rc\+\_\+dna}} (char $\ast$dna, char $\ast$dna1)
-\item 
-void \mbox{\hyperlink{hmm_8h_ac9373e9bd80de271779eee48dcd86283}{get\+\_\+corrected\+\_\+dna}} (char $\ast$dna, char $\ast$dna\+\_\+f)
 \end{DoxyCompactItemize}
 
 
@@ -445,25 +441,6 @@ Total number of states, mainly used in for loops. \mbox{\Hypertarget{hmm_8h_a7fa
 
 
 \doxysubsection{Documentatie van functies}
-\mbox{\Hypertarget{hmm_8h_a69d9f91366d7b834ca7076283be14a89}\label{hmm_8h_a69d9f91366d7b834ca7076283be14a89}} 
-\index{hmm.h@{hmm.h}!free\_hmm@{free\_hmm}}
-\index{free\_hmm@{free\_hmm}!hmm.h@{hmm.h}}
-\doxysubsubsection{\texorpdfstring{free\_hmm()}{free\_hmm()}}
-{\footnotesize\ttfamily void free\+\_\+hmm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm }\end{DoxyParamCaption})}
-
-Hier is de call graaf voor deze functie\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=247pt]{hmm_8h_a69d9f91366d7b834ca7076283be14a89_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{hmm_8h_ac9373e9bd80de271779eee48dcd86283}\label{hmm_8h_ac9373e9bd80de271779eee48dcd86283}} 
-\index{hmm.h@{hmm.h}!get\_corrected\_dna@{get\_corrected\_dna}}
-\index{get\_corrected\_dna@{get\_corrected\_dna}!hmm.h@{hmm.h}}
-\doxysubsubsection{\texorpdfstring{get\_corrected\_dna()}{get\_corrected\_dna()}}
-{\footnotesize\ttfamily void get\+\_\+corrected\+\_\+dna (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{dna\+\_\+f }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399}\label{hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399}} 
 \index{hmm.h@{hmm.h}!get\_prob\_from\_cg@{get\_prob\_from\_cg}}
 \index{get\_prob\_from\_cg@{get\_prob\_from\_cg}!hmm.h@{hmm.h}}
@@ -483,7 +460,7 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{get\_protein()}{get\_protein()}}
 {\footnotesize\ttfamily void get\+\_\+protein (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{protein,  }\item[{int}]{strand,  }\item[{int}]{whole\+\_\+genome }\end{DoxyParamCaption})}
 
-Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short read and stop early. Hier is de caller graaf voor deze functie\+:\nopagebreak
+Hier is de caller graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -496,7 +473,7 @@ Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short r
 \doxysubsubsection{\texorpdfstring{get\_rc\_dna()}{get\_rc\_dna()}}
 {\footnotesize\ttfamily void get\+\_\+rc\+\_\+dna (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{dna1 }\end{DoxyParamCaption})}
 
-copies dna to dna1 in reverse. and Hier is de call graaf voor deze functie\+:\nopagebreak
+Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -28,7 +28,7 @@ src/run_hmm.c
 .RI "#define \fBADD_LEN\fP   1024"
 .br
 .ti -1c
-.RI "#define \fBSTRINGLEN\fP   4096"
+.RI "#define \fBSTRINGLEN\fP   4096+1"
 .br
 .in -1c
 .SS "Functies"
@@ -41,9 +41,6 @@ src/run_hmm.c
 .RI "void * \fBthread_func\fP (void *threadarr)"
 .br
 .ti -1c
-.RI "int \fBappendSeq\fP (char *input, char **seq, int input_max)"
-.br
-.ti -1c
 .RI "void \fBprint_error\fP (const char *error_message,\&.\&.\&.)"
 .br
 .ti -1c
@@ -54,12 +51,10 @@ src/run_hmm.c
 .PP 
 .SS "#define ADD_LEN   1024"
 
-.SS "#define STRINGLEN   4096"
+.SS "#define STRINGLEN   4096+1"
 
 .SH "Documentatie van functies"
 .PP 
-.SS "int appendSeq (char * input, char ** seq, int input_max)"
-
 .SS "int main (int argc, char ** argv)"
 Entry point of program
 .IP "1." 4

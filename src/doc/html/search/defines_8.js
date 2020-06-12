@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['s_5fstate_240',['S_STATE',['../hmm_8h.html#a0b7a2bcac41b36a2944b898ae323f6be',1,'hmm.h']]],
-  ['s_5fstate_5f1_241',['S_STATE_1',['../hmm_8h.html#ad94b093a549297acabef6efd616b8d39',1,'hmm.h']]],
-  ['stringlen_242',['STRINGLEN',['../run__hmm_8c.html#a1dbcf7a897365acb6f5ae1750952113f',1,'run_hmm.c']]]
+  ['r_5fstate_224',['R_STATE',['../hmm_8h.html#a7faf86b612c344ecd5fea2171d7da9e6',1,'hmm.h']]]
 ];

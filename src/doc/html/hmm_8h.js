@@ -51,8 +51,6 @@ var hmm_8h =
     [ "TR_MM", "hmm_8h.html#a764745eaa637e08769fc7c4aaf759409", null ],
     [ "TR_RR", "hmm_8h.html#a6977cb40a8d178555195839255398534", null ],
     [ "TR_RS", "hmm_8h.html#a3a7382013253690708c1ecc02319c1ea", null ],
-    [ "free_hmm", "hmm_8h.html#a69d9f91366d7b834ca7076283be14a89", null ],
-    [ "get_corrected_dna", "hmm_8h.html#ac9373e9bd80de271779eee48dcd86283", null ],
     [ "get_prob_from_cg", "hmm_8h.html#aa5d13d79b8ed4466bcacfcc4184ee399", null ],
     [ "get_protein", "hmm_8h.html#a66ceabacbfe397e6d70025814a0c3882", null ],
     [ "get_rc_dna", "hmm_8h.html#a4bb170d07b8af8e326242f06b922bd80", null ],

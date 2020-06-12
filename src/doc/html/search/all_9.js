@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['n_64',['N',['../struct_h_m_m.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'HMM']]],
-  ['noncoding_65',['noncoding',['../struct_t_r_a_i_n.html#ad7467bba68a4c50176f51c5c2f8c6e66',1,'TRAIN']]],
-  ['nostate_66',['NOSTATE',['../hmm_8h.html#ab9dcd2095b9fd857e500f426f52ec68b',1,'hmm.h']]],
-  ['nt2int_67',['nt2int',['../util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535',1,'nt2int(char nt):&#160;util_lib.c'],['../util__lib_8h.html#a4de49e3fa34734f20dcd2443a8a4d535',1,'nt2int(char nt):&#160;util_lib.c']]],
-  ['nt2int_5frc_68',['nt2int_rc',['../util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728',1,'nt2int_rc(char nt):&#160;util_lib.c'],['../util__lib_8h.html#a463ba3bb94808100d5c8d9ffea2a3728',1,'nt2int_rc(char nt):&#160;util_lib.c']]],
-  ['nt2int_5frc_5findel_69',['nt2int_rc_indel',['../util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855',1,'util_lib.c']]],
-  ['num_5fstate_70',['NUM_STATE',['../hmm_8h.html#af7b285b14bb950363ce3b0085885906a',1,'hmm.h']]]
+  ['m1_5fstate_45',['M1_STATE',['../hmm_8h.html#a59dd3126d6fc18b51517659e4b2ebded',1,'hmm.h']]],
+  ['m1_5fstate_5f1_46',['M1_STATE_1',['../hmm_8h.html#a7414b79bb31f61b74e3c44e5c8d1ebd1',1,'hmm.h']]],
+  ['m2_5fstate_47',['M2_STATE',['../hmm_8h.html#a0272e7e145b11d6cd857d0df5ba2d407',1,'hmm.h']]],
+  ['m2_5fstate_5f1_48',['M2_STATE_1',['../hmm_8h.html#a83a18bf4196eda08bc1ff5f71f85af3c',1,'hmm.h']]],
+  ['m3_5fstate_49',['M3_STATE',['../hmm_8h.html#a8a728842e5b5423977a16cb9b0ab0f5b',1,'hmm.h']]],
+  ['m3_5fstate_5f1_50',['M3_STATE_1',['../hmm_8h.html#aaebb6e1c33556852a9159c0768e3f2e6',1,'hmm.h']]],
+  ['m4_5fstate_51',['M4_STATE',['../hmm_8h.html#acbc17d0564820ce08b37ac6f24b9f30b',1,'hmm.h']]],
+  ['m4_5fstate_5f1_52',['M4_STATE_1',['../hmm_8h.html#aa595187a0eefe91a0e2d48985fe23a08',1,'hmm.h']]],
+  ['m5_5fstate_53',['M5_STATE',['../hmm_8h.html#a979710800ad0379b3afa38aa0a0bedab',1,'hmm.h']]],
+  ['m5_5fstate_5f1_54',['M5_STATE_1',['../hmm_8h.html#a387c64e65347b212c22cfefad72fa719',1,'hmm.h']]],
+  ['m6_5fstate_55',['M6_STATE',['../hmm_8h.html#ac7603a77a02a1e088eded55f326b400c',1,'hmm.h']]],
+  ['m6_5fstate_5f1_56',['M6_STATE_1',['../hmm_8h.html#a9fdb2004810618487d99ac891d8b51db',1,'hmm.h']]],
+  ['main_57',['main',['../run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'run_hmm.c']]]
 ];

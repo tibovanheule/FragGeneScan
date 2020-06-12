@@ -240,14 +240,10 @@ Functies</h2></td></tr>
 <tr class="separator:acef94cf960e200f7ec1b4619510461a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5256334c4b449b8ed86f428fc0c7a36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36">viterbi</a> (<a class="el" href="struct_h_m_m.html">HMM</a> *hmm_ptr, <a class="el" href="struct_t_r_a_i_n.html">TRAIN</a> *train_ptr, char *O, FILE *out_filename, FILE *log_filename, FILE *dna_filename, char *head, int metagene, int cg, int format)</td></tr>
 <tr class="separator:ad5256334c4b449b8ed86f428fc0c7a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d9f91366d7b834ca7076283be14a89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmm_8h.html#a69d9f91366d7b834ca7076283be14a89">free_hmm</a> (<a class="el" href="struct_h_m_m.html">HMM</a> *hmm)</td></tr>
-<tr class="separator:a69d9f91366d7b834ca7076283be14a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ceabacbfe397e6d70025814a0c3882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmm_8h.html#a66ceabacbfe397e6d70025814a0c3882">get_protein</a> (char *dna, char *protein, int strand, int whole_genome)</td></tr>
 <tr class="separator:a66ceabacbfe397e6d70025814a0c3882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb170d07b8af8e326242f06b922bd80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmm_8h.html#a4bb170d07b8af8e326242f06b922bd80">get_rc_dna</a> (char *dna, char *dna1)</td></tr>
 <tr class="separator:a4bb170d07b8af8e326242f06b922bd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9373e9bd80de271779eee48dcd86283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hmm_8h.html#ac9373e9bd80de271779eee48dcd86283">get_corrected_dna</a> (char *dna, char *dna_f)</td></tr>
-<tr class="separator:ac9373e9bd80de271779eee48dcd86283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Gedetailleerde Beschrijving</h2>
 <div class="textblock"><p>This is the header file for the hmm datastructure. </p>
@@ -940,63 +936,6 @@ Functies</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentatie van functies</h2>
-<a id="a69d9f91366d7b834ca7076283be14a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d9f91366d7b834ca7076283be14a89">&#9670;&nbsp;</a></span>free_hmm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free_hmm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_h_m_m.html">HMM</a> *&#160;</td>
-          <td class="paramname"><em>hmm</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="hmm_8h_a69d9f91366d7b834ca7076283be14a89_cgraph.png" border="0" usemap="#hmm_8h_a69d9f91366d7b834ca7076283be14a89_cgraph" alt=""/></div>
-<map name="hmm_8h_a69d9f91366d7b834ca7076283be14a89_cgraph" id="hmm_8h_a69d9f91366d7b834ca7076283be14a89_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,85,32"/>
-<area shape="rect" href="util__lib_8c.html#ac2288cb3514168160c68cec8f09a99be" title=" " alt="" coords="133,5,228,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ac9373e9bd80de271779eee48dcd86283"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9373e9bd80de271779eee48dcd86283">&#9670;&nbsp;</a></span>get_corrected_dna()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void get_corrected_dna </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>dna</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>dna_f</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa5d13d79b8ed4466bcacfcc4184ee399"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5d13d79b8ed4466bcacfcc4184ee399">&#9670;&nbsp;</a></span>get_prob_from_cg()</h2>
 
@@ -1028,11 +967,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399_icgraph.png" border="0" usemap="#hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399_icgraph" alt=""/></div>
 <map name="hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399_icgraph" id="hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399_icgraph">
 <area shape="rect" title=" " alt="" coords="243,5,369,32"/>
@@ -1080,12 +1019,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get a protein of dna if Whole_genome equals to zero, then we want a short read and stop early. </p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_a66ceabacbfe397e6d70025814a0c3882_icgraph.png" border="0" usemap="#hmm_8h_a66ceabacbfe397e6d70025814a0c3882_icgraph" alt=""/></div>
 <map name="hmm_8h_a66ceabacbfe397e6d70025814a0c3882_icgraph" id="hmm_8h_a66ceabacbfe397e6d70025814a0c3882_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,435,32"/>
@@ -1122,23 +1060,22 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>copies dna to dna1 in reverse. and </p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_cgraph.png" border="0" usemap="#hmm_8h_a4bb170d07b8af8e326242f06b922bd80_cgraph" alt=""/></div>
 <map name="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_cgraph" id="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,92,32"/>
 <area shape="rect" href="util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728" title=" " alt="" coords="140,5,212,32"/>
 </map>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_icgraph.png" border="0" usemap="#hmm_8h_a4bb170d07b8af8e326242f06b922bd80_icgraph" alt=""/></div>
 <map name="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_icgraph" id="hmm_8h_a4bb170d07b8af8e326242f06b922bd80_icgraph">
 <area shape="rect" title=" " alt="" coords="348,5,435,32"/>
@@ -1232,11 +1169,11 @@ Functies</h2></td></tr>
 <p>Reads files.</p><ol type="1">
 <li>Reads trasition file and store in hmm datastructure </li>
 </ol>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_acef94cf960e200f7ec1b4619510461a1_cgraph.png" border="0" usemap="#hmm_8h_acef94cf960e200f7ec1b4619510461a1_cgraph" alt=""/></div>
 <map name="hmm_8h_acef94cf960e200f7ec1b4619510461a1_cgraph" id="hmm_8h_acef94cf960e200f7ec1b4619510461a1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,135,57"/>
@@ -1244,11 +1181,11 @@ Functies</h2></td></tr>
 <area shape="rect" href="util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9" title=" " alt="" coords="185,56,235,83"/>
 </map>
 </div>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_acef94cf960e200f7ec1b4619510461a1_icgraph.png" border="0" usemap="#hmm_8h_acef94cf960e200f7ec1b4619510461a1_icgraph" alt=""/></div>
 <map name="hmm_8h_acef94cf960e200f7ec1b4619510461a1_icgraph" id="hmm_8h_acef94cf960e200f7ec1b4619510461a1_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,233,32"/>
@@ -1331,11 +1268,11 @@ Functies</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_cgraph.png" border="0" usemap="#hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_cgraph" alt=""/></div>
 <map name="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_cgraph" id="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_cgraph">
 <area shape="rect" title=" " alt="" coords="5,259,63,285"/>
@@ -1354,11 +1291,11 @@ Functies</h2></td></tr>
 <area shape="rect" href="util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728" title=" " alt="" coords="314,5,386,32"/>
 </map>
 </div>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_icgraph.png" border="0" usemap="#hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_icgraph" alt=""/></div>
 <map name="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_icgraph" id="hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_icgraph">
 <area shape="rect" title=" " alt="" coords="243,5,300,32"/>
@@ -1375,7 +1312,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="hmm_8h.html">hmm.h</a></li>
-    <li class="footer">Gegenereerd op Vr 12 Jun 2020 00:18:37 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Vr 12 Jun 2020 14:19:19 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>
