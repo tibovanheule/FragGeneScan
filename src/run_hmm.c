@@ -8,7 +8,7 @@
 #include <pthread.h>
 
 #define ADD_LEN 1024
-#define STRINGLEN 4096
+#define STRINGLEN 4096+1
 
 /**
 * Entry point of program
@@ -103,7 +103,6 @@ int main (int argc, char **argv) {
             strcpy(train_file, optarg);
             strcpy(hmm_file, train_dir);
             strcat(hmm_file, train_file);
-            if (access(hmm_file, F_OK)==-1) print_error("ERROR: The file for model parameters [%s] does not exist\n", hmm_file);
             break;
         case 'f':
             format = 1;

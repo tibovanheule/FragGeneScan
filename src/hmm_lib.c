@@ -1044,8 +1044,6 @@ int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O) {
 void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename,
                          char *sfilename,char *pfilename,char *s1filename,char *p1filename,char *dfilename, TRAIN *train_ptr) {
 
-    // verwijder alle ints
-    int j, k, p;
     double prob;
     // All file handlers
     FILE *fp, *fpm, *fpm1, *fpn, *fps, *fpp, *fps1, *fpp1, *fpd;
@@ -1103,11 +1101,11 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* M state transition                               */
     /****************************************************/
     fpm = fopen (mfilename, "r");
-    for (p=0; p<44; p++) {                       /* cg */
+    for (int p=0; p<44; p++) {                       /* cg */
         fscanf(fpm, "%s", head);
         for (int i=0; i<6; i++) {                      /* period */
-            for (j=0; j<16; j++) {                   /* condition */
-                for (k=0; k<4; k++) {                  /* emission */
+            for (int j=0; j<16; j++) {                   /* condition */
+                for (int k=0; k<4; k++) {                  /* emission */
                     fscanf(fpm, "%lf", &prob);
                     train_ptr->trans[p][i][j][k] = log(prob);
                 }
@@ -1121,11 +1119,11 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* M state_1 transition                             */
     /****************************************************/
     fpm1 = fopen (mfilename1, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fpm1, "%s", head);
         for (int i=0; i<6; i++) {
-            for (j=0; j<16; j++) {
-                for (k=0; k<4; k++) {
+            for (int j=0; j<16; j++) {
+                for (int k=0; k<4; k++) {
                     fscanf(fpm1, "%lf", &prob);
                     train_ptr->rtrans[p][i][j][k] = log(prob);
                 }
@@ -1139,10 +1137,10 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* noncoding state  transition                      */
     /****************************************************/
     fpn = fopen (nfilename, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fpn, "%s", head);
-        for (j=0; j<4; j++) {
-            for (k=0; k<4; k++) {
+        for (int j=0; j<4; j++) {
+            for (int k=0; k<4; k++) {
                 fscanf(fpn, "%lf", &prob);
                 train_ptr->noncoding[p][j][k] = log(prob);
             }
@@ -1155,10 +1153,10 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* start                                            */
     /****************************************************/
     fps = fopen (sfilename, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fps, "%s", head);
-        for (j=0; j<61; j++) {
-            for (k=0; k<64; k++) {
+        for (int j=0; j<61; j++) {
+            for (int k=0; k<64; k++) {
                 fscanf(fps, "%lf", &prob);
                 train_ptr->start[p][j][k] = log(prob);
             }
@@ -1170,12 +1168,11 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* stop                                             */
     /****************************************************/
-    fpp = fopen (pfilename, "r"); //sfilename->pfilename, Ye, April 18, 2016
-    for (p=0; p<44; p++) {
+    fpp = fopen (pfilename, "r");
+    for (int p=0; p<44; p++) {
         fscanf(fpp, "%s", head);
-        //for (j=0; j<58; j++){ //58->61, Ye, April 18, 2016
-        for (j=0; j<61; j++) {
-            for (k=0; k<64; k++) {
+        for (int j=0; j<61; j++) {
+            for (int k=0; k<64; k++) {
                 fscanf(fpp, "%lf", &prob);
                 train_ptr->stop[p][j][k] = log(prob);
             }
@@ -1188,10 +1185,10 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* start1                                           */
     /****************************************************/
     fps1 = fopen (s1filename, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fps1, "%s", head);
-        for (j=0; j<61; j++) { //58->61 Ye, April 18, 2016
-            for (k=0; k<64; k++) {
+        for (int j=0; j<61; j++) { //58->61 Ye, April 18, 2016
+            for (int k=0; k<64; k++) {
                 fscanf(fps1, "%lf", &prob);
                 train_ptr->start1[p][j][k] = log(prob);
             }
@@ -1204,10 +1201,10 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* stop1                                            */
     /****************************************************/
     fpp1 = fopen (p1filename, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fpp1, "%s", head);
-        for (j=0; j<61; j++) {
-            for (k=0; k<64; k++) {
+        for (int j=0; j<61; j++) {
+            for (int k=0; k<64; k++) {
                 fscanf(fpp1, "%lf", &prob);
                 train_ptr->stop1[p][j][k] = log(prob);
             }
@@ -1221,21 +1218,21 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* S_dist, E_dist, S1_dist, E1_dist NOT in log      */
     /****************************************************/
     fpd = fopen (dfilename, "r");
-    for (p=0; p<44; p++) {
+    for (int p=0; p<44; p++) {
         fscanf(fpd, "%s", head);
-        for (k=0; k<6; k++) {
+        for (int k=0; k<6; k++) {
             fscanf(fpd, "%lf", &prob);
             train_ptr->S_dist[p][k] = prob;
         }
-        for (k=0; k<6; k++) {
+        for (int k=0; k<6; k++) {
             fscanf(fpd, "%lf", &prob);
             train_ptr->E_dist[p][k] = prob;
         }
-        for (k=0; k<6; k++) {
+        for (int k=0; k<6; k++) {
             fscanf(fpd, "%lf", &prob);
             train_ptr->S1_dist[p][k] = prob;
         }
-        for (k=0; k<6; k++) {
+        for (int k=0; k<6; k++) {
             fscanf(fpd, "%lf", &prob);
             train_ptr->E1_dist[p][k] = prob;
         }
@@ -1243,21 +1240,3 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     fclose(fpd);
 
 }
-
-void free_hmm(HMM *hmm_ptr) {
-    free_dvector(hmm_ptr->pi);
-}
-
-void dump_memory(void *p, int size) {
-    double *c = (double*) p;
-    int s = size / sizeof(double);
-
-    printf("Dump size %d\n", size);
-    for (int i = 0; i < s; i++)	{
-        if (i > 0 && i % 10 == 0) printf("\n");
-        printf("%f ", *c);
-        c++;
-    }
-    printf("\n");
-}
-
