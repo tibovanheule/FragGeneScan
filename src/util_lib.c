@@ -4,9 +4,11 @@
 #include <string.h>
 #include "util_lib.h"
 
+#ifdef EMULATED_LOG
 double log2(double a) {
     return log(a)/log(2);
 }
+#endif
 
 #define TR_SIZE 14
 
@@ -58,7 +60,7 @@ char anti_codon_code[65] = { 'F','V','L','I',
 */
 double **dmatrix(int num_row, int num_col) {
 
-    double **m = (double **) malloc(num_row * sizeof(double*));
+    double **m = malloc(num_row * sizeof(double*));
 
     if (!m) print_allocation_error("%s\n", "ERROR: Allocation failure for points to rows in dmatrix()");
 
@@ -77,7 +79,7 @@ double **dmatrix(int num_row, int num_col) {
 int **imatrix(int num_row, int num_col) {
 
     int i,j;
-    int **m = (int **) malloc(num_row * sizeof(int*));
+    int **m = malloc(num_row * sizeof(int*));
 
     if (!m) print_allocation_error("%s\n", "ERROR: Allocation failure for points to rows in imatrix()");
 
@@ -96,12 +98,9 @@ int **imatrix(int num_row, int num_col) {
 double *dvector(int nh) {
 
     int j;
-    double *v = (double *) malloc(nh * sizeof(double));
+    double *v = calloc(nh , sizeof(double));
 
     if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in dvector()");
-
-    for(j=0; j<nh; j++) v[j] = 0.0;
-
     return v;
 }
 
@@ -111,11 +110,23 @@ double *dvector(int nh) {
 * Exits when allocation fails.
 */
 int *ivector(int nh) {
-    int *v=(int *)malloc(nh * sizeof(int));
+    int *v= calloc(nh , sizeof(int));
 
     if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in ivector()");
 
-    for(int j=0; j<nh; j++) v[j] = 0;
+    return v;
+}
+
+/**
+* Makes an vector array) with datatype int.
+* Elements are ints en vector is a int pointer.
+* Exits when allocation fails.
+*/
+int *real_ivector(int* ptr, int nh) {
+    int *v= realloc(ptr, nh * sizeof(int));
+
+    if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in real_ivector()");
+
     return v;
 }
 

@@ -4,6 +4,7 @@
 #include <time.h>
 #include "run_hmm.h"
 #include "util_lib.h"
+#include "sprintf_irc.h"
 
 #include <pthread.h>
 
@@ -24,12 +25,9 @@ int main (int argc, char **argv) {
     thread_data *threadarr;
 
     clock_t start = clock();
-    int i, j, max;
+    int j, max;
     int wholegenome;
     int format=0;
-    int count=0;
-    int currcount = 0;
-    int total = 0;
     /* count the length of each line in input file */
     int bp_count;
     /* number of threads */
@@ -129,21 +127,22 @@ int main (int argc, char **argv) {
     // Initialize thread data structure
     threadarr = (thread_data*) malloc(sizeof(thread_data)* threadnum);
 
-    for (i = 0; i < threadnum; i++)   {
-        if(threadnum > 1) sprintf(mystring, "%s.out.tmp.%d", out_header, i);
-        else sprintf(mystring, "%s.out", out_header);
-
-        threadarr[i].out = fopen(mystring, "w");
-
-        if(threadnum > 1) sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
-        else sprintf(mystring, "%s.faa", out_header);
-
-        threadarr[i].aa = fopen(mystring, "w");
-
-        if(threadnum > 1) sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
-        else sprintf(mystring, "%s.ffn", out_header);
-
-        threadarr[i].dna = fopen(mystring, "w");
+    for (int i = 0; i < threadnum; i++)   {
+        if(threadnum > 1) {
+            ircsprintf(mystring, "%s.out.tmp.%d", out_header, i);
+            threadarr[i].out = fopen(mystring, "w");
+            ircsprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+            threadarr[i].aa = fopen(mystring, "w");
+            ircsprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+            threadarr[i].dna = fopen(mystring, "w");
+        } else {
+            ircsprintf(mystring, "%s.out", out_header);
+            threadarr[i].out = fopen(mystring, "w");
+            ircsprintf(mystring, "%s.faa", out_header);
+            threadarr[i].aa = fopen(mystring, "w");
+            ircsprintf(mystring, "%s.ffn", out_header);
+            threadarr[i].dna = fopen(mystring, "w");
+        }       
 
         threadarr[i].hmm = (HMM*) malloc(sizeof(HMM));
         threadarr[i].hmm = &hmm;
@@ -154,104 +153,83 @@ int main (int argc, char **argv) {
         threadarr[i].format = format;
     }
 
-    
-char * buffer;
-    fp = fopen (seq_file, "r");
-    // tel gewoon aantal reads
-    while ( fgets (mystring, sizeof mystring, fp) ) {
-        if (mystring[0] == '>')      count++;
-    }
 
 
-    // lengte van elke sequentie
-    int obs_seq_len[count];
-    printf("no. of seqs: %d\n", count);
-    // TODO controle
 
-    i = 0;
-    count = 0;
-    rewind(fp);
-    while ( fgets (mystring, sizeof mystring, fp) ) {
-        if (mystring[0] == '>') {
-            if (i>0) {
-                obs_seq_len[count] = i;
-                count++;
-                i = 0;
-            }
 
-        } else {
-            bp_count = strlen(mystring);
-            i += bp_count;
-        }
-    }
-    obs_seq_len[count] = i;
-
-    rewind(fp);
-    total = 0;
-    count = 0;
     j = 0;
-
+    int seq_len = 0, count = 0, currcount = 0;
     pthread_t thread[threadnum];
-    while (!(feof(fp))) {
-        memset(mystring, '\0', sizeof mystring);
+    fp = fopen (seq_file, "r");
+    size_t size = 50*sizeof(char);
+    char* sequentie = malloc(size);
+    int total=0;
+    while ( !feof(fp) ) {
+        char mystring[STRINGLEN] = "";
         fgets (mystring, sizeof mystring, fp);
         bp_count = strlen(mystring);
         while(mystring[bp_count - 1] == 10 || mystring[bp_count - 1]== 13) bp_count--;
-
+        printf("%s\n",mystring);
         if (mystring[0] == '>' || feof(fp)) {
-            if (feof(fp)) {
-                // append to seq
-                memcpy(threadarr[currcount].obs_seq + j, mystring, bp_count);
-                j += bp_count;
+
+             if (total > 0){
+                threadarr[count].obs_head = (char *) malloc((bp_count+1)* sizeof(char));
+                memcpy(threadarr[count].obs_head, mystring, bp_count);
+                threadarr[count].obs_seq = (char*) calloc(strlen(sequentie)+3, sizeof(char));
+                memcpy(threadarr[count].obs_seq, sequentie, strlen(sequentie));
+                
+                currcount = count;
+                count++;
+                j = 0;
+                seq_len = 0;
+                
             }
+             total++;
             if ((count > 0 && count % threadnum == 0) || feof(fp)) {
                 // Deal with the thread
-                
-                for (i = 0; i < count; i++) {
+                for (int i = 0; i < count; i++) {
                     int rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
-                    // TODO print error with custom error code
                     if (rc) {
                         printf("Error: Unable to create thread, %d\n", rc);
                         exit(-1);
                     }
                 }
-                // let threads join (wait)
-                for (i = 0; i < count; i++) {
+                // let threads join (wait) 
+                for (int i = 0; i < count; i++) {
                     int rc = pthread_join(thread[i], NULL);
                     if (rc) {
                         printf("Error: Unable to join threads, %d\n", rc);
                         exit(-1);
                     }
                 }
-                // free threads array
-                for (i = 0; i < count; i++) {
+                // free threads seq
+                for (int i = 0; i < count; i++) {
                     free(threadarr[i].obs_head);
                     free(threadarr[i].obs_seq);
                     threadarr[i].obs_head = NULL;
                     threadarr[i].obs_seq = NULL;
                 }
                 count = 0;
+                
             }
-            if (!(feof(fp))) {
-                threadarr[count].obs_head = (char *) malloc((bp_count+1)* sizeof(char));
-                memcpy(threadarr[count].obs_head, mystring, bp_count);
-                threadarr[count].obs_seq = (char*) calloc((obs_seq_len[total] + 1), sizeof(char));
-                total++;
-                currcount = count;
-                count++;
-                j = 0;
-                max = 0;
-            }
-
         } else {
-            // append aan de sequentie
-            memcpy(threadarr[currcount].obs_seq + j, mystring, bp_count);
-            j += bp_count;
+           seq_len += strlen(mystring);
+           printf("%d %lu\n",seq_len,size);
+           if((seq_len*sizeof(char))>size){
+               size = seq_len + 1;
+               sequentie = realloc(sequentie,size);
+           }
+           memcpy(sequentie + j, mystring, bp_count);
+           j += bp_count;
+           
         }
-    }
+        memset(mystring,0,sizeof mystring);
+    } 
+    printf("no. of seqs: %d\n", total);
+
     fclose(fp);
 
-    for (i = 0; i < threadnum; i++)  {
+    for (int i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
         fclose(threadarr[i].aa);
         fclose(threadarr[i].dna);
@@ -279,12 +257,12 @@ char * buffer;
         lastline = (char**) malloc(threadnum* sizeof(char*));
         currline = (char**) malloc(threadnum* sizeof(char*));
 
-        for (i = 0; i < threadnum; i++) {
-            sprintf(mystring, "%s.out.tmp.%d", out_header, i);
+        for (int i = 0; i < threadnum; i++) {
+            ircsprintf(mystring, "%s.out.tmp.%d", out_header, i);
             threadarr[i].out = fopen(mystring, "r");
-            sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+            ircsprintf(mystring, "%s.faa.tmp.%d", out_header, i);
             threadarr[i].aa = fopen(mystring, "r");
-            sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+            ircsprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
             threadarr[i].dna = fopen(mystring, "r");
 
             lastline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
@@ -294,7 +272,7 @@ char * buffer;
         // Organize out file
         while (1) {
             j = 0;
-            for (i = 0; i < threadnum; i++) {
+            for (int i = 0; i < threadnum; i++) {
                 if (lastline[i][0] != '\0') {
                     fputs(lastline[i], fp_out);
                     lastline[i][0] = '\0';
@@ -312,10 +290,10 @@ char * buffer;
             }
         }
         // Organize faa file
-        for (i = 0; i < threadnum; i++) lastline[i][0] = '\0';
+        for (int i = 0; i < threadnum; i++) lastline[i][0] = '\0';
         while (1)    {
             j = 0;
-            for (i = 0; i < threadnum; i++) {
+            for (int i = 0; i < threadnum; i++) {
                 if (lastline[i][0] != '\0') {
                     fputs(lastline[i], fp_aa);
                     lastline[i][0] = '\0';
@@ -338,12 +316,12 @@ char * buffer;
         }
 
         // Organize dna file
-        for (i = 0; i < threadnum; i++) {
+        for (int i = 0; i < threadnum; i++) {
             lastline[i][0] = '\0';
         }
         while (j != threadnum) {
             j = 0;
-            for (i = 0; i < threadnum; i++) {
+            for (int i = 0; i < threadnum; i++) {
                 if (lastline[i][0] != '\0') {
                     fputs(lastline[i], fp_dna);
                     lastline[i][0] = '\0';
@@ -363,16 +341,16 @@ char * buffer;
             }
         }
 
-    //FREE 
-        for (i = 0; i < threadnum; i++) {
+        //FREE
+        for (int i = 0; i < threadnum; i++) {
             fclose(threadarr[i].out);
             fclose(threadarr[i].aa);
             fclose(threadarr[i].dna);
-            sprintf(mystring, "%s.out.tmp.%d", out_header, i);
+            ircsprintf(mystring, "%s.out.tmp.%d", out_header, i);
             remove(mystring);
-            sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+            ircsprintf(mystring, "%s.faa.tmp.%d", out_header, i);
             remove(mystring);
-            sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+            ircsprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
             remove(mystring);
             free(lastline[i]);
             free(currline[i]);
@@ -383,9 +361,9 @@ char * buffer;
         fclose(fp_aa);
         fclose(fp_dna);
     }
-        free(threadarr);
-        free(lastline);
-        free(currline);
+    free(threadarr);
+    free(lastline);
+    free(currline);
     printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
     return 0;
 }
@@ -393,7 +371,7 @@ char * buffer;
 
 void* thread_func(void *threadarr) {
     thread_data *d = (thread_data*) threadarr;
-    d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq); /* cg - 26 Ye April 16, 2016 */
+    d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);
     if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, d->cg, d->format);
     return NULL;
 }

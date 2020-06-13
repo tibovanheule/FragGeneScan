@@ -9,6 +9,7 @@ double **dmatrix(int num_row, int num_col);
 double *dvector(int nh);
 int **imatrix(int num_row, int num_col);
 int *ivector(int nh);
+int *real_ivector(int* ptr, int nh);
 
 void free_dvector(double *v);
 void free_dmatrix(double **m,int num_row);
