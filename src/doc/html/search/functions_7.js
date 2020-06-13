@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['print_5fallocation_5ferror_154',['print_allocation_error',['../util__lib_8c.html#a77d6581715c5162c69476c05dc132a93',1,'print_allocation_error(const char *format,...):&#160;util_lib.c'],['../util__lib_8h.html#a77d6581715c5162c69476c05dc132a93',1,'print_allocation_error(const char *format,...):&#160;util_lib.c']]],
-  ['print_5ferror_155',['print_error',['../run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262',1,'print_error(const char *error_message,...):&#160;run_hmm.c'],['../run__hmm_8h.html#a5f590f6cc7bf5db3ae40e2e1c34f2262',1,'print_error(const char *error_message,...):&#160;run_hmm.c']]],
-  ['print_5ffile_5ferror_156',['print_file_error',['../run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256',1,'print_file_error(const char *error_message, char *file):&#160;run_hmm.c'],['../run__hmm_8h.html#a8ba3959a9af3a709d5ac2d90d6c7d256',1,'print_file_error(const char *error_message, char *file):&#160;run_hmm.c']]],
-  ['print_5fusage_157',['print_usage',['../util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79',1,'print_usage():&#160;util_lib.c'],['../util__lib_8h.html#ae5ad5cbeccaedc03a48d3c7eaa803e79',1,'print_usage():&#160;util_lib.c']]]
+  ['thread_5ffunc_171',['thread_func',['../run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8',1,'thread_func(void *threadarr):&#160;run_hmm.c'],['../run__hmm_8h.html#af48b9cd1d1b40f874fae9bcfc15abad8',1,'thread_func(void *threadarr):&#160;run_hmm.c']]],
+  ['tr2int_172',['tr2int',['../util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9',1,'tr2int(char *tr):&#160;util_lib.c'],['../util__lib_8h.html#a843ecc458c3d68506fb7475f012e51d5',1,'tr2int(char *nt):&#160;util_lib.c']]],
+  ['trinucleotide_173',['trinucleotide',['../util__lib_8c.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f',1,'trinucleotide(char a, char b, char c):&#160;util_lib.c'],['../util__lib_8h.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f',1,'trinucleotide(char a, char b, char c):&#160;util_lib.c']]],
+  ['trinucleotide_5fpep_174',['trinucleotide_pep',['../util__lib_8c.html#a9f526cfd3ce7777d8144aed9ecc53b8d',1,'util_lib.c']]]
 ];

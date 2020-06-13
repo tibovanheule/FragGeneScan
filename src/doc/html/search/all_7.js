@@ -13,5 +13,6 @@ var searchData=
   ['i6_5fstate_44',['I6_STATE',['../hmm_8h.html#ad8990c2eee7a2c6c41437a6f043bcb30',1,'hmm.h']]],
   ['i6_5fstate_5f1_45',['I6_STATE_1',['../hmm_8h.html#af17bc72974a1083c3f0f59874df96c78',1,'hmm.h']]],
   ['imatrix_46',['imatrix',['../util__lib_8c.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c']]],
-  ['ivector_47',['ivector',['../util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c']]]
+  ['ircsprintf_47',['ircsprintf',['../sprintf__irc_8c.html#a7a8181c472cc767cd65e2b443a896e0f',1,'ircsprintf(char *str, const char *format,...):&#160;sprintf_irc.c'],['../sprintf__irc_8h.html#aa298905ac4feaa6580397b3fc6b7633c',1,'ircsprintf(char *, const char *,...):&#160;sprintf_irc.c']]],
+  ['ivector_48',['ivector',['../util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c']]]
 ];

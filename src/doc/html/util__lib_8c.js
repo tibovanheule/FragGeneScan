@@ -12,7 +12,6 @@ var util__lib_8c =
     [ "get_rc_dna_indel", "util__lib_8c.html#ace3dceb07b9556e404f8eedde73e4d61", null ],
     [ "imatrix", "util__lib_8c.html#aa4be6d2998bec55044c271fea2ae7176", null ],
     [ "ivector", "util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495", null ],
-    [ "log2", "util__lib_8c.html#a5536923a606fb457a87150a9e613cc09", null ],
     [ "nt2int", "util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535", null ],
     [ "nt2int_rc", "util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728", null ],
     [ "nt2int_rc_indel", "util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855", null ],

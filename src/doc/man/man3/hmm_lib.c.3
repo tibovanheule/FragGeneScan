@@ -1,4 +1,4 @@
-.TH "src/hmm_lib.c" 3 "Vr 12 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/hmm_lib.c" 3 "Za 13 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,13 +23,6 @@ src/hmm_lib.c
 \fC#include 'hmm_lib\&.h'\fP
 .br
 
-.SS "Macros"
-
-.in +1c
-.ti -1c
-.RI "#define \fBDELIMI\fP   ' '"
-.br
-.in -1c
 .SS "Functies"
 
 .in +1c
@@ -43,10 +36,34 @@ src/hmm_lib.c
 .RI "void \fBget_train_from_file\fP (char *filename, \fBHMM\fP *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename, char *sfilename, char *pfilename, char *s1filename, char *p1filename, char *dfilename, \fBTRAIN\fP *train_ptr)"
 .br
 .in -1c
-.SH "Documentatie van macro's"
-.PP 
-.SS "#define DELIMI   ' '"
+.SS "Variabelen"
 
+.in +1c
+.ti -1c
+.RI "const double \fBlog53\fP = \-0\&.634878"
+.br
+.ti -1c
+.RI "const double \fBlog16\fP = \-1\&.832581"
+.br
+.ti -1c
+.RI "const double \fBlog30\fP = \-1\&.203973"
+.br
+.ti -1c
+.RI "const double \fBlog25\fP = \-1\&.386294"
+.br
+.ti -1c
+.RI "const double \fBlog95\fP = \-0\&.051293"
+.br
+.ti -1c
+.RI "const double \fBlog54\fP = \-0\&.616186"
+.br
+.ti -1c
+.RI "const double \fBlog83\fP = \-0\&.186330"
+.br
+.ti -1c
+.RI "const double \fBlog07\fP = \-2\&.659260"
+.br
+.in -1c
 .SH "Documentatie van functies"
 .PP 
 .SS "int get_prob_from_cg (\fBHMM\fP * hmm_ptr, \fBTRAIN\fP * train_ptr, char * O)"
@@ -58,6 +75,24 @@ Reads trasition file and store in hmm datastructure
 .PP
 
 .SS "void viterbi (\fBHMM\fP * hmm_ptr, \fBTRAIN\fP * train_ptr, char * O, FILE * fp_out, FILE * fp_aa, FILE * fp_dna, char * head, int whole_genome, int cg, int format)"
+
+.SH "Documentatie van variabelen"
+.PP 
+.SS "const double log07 = \-2\&.659260"
+
+.SS "const double log16 = \-1\&.832581"
+
+.SS "const double log25 = \-1\&.386294"
+
+.SS "const double log30 = \-1\&.203973"
+
+.SS "const double log53 = \-0\&.634878"
+
+.SS "const double log54 = \-0\&.616186"
+
+.SS "const double log83 = \-0\&.186330"
+
+.SS "const double log95 = \-0\&.051293"
 
 .SH "Auteur"
 .PP 

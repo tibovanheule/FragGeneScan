@@ -6,8 +6,10 @@
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}run\+\_\+hmm.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}util\+\_\+lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprintf\+\_\+irc.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$pthread.\+h$>$}\newline
-Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+c\+:\nopagebreak
+Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,6 +22,8 @@ Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+c\+:\nopagebreak
 \#define \mbox{\hyperlink{run__hmm_8c_ab76fbb1f1b2031f52c2a805e49aaa23b}{A\+D\+D\+\_\+\+L\+EN}}~1024
 \item 
 \#define \mbox{\hyperlink{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}{S\+T\+R\+I\+N\+G\+L\+EN}}~4096+1
+\item 
+\#define \mbox{\hyperlink{run__hmm_8c_ac5d80f9f8a9c084b4f9e80da4d1583aa}{D\+E\+L\+I\+MI}}~\char`\"{} \char`\"{}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functies}
 \begin{DoxyCompactItemize}
@@ -41,6 +45,12 @@ void \mbox{\hyperlink{run__hmm_8c_a8ba3959a9af3a709d5ac2d90d6c7d256}{print\+\_\+
 \doxysubsubsection{\texorpdfstring{ADD\_LEN}{ADD\_LEN}}
 {\footnotesize\ttfamily \#define A\+D\+D\+\_\+\+L\+EN~1024}
 
+\mbox{\Hypertarget{run__hmm_8c_ac5d80f9f8a9c084b4f9e80da4d1583aa}\label{run__hmm_8c_ac5d80f9f8a9c084b4f9e80da4d1583aa}} 
+\index{run\_hmm.c@{run\_hmm.c}!DELIMI@{DELIMI}}
+\index{DELIMI@{DELIMI}!run\_hmm.c@{run\_hmm.c}}
+\doxysubsubsection{\texorpdfstring{DELIMI}{DELIMI}}
+{\footnotesize\ttfamily \#define D\+E\+L\+I\+MI~\char`\"{} \char`\"{}}
+
 \mbox{\Hypertarget{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}\label{run__hmm_8c_a1dbcf7a897365acb6f5ae1750952113f}} 
 \index{run\_hmm.c@{run\_hmm.c}!STRINGLEN@{STRINGLEN}}
 \index{STRINGLEN@{STRINGLEN}!run\_hmm.c@{run\_hmm.c}}
@@ -60,7 +70,8 @@ Entry point of program
 \begin{DoxyEnumerate}
 \item Initialization of variables and datatypes
 \item Check File acessiblity 
-\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:\nopagebreak
+\end{DoxyEnumerate}Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -115,7 +126,8 @@ Error function\+:
 \doxysubsubsection{\texorpdfstring{thread\_func()}{thread\_func()}}
 {\footnotesize\ttfamily void$\ast$ thread\+\_\+func (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadarr }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Function given to a thread during his creation. This thread will then execute this function. Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

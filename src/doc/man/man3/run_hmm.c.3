@@ -1,4 +1,4 @@
-.TH "src/run_hmm.c" 3 "Vr 12 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/run_hmm.c" 3 "Za 13 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,6 +18,8 @@ src/run_hmm.c
 .br
 \fC#include 'util_lib\&.h'\fP
 .br
+\fC#include 'sprintf_irc\&.h'\fP
+.br
 \fC#include <pthread\&.h>\fP
 .br
 
@@ -29,6 +31,9 @@ src/run_hmm.c
 .br
 .ti -1c
 .RI "#define \fBSTRINGLEN\fP   4096+1"
+.br
+.ti -1c
+.RI "#define \fBDELIMI\fP   ' '"
 .br
 .in -1c
 .SS "Functies"
@@ -50,6 +55,8 @@ src/run_hmm.c
 .SH "Documentatie van macro's"
 .PP 
 .SS "#define ADD_LEN   1024"
+
+.SS "#define DELIMI   ' '"
 
 .SS "#define STRINGLEN   4096+1"
 
@@ -82,7 +89,7 @@ EXIT program
 .PP
 
 .SS "void* thread_func (void * threadarr)"
-
+Function given to a thread during his creation\&. This thread will then execute this function\&. 
 .SH "Auteur"
 .PP 
 Automatisch gegenereerd door Doxygen voor FragScanTibo uit de programmatekst\&.

@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['tr_189',['tr',['../struct_h_m_m.html#acf88a662edc6d0f0a283208e4bad024f',1,'HMM']]],
-  ['tr_5fe_190',['tr_E',['../struct_h_m_m.html#a6c628a8d876f64afa1a8050354e338ec',1,'HMM']]],
-  ['tr_5fe_5f1_191',['tr_E_1',['../struct_h_m_m.html#a715c4b7ab8405a040c9166167efcbb11',1,'HMM']]],
-  ['tr_5fi_5fi_192',['tr_I_I',['../struct_h_m_m.html#a68c10da4dd2fe104fa4ae7ae298dddff',1,'HMM']]],
-  ['tr_5flist_193',['tr_list',['../util__lib_8c.html#afb5d1ceafb82e51594aa5d572a959b6d',1,'util_lib.c']]],
-  ['tr_5fm_5fi_194',['tr_M_I',['../struct_h_m_m.html#a3cb833c6900692ac6fdca7b0f88023ca',1,'HMM']]],
-  ['tr_5fr_5fr_195',['tr_R_R',['../struct_h_m_m.html#a1fa0ecb7973e4fa62fc427cf52c1a420',1,'HMM']]],
-  ['tr_5fs_196',['tr_S',['../struct_h_m_m.html#a66ff157c602048095effa9d5bd572769',1,'HMM']]],
-  ['tr_5fs_5f1_197',['tr_S_1',['../struct_h_m_m.html#a740886a2a388faf4ca9c11e348f3624e',1,'HMM']]],
-  ['train_198',['train',['../structthread__data.html#af6eca28862d23b3932fecc05c2858268',1,'thread_data']]],
-  ['trans_199',['trans',['../struct_t_r_a_i_n.html#ab5f2bd6635938ef0af744cc073f2e8f3',1,'TRAIN']]]
+  ['s1_5fdist_205',['S1_dist',['../struct_h_m_m.html#a182174b17c9d07c07f01ee5556409c5d',1,'HMM::S1_dist()'],['../struct_t_r_a_i_n.html#a09e43207ff49c0358f0c727ac0b34e70',1,'TRAIN::S1_dist()']]],
+  ['s_5fdist_206',['S_dist',['../struct_h_m_m.html#a6a94b505e54dfb5464ee3533efda0222',1,'HMM::S_dist()'],['../struct_t_r_a_i_n.html#ac762939da7432594989a39d34e51ccfd',1,'TRAIN::S_dist()']]],
+  ['start_207',['start',['../struct_t_r_a_i_n.html#a95069b2532205192e33aa395a41bfbcc',1,'TRAIN']]],
+  ['start1_208',['start1',['../struct_t_r_a_i_n.html#afea4743bfda05c730aa57ddeaca53952',1,'TRAIN']]],
+  ['stop_209',['stop',['../struct_t_r_a_i_n.html#a8868f5a4b944f01ce8fedb3e07e0a857',1,'TRAIN']]],
+  ['stop1_210',['stop1',['../struct_t_r_a_i_n.html#a895d17b889cbc94078e1208e40487ef1',1,'TRAIN']]]
 ];

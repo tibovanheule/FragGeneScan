@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['nt2int_151',['nt2int',['../util__lib_8c.html#a4de49e3fa34734f20dcd2443a8a4d535',1,'nt2int(char nt):&#160;util_lib.c'],['../util__lib_8h.html#a4de49e3fa34734f20dcd2443a8a4d535',1,'nt2int(char nt):&#160;util_lib.c']]],
-  ['nt2int_5frc_152',['nt2int_rc',['../util__lib_8c.html#a463ba3bb94808100d5c8d9ffea2a3728',1,'nt2int_rc(char nt):&#160;util_lib.c'],['../util__lib_8h.html#a463ba3bb94808100d5c8d9ffea2a3728',1,'nt2int_rc(char nt):&#160;util_lib.c']]],
-  ['nt2int_5frc_5findel_153',['nt2int_rc_indel',['../util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855',1,'util_lib.c']]]
+  ['print_5fallocation_5ferror_167',['print_allocation_error',['../util__lib_8c.html#a77d6581715c5162c69476c05dc132a93',1,'print_allocation_error(const char *format,...):&#160;util_lib.c'],['../util__lib_8h.html#a77d6581715c5162c69476c05dc132a93',1,'print_allocation_error(const char *format,...):&#160;util_lib.c']]],
+  ['print_5ferror_168',['print_error',['../run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262',1,'print_error(const char *error_message,...):&#160;run_hmm.c'],['../run__hmm_8h.html#a5f590f6cc7bf5db3ae40e2e1c34f2262',1,'print_error(const char *error_message,...):&#160;run_hmm.c']]],
+  ['print_5ffile_5ferror_169',['print_file_error',['../run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256',1,'print_file_error(const char *error_message, char *file):&#160;run_hmm.c'],['../run__hmm_8h.html#a8ba3959a9af3a709d5ac2d90d6c7d256',1,'print_file_error(const char *error_message, char *file):&#160;run_hmm.c']]],
+  ['print_5fusage_170',['print_usage',['../util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79',1,'print_usage():&#160;util_lib.c'],['../util__lib_8h.html#ae5ad5cbeccaedc03a48d3c7eaa803e79',1,'print_usage():&#160;util_lib.c']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['thread_5ffunc_158',['thread_func',['../run__hmm_8c.html#af48b9cd1d1b40f874fae9bcfc15abad8',1,'thread_func(void *threadarr):&#160;run_hmm.c'],['../run__hmm_8h.html#af48b9cd1d1b40f874fae9bcfc15abad8',1,'thread_func(void *threadarr):&#160;run_hmm.c']]],
-  ['tr2int_159',['tr2int',['../util__lib_8c.html#af63cd754beea7a1122a0eaca769b62d9',1,'tr2int(char *tr):&#160;util_lib.c'],['../util__lib_8h.html#a843ecc458c3d68506fb7475f012e51d5',1,'tr2int(char *nt):&#160;util_lib.c']]],
-  ['trinucleotide_160',['trinucleotide',['../util__lib_8c.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f',1,'trinucleotide(char a, char b, char c):&#160;util_lib.c'],['../util__lib_8h.html#a6c3f6a6a60ce5b7eedea9fd18c377f6f',1,'trinucleotide(char a, char b, char c):&#160;util_lib.c']]],
-  ['trinucleotide_5fpep_161',['trinucleotide_pep',['../util__lib_8c.html#a9f526cfd3ce7777d8144aed9ecc53b8d',1,'util_lib.c']]]
+  ['viterbi_175',['viterbi',['../hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *out_filename, FILE *log_filename, FILE *dna_filename, char *head, int metagene, int cg, int format):&#160;hmm_lib.c'],['../hmm__lib_8c.html#a66a36ec378618afca39e44147b742270',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format):&#160;hmm_lib.c']]],
+  ['vsprintf_5firc_176',['vsprintf_irc',['../sprintf__irc_8c.html#a3a08d5534e8e14aa544a02eba6e41776',1,'sprintf_irc.c']]]
 ];

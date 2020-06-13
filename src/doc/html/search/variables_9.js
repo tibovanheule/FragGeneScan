@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rtrans_182',['rtrans',['../struct_t_r_a_i_n.html#a6fcb65e4753d3fc1a17affc4266442a2',1,'TRAIN']]]
+  ['pi_203',['pi',['../struct_h_m_m.html#aae34935f36de87d3ffffc3fb0afb75f8',1,'HMM']]]
 ];

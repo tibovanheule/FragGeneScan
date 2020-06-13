@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['pi_181',['pi',['../struct_h_m_m.html#aae34935f36de87d3ffffc3fb0afb75f8',1,'HMM']]]
+  ['obs_5fhead_200',['obs_head',['../structthread__data.html#aacd04e0e4ce7243b284cf7a06ed0e0b2',1,'thread_data']]],
+  ['obs_5fseq_201',['obs_seq',['../structthread__data.html#a83689737ed3ca81bd59b647b361afb36',1,'thread_data']]],
+  ['out_202',['out',['../structthread__data.html#a1277960b5f2b37137fe9b0b5a1ea0beb',1,'thread_data']]]
 ];
