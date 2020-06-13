@@ -78,12 +78,11 @@ double **dmatrix(int num_row, int num_col) {
 */
 int **imatrix(int num_row, int num_col) {
 
-    int i,j;
     int **m = malloc(num_row * sizeof(int*));
 
     if (!m) print_allocation_error("%s\n", "ERROR: Allocation failure for points to rows in imatrix()");
 
-    for(i=0; i<num_row; i++) {
+    for(int i=0; i<num_row; i++) {
         m[i]=(int *) calloc(num_col, sizeof(int));
         if (!m[i]) print_allocation_error("%s %d %s\n", "ERROR: Allocation failure for the row ", i," in imatrix()");
     }
@@ -97,7 +96,6 @@ int **imatrix(int num_row, int num_col) {
 */
 double *dvector(int nh) {
 
-    int j;
     double *v = calloc(nh , sizeof(double));
 
     if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in dvector()");
@@ -117,18 +115,6 @@ int *ivector(int nh) {
     return v;
 }
 
-/**
-* Makes an vector array) with datatype int.
-* Elements are ints en vector is a int pointer.
-* Exits when allocation fails.
-*/
-int *real_ivector(int* ptr, int nh) {
-    int *v= realloc(ptr, nh * sizeof(int));
-
-    if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in real_ivector()");
-
-    return v;
-}
 
 /**
 * Frees the memory allocation of an vector with datatype double.

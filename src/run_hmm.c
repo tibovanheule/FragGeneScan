@@ -10,7 +10,7 @@
 
 #define ADD_LEN 1024
 #define STRINGLEN 4096+1
-
+#define DELIMI " "
 /**
 * Entry point of program
 * 1. Initialization of variables and datatypes
@@ -18,7 +18,7 @@
 */
 int main (int argc, char **argv) {
     //file handlers
-    FILE *fp_out, *fp_aa, *fp_dna, *fp;
+    FILE *fp_out, *fp_aa, *fp_dna;
     /*Initialization datastructures*/
     TRAIN train;
     HMM hmm;
@@ -28,8 +28,6 @@ int main (int argc, char **argv) {
     int j, max;
     int wholegenome;
     int format=0;
-    /* count the length of each line in input file */
-    int bp_count;
     /* number of threads */
     int threadnum = 1;
     char *obs_seq, *obs_head;
@@ -154,40 +152,27 @@ int main (int argc, char **argv) {
     }
 
 
-
-
-
+    // used for th sum of bpcounts
     j = 0;
-    int seq_len = 0, count = 0, currcount = 0;
+    // totaal 
+    int  total=0;
+    // array of threads (variables needed for pthreads)
     pthread_t thread[threadnum];
-    fp = fopen (seq_file, "r");
-    size_t size = 50*sizeof(char);
-    char* sequentie = malloc(size);
-    int total=0;
-    while ( !feof(fp) ) {
-        char mystring[STRINGLEN] = "";
-        fgets (mystring, sizeof mystring, fp);
-        bp_count = strlen(mystring);
-        while(mystring[bp_count - 1] == 10 || mystring[bp_count - 1]== 13) bp_count--;
-        printf("%s\n",mystring);
+    //open file handler
+    FILE *fp = fopen (seq_file, "r");
+    // initial size of sequentie string, this will increase if there are strings in the 
+    size_t size = 50;
+    char* sequentie = malloc(size* sizeof(char));
+    while ( fgets (mystring, sizeof mystring, fp)  ) {
         if (mystring[0] == '>' || feof(fp)) {
-
-             if (total > 0){
-                threadarr[count].obs_head = (char *) malloc((bp_count+1)* sizeof(char));
-                memcpy(threadarr[count].obs_head, mystring, bp_count);
-                threadarr[count].obs_seq = (char*) calloc(strlen(sequentie)+3, sizeof(char));
-                memcpy(threadarr[count].obs_seq, sequentie, strlen(sequentie));
-                
-                currcount = count;
-                count++;
+            
+            if (total > 0) {
+                threadarr[total % threadnum].obs_seq = strdup(sequentie);
                 j = 0;
-                seq_len = 0;
-                
-            }
-             total++;
-            if ((count > 0 && count % threadnum == 0) || feof(fp)) {
+            }        
+            if (total > 0 && (total % threadnum == 0 || feof(fp))) {
                 // Deal with the thread
-                for (int i = 0; i < count; i++) {
+                for (int i = 0; i < threadnum; i++) {
                     int rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
                     if (rc) {
                         printf("Error: Unable to create thread, %d\n", rc);
@@ -195,7 +180,7 @@ int main (int argc, char **argv) {
                     }
                 }
                 // let threads join (wait) 
-                for (int i = 0; i < count; i++) {
+                for (int i = 0; i < threadnum; i++) {
                     int rc = pthread_join(thread[i], NULL);
                     if (rc) {
                         printf("Error: Unable to join threads, %d\n", rc);
@@ -203,31 +188,32 @@ int main (int argc, char **argv) {
                     }
                 }
                 // free threads seq
-                for (int i = 0; i < count; i++) {
+                for (int i = 0; i < threadnum; i++) {
                     free(threadarr[i].obs_head);
                     free(threadarr[i].obs_seq);
-                    threadarr[i].obs_head = NULL;
-                    threadarr[i].obs_seq = NULL;
                 }
-                count = 0;
-                
             }
+            if (!feof(fp)) {
+                total++;
+                threadarr[total % threadnum].obs_head = strdup(strtok(mystring, DELIMI));
+            }
+            continue;
         } else {
-           seq_len += strlen(mystring);
-           printf("%d %lu\n",seq_len,size);
-           if((seq_len*sizeof(char))>size){
-               size = seq_len + 1;
+           int bpcount = strlen(mystring);
+           if(j+bpcount>size){
+               size = j+bpcount + 1;
                sequentie = realloc(sequentie,size);
            }
-           memcpy(sequentie + j, mystring, bp_count);
-           j += bp_count;
-           
+           while(mystring[bpcount - 1] == 10 || mystring[bpcount - 1]== 13) bpcount--;
+           memcpy(sequentie + j, mystring, bpcount);
+           j += bpcount;
+           sequentie[j] = '\0';
         }
-        memset(mystring,0,sizeof mystring);
-    } 
+    }
+    fclose(fp);
     printf("no. of seqs: %d\n", total);
 
-    fclose(fp);
+
 
     for (int i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
@@ -347,16 +333,13 @@ int main (int argc, char **argv) {
             fclose(threadarr[i].aa);
             fclose(threadarr[i].dna);
             ircsprintf(mystring, "%s.out.tmp.%d", out_header, i);
-            remove(mystring);
             ircsprintf(mystring, "%s.faa.tmp.%d", out_header, i);
-            remove(mystring);
             ircsprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
-            remove(mystring);
             free(lastline[i]);
             free(currline[i]);
         }
 
-        //free(obs_head);
+        free(obs_head);
         fclose(fp_out);
         fclose(fp_aa);
         fclose(fp_dna);
@@ -368,7 +351,9 @@ int main (int argc, char **argv) {
     return 0;
 }
 
-
+/**
+* Function given to a thread during his creation. This thread will then execute this function.
+*/
 void* thread_func(void *threadarr) {
     thread_data *d = (thread_data*) threadarr;
     d->cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);

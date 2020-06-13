@@ -6,7 +6,6 @@
 #include "hmm.h"
 #include "util_lib.h"
 #include "hmm_lib.h"
-#define DELIMI " "
 
     const double log53 = -0.634878; //log(0.53);
     const double log16 = -1.832581; //log(0.16);
@@ -721,8 +720,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     /* backtrack array to find the optimal path                */
     /***********************************************************/
 
-    char *head_short = strtok(head, DELIMI);
-    fprintf(fp_out, "%s\n", head_short); //use head_short, Ye, April 22, 2016
+    fprintf(fp_out, "%s\n", head); 
 
     /* find the state for O[N] with the highest probability */
     for (int i = 0; i < hmm_ptr->N; i++) if (alpha[i][len_seq-1] < max_dbl) {
@@ -862,8 +860,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     exit(0);
                     }
                     */
-                    fprintf(fp_aa, "%s_%d_%d_+\n", head_short, dna_start_t, dna_end_t);
-                    fprintf(fp_dna, "%s_%d_%d_+\n", head_short, dna_start_t, dna_end_t);
+                    fprintf(fp_aa, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
+                    fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     fprintf(fp_aa, "%s\n", protein);
 
                     if (format==0) {
@@ -928,8 +926,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                     get_protein(dna,protein,-1, whole_genome); //YY July 18, 2018, introduce adjust
 
-                    fprintf(fp_aa, "%s_%d_%d_-\n", head_short, dna_start_t_withstop, dna_end_t);
-                    fprintf(fp_dna, "%s_%d_%d_-\n", head_short, dna_start_t_withstop, dna_end_t);
+                    fprintf(fp_aa, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
+                    fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
 
                     get_rc_dna(dna, dna1);
                     get_rc_dna_indel(dna_f, dna_f1);
