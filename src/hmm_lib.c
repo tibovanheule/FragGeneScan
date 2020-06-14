@@ -19,8 +19,8 @@
 void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format) {
     double max_dbl = INFINITY;
     int len_seq = strlen(O);
-    double ** alpha = dmatrix(hmm_ptr->N, len_seq);                      /* viterbi prob array */
-    int ** path = imatrix(hmm_ptr->N, len_seq);                          /* viterbi path array */
+    double ** alpha = dmatrix(NUM_STATE, len_seq);                      /* viterbi prob array */
+    int ** path = imatrix(NUM_STATE, len_seq);                          /* viterbi path array */
     int j;
     int temp_t;
     double prob_save, start_freq;
@@ -57,7 +57,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
         refine = 1;
     }
 
-    for (int i=0; i<hmm_ptr->N; i++)         alpha[i][0] = -1 * hmm_ptr->pi[i];
+    for (int i=0; i<NUM_STATE; i++)         alpha[i][0] = -1 * hmm_ptr->pi[i];
 
     /* stop state */
     if ((O[0] == 'T'|| O[0] == 't')  &&
@@ -723,7 +723,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     fprintf(fp_out, "%s\n", head); 
 
     /* find the state for O[N] with the highest probability */
-    for (int i = 0; i < hmm_ptr->N; i++) if (alpha[i][len_seq-1] < max_dbl) {
+    for (int i = 0; i < NUM_STATE; i++) if (alpha[i][len_seq-1] < max_dbl) {
             max_dbl = alpha[i][len_seq-1];
             vpath[len_seq-1] = i;
         }
@@ -735,9 +735,9 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     start_t=-1;
 
     char codon[4], utr[65];
-    char *dna = malloc(300000*sizeof(char));
+    char *dna = malloc(len_seq+1);
     char *dna1 = malloc(300000*sizeof(char));
-    char *dna_f = malloc(300000*sizeof(char));
+    char *dna_f = malloc(len_seq+1);
     char *dna_f1 = malloc(300000*sizeof(char));
     char *protein = malloc(300000*sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
@@ -988,8 +988,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
         }
     }
 
-    free_dmatrix(alpha, hmm_ptr->N);
-    free_imatrix(path, hmm_ptr->N);
+    free_dmatrix(alpha, NUM_STATE);
+    free_imatrix(path, NUM_STATE);
     free_ivector(vpath);
     free(dna);
     free(dna1);
@@ -1035,9 +1035,6 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
                          char *sfilename,char *pfilename,char *s1filename,char *p1filename,char *dfilename, TRAIN *train_ptr) {
 
     double prob;
-    // All file handlers
-    FILE *fp, *fpm, *fpm1, *fpn, *fps, *fpp, *fps1, *fpp1, *fpd;
-
     char name[10];
     char start[10];
     char end[10];
@@ -1054,7 +1051,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* transition                                       */
     /****************************************************/
-    fp = fopen (filename, "r");
+    FILE *fp = fopen (filename, "r");
 
     /* Transition */
     fscanf(fp, "%*s");
@@ -1089,7 +1086,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* M state transition                               */
     /****************************************************/
-    fpm = fopen (mfilename, "r");
+    FILE *fpm = fopen (mfilename, "r");
     for (int p=0; p<44; p++) {                       /* cg */
         fscanf(fp, "%*s");
         for (int i=0; i<6; i++) {                      /* period */
@@ -1107,7 +1104,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* M state_1 transition                             */
     /****************************************************/
-    fpm1 = fopen (mfilename1, "r");
+    FILE * fpm1 = fopen (mfilename1, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int i=0; i<6; i++) {
@@ -1125,7 +1122,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* noncoding state  transition                      */
     /****************************************************/
-    fpn = fopen (nfilename, "r");
+    FILE *fpn = fopen (nfilename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int j=0; j<4; j++) {
@@ -1141,7 +1138,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* start                                            */
     /****************************************************/
-    fps = fopen (sfilename, "r");
+    FILE * fps = fopen (sfilename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int j=0; j<61; j++) {
@@ -1157,7 +1154,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* stop                                             */
     /****************************************************/
-    fpp = fopen (pfilename, "r");
+    FILE *fpp = fopen (pfilename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int j=0; j<61; j++) {
@@ -1173,7 +1170,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* start1                                           */
     /****************************************************/
-    fps1 = fopen (s1filename, "r");
+    FILE *fps1 = fopen (s1filename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int j=0; j<61; j++) { //58->61 Ye, April 18, 2016
@@ -1189,7 +1186,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /****************************************************/
     /* stop1                                            */
     /****************************************************/
-    fpp1 = fopen (p1filename, "r");
+    FILE *fpp1 = fopen (p1filename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int j=0; j<61; j++) {
@@ -1206,7 +1203,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
     /* pwm distribution                                 */
     /* S_dist, E_dist, S1_dist, E1_dist NOT in log      */
     /****************************************************/
-    fpd = fopen (dfilename, "r");
+    FILE *fpd = fopen (dfilename, "r");
     for (int p=0; p<44; p++) {
         fscanf(fp, "%*s");
         for (int k=0; k<6; k++) {

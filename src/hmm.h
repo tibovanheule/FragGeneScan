@@ -3,9 +3,7 @@
 */
 #ifndef HMM_H
 #define HMM_H
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+
 
 #define A 0
 #define C 1

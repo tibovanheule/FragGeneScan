@@ -5,19 +5,27 @@
 #include "util_lib.h"
 
 #ifdef EMULATED_LOG
+/**
+* This log function is a math trick to compute log
+* This function is not always needed because in most platforms it is defined in math.h.
+* define EMULATED_LOG when it isn't defined there.
+*/
 double log2(double a) {
     return log(a)/log(2);
 }
 #endif
 
+/**
+*
+*/
 #define TR_SIZE 14
 
-char* tr_list[TR_SIZE] = { "MM","MI","MD","II","IM","DD","DM","GE","GG","ER","RS","RR","ES","ES1" };
+const char* tr_list[TR_SIZE] = { "MM","MI","MD","II","IM","DD","DM","GE","GG","ER","RS","RR","ES","ES1" };
 
-char codon5[5] = { 'A', 'C', 'G', 'T', 'N' };
-char codon11[11] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
+const char codon5[] = { 'A', 'C', 'G', 'T', 'N' };
+const char codon11[] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
 
-char codon_code[65] = { 'K','N','K','N',
+const char codon_code[] = { 'K','N','K','N',
                         'T','T','T','T',
                         'R','S','R','S',
                         'I','I','M','I',
@@ -35,7 +43,7 @@ char codon_code[65] = { 'K','N','K','N',
                         'L','F','L','F', 'X'
                       };
 
-char anti_codon_code[65] = { 'F','V','L','I',
+const char anti_codon_code[] = { 'F','V','L','I',
                              'C','G','R','S',
                              'S','A','P','T',
                              'Y','D','H','N',
