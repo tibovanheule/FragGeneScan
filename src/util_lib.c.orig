@@ -26,40 +26,40 @@ const char codon5[] = { 'A', 'C', 'G', 'T', 'N' };
 const char codon11[] = { 'A', 'C', 'G', 'T', 'N', 'a', 'c', 'g', 't', 'n', 'x' };
 
 const char codon_code[] = { 'K','N','K','N',
-                            'T','T','T','T',
-                            'R','S','R','S',
-                            'I','I','M','I',
-                            'Q','H','Q','H',
-                            'P','P','P','P',
-                            'R','R','R','R',
-                            'L','L','L','L',
-                            'E','D','E','D',
-                            'A','A','A','A',
-                            'G','G','G','G',
-                            'V','V','V','V',
-                            '*','Y','*','Y',
-                            'S','S','S','S',
-                            '*','C','W','C',
-                            'L','F','L','F', 'X'
-                          };
+                        'T','T','T','T',
+                        'R','S','R','S',
+                        'I','I','M','I',
+                        'Q','H','Q','H',
+                        'P','P','P','P',
+                        'R','R','R','R',
+                        'L','L','L','L',
+                        'E','D','E','D',
+                        'A','A','A','A',
+                        'G','G','G','G',
+                        'V','V','V','V',
+                        '*','Y','*','Y',
+                        'S','S','S','S',
+                        '*','C','W','C',
+                        'L','F','L','F', 'X'
+                      };
 
 const char anti_codon_code[] = { 'F','V','L','I',
-                                 'C','G','R','S',
-                                 'S','A','P','T',
-                                 'Y','D','H','N',
-                                 'L','V','L','M',
-                                 'W','G','R','R',
-                                 'S','A','P','T',
-                                 '*','E','Q','K',
-                                 'F','V','L','I',
-                                 'C','G','R','S',
-                                 'S','A','P','T',
-                                 'Y','D','H','N',
-                                 'L','V','L','I',
-                                 '*','G','R','R',
-                                 'S','A','P','T',
-                                 '*','E','Q','K','X'
-                               };
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','M',
+                             'W','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K',
+                             'F','V','L','I',
+                             'C','G','R','S',
+                             'S','A','P','T',
+                             'Y','D','H','N',
+                             'L','V','L','I',
+                             '*','G','R','R',
+                             'S','A','P','T',
+                             '*','E','Q','K','X'
+                           };
 
 /**
 * Makes an matrix with datatype double.
@@ -104,7 +104,7 @@ int **imatrix(int num_row, int num_col) {
 */
 double *dvector(int nh) {
 
-    double *v = calloc(nh, sizeof(double));
+    double *v = calloc(nh , sizeof(double));
 
     if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in dvector()");
     return v;
@@ -116,7 +116,7 @@ double *dvector(int nh) {
 * Exits when allocation fails.
 */
 int *ivector(int nh) {
-    int *v= calloc(nh, sizeof(int));
+    int *v= calloc(nh , sizeof(int));
 
     if (!v) print_allocation_error("%s\n", "ERROR: Allocation failure in ivector()");
 

@@ -7,14 +7,14 @@
 #include "util_lib.h"
 #include "hmm_lib.h"
 
-const double log53 = -0.634878; //log(0.53);
-const double log16 = -1.832581; //log(0.16);
-const double log30 = -1.203973; //log(0.30);
-const double log25 = -1.386294; //log(0.25);
-const double log95 = -0.051293; //log(0.95);
-const double log54 = -0.616186; //log(0.54);
-const double log83 = -0.186330; //log(0.83);
-const double log07 = -2.659260; //log(0.07);
+    const double log53 = -0.634878; //log(0.53);
+    const double log16 = -1.832581; //log(0.16);
+    const double log30 = -1.203973; //log(0.30);
+    const double log25 = -1.386294; //log(0.25);
+    const double log95 = -0.051293; //log(0.95);
+    const double log54 = -0.616186; //log(0.54);
+    const double log83 = -0.186330; //log(0.83);
+    const double log07 = -2.659260; //log(0.07);
 
 void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format) {
     double max_dbl = INFINITY;
@@ -720,7 +720,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     /* backtrack array to find the optimal path                */
     /***********************************************************/
 
-    fprintf(fp_out, "%s\n", head);
+    fprintf(fp_out, "%s\n", head); 
 
     /* find the state for O[N] with the highest probability */
     for (int i = 0; i < NUM_STATE; i++) if (alpha[i][len_seq-1] < max_dbl) {

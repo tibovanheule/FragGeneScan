@@ -4,7 +4,6 @@
 #include <time.h>
 #include "run_hmm.h"
 #include "util_lib.h"
-#include <stdio.h>
 
 #include <pthread.h>
 
@@ -17,6 +16,8 @@
 * 2. Check File acessiblity
 */
 int main (int argc, char **argv) {
+    //file handlers
+    FILE *fp_out, *fp_aa, *fp_dna;
     /*Initialization datastructures*/
     TRAIN train;
     HMM hmm;
@@ -28,9 +29,10 @@ int main (int argc, char **argv) {
 
     char hmm_file[STRINGLEN] = "";
     char out_header[STRINGLEN] = "";
-
+    char aa_file[STRINGLEN] = "";
     char seq_file[STRINGLEN] = "";
-
+    char out_file[STRINGLEN] = "";
+    char dna_file[STRINGLEN] = "";
     char train_file[STRINGLEN] = "";
     char mstate_file[STRINGLEN] = "";
     char rstate_file[STRINGLEN] = "";
@@ -42,8 +44,6 @@ int main (int argc, char **argv) {
     char dstate_file[STRINGLEN] = "";
     char train_dir[STRINGLEN] = "";
     char mystring[STRINGLEN] = "";
-
-
 
 
     strncpy(train_dir, argv[0], strlen(argv[0])-12);
@@ -139,7 +139,7 @@ int main (int argc, char **argv) {
             threadarr[i].aa = fopen(mystring, "w");
             sprintf(mystring, "%s.ffn", out_header);
             threadarr[i].dna = fopen(mystring, "w");
-        }
+        }       
 
         threadarr[i].hmm = (HMM*) malloc(sizeof(HMM));
         threadarr[i].hmm = &hmm;
@@ -153,22 +153,22 @@ int main (int argc, char **argv) {
 
     // used for th sum of bpcounts
     int sequence_offset = 0;
-    // totaal
+    // totaal 
     int  total=0;
     // array of threads (variables needed for pthreads)
     pthread_t thread[threadnum];
     //open file handler
     FILE *fp = fopen (seq_file, "r");
-    // initial size of sequentie string, this will increase if there are strings in the
+    // initial size of sequentie string, this will increase if there are strings in the 
     size_t size = 50;
     char* sequentie = malloc(size* sizeof(char));
     while ( fgets (mystring, sizeof mystring, fp)  ) {
         if (mystring[0] == '>' || feof(fp)) {
-
+            
             if (total > 0) {
                 threadarr[total % threadnum].obs_seq = strdup(sequentie);
                 sequence_offset = 0;
-            }
+            }        
             if (total > 0 && (total % threadnum == 0 || feof(fp))) {
                 // Deal with the thread
                 for (int i = 0; i < threadnum; i++) {
@@ -178,7 +178,7 @@ int main (int argc, char **argv) {
                         exit(-1);
                     }
                 }
-                // let threads join (wait)
+                // let threads join (wait) 
                 for (int i = 0; i < threadnum; i++) {
                     int rc = pthread_join(thread[i], NULL);
                     if (rc) {
@@ -198,19 +198,21 @@ int main (int argc, char **argv) {
             }
             continue;
         } else {
-            int bpcount = strlen(mystring);
-            if(sequence_offset+bpcount>size) {
-                size = sequence_offset+bpcount + 1;
-                sequentie = realloc(sequentie,size);
-            }
-            while(mystring[bpcount - 1] == 10 || mystring[bpcount - 1]== 13) bpcount--;
-            memcpy(sequentie + sequence_offset, mystring, bpcount);
-            sequence_offset += bpcount;
-            sequentie[sequence_offset] = '\0';
+           int bpcount = strlen(mystring);
+           if(sequence_offset+bpcount>size){
+               size = sequence_offset+bpcount + 1;
+               sequentie = realloc(sequentie,size);
+           }
+           while(mystring[bpcount - 1] == 10 || mystring[bpcount - 1]== 13) bpcount--;
+           memcpy(sequentie + sequence_offset, mystring, bpcount);
+           sequence_offset += bpcount;
+           sequentie[sequence_offset] = '\0';
         }
     }
     fclose(fp);
     printf("no. of seqs: %d\n", total);
+
+
 
     for (int i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
@@ -218,55 +220,56 @@ int main (int argc, char **argv) {
         fclose(threadarr[i].dna);
     }
 
-    if(threadnum > 1) combine(threadnum,strdup(out_header),threadarr);
-        free(threadarr);
-        printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
-        return 0;
-    }
 
-    /**
-    * Function given to a thread during his creation. This thread will then execute this function.
-    */
-    void* thread_func(void *threadarr) {
-        thread_data *d = (thread_data*) threadarr;
-        int cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);
-        if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, cg, d->format);
-        return NULL;
-    }
+    //uitschrijven
 
-    /**
-    * Error function:
-    * 1. Print error message
-    * 2. Call print_usage() from util_lib
-    * 3. EXIT program
-    */
-    void print_error(const char* error_message, ...) {
-        va_list list;
-        va_start(list,error_message);
-        vfprintf(stderr, error_message,list);
-        va_end(list);
-        print_usage();
-        exit(EXIT_FAILURE);
-    }
+    if(threadnum > 1) {
 
-    /**
-    * Error function:
-    * 1. Print error message
-    * 2. EXIT program
-    */
-    void print_file_error(const char* error_message, char* file) {
-        fprintf(stderr, error_message,file);
-        exit(EXIT_FAILURE);
-    }
 
-    /**
-    * This function will combine multiple files created by the invidual threads if number of threads > 1;
-    */
-    void combine(int threadnum,char* out_header, thread_data *threadarr) {
-    char aa_file[STRINGLEN] = "";
-    char out_file[STRINGLEN] = "";
-    char dna_file[STRINGLEN] = "";
-    char mystring[STRINGLEN] = "";
+    free(threadarr);
+    printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
+    return 0;
+}
+
+/**
+* Function given to a thread during his creation. This thread will then execute this function.
+*/
+void* thread_func(void *threadarr) {
+    thread_data *d = (thread_data*) threadarr;
+    int cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);
+    if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, cg, d->format);
+    return NULL;
+}
+
+/**
+* Error function:
+* 1. Print error message
+* 2. Call print_usage() from util_lib
+* 3. EXIT program
+*/
+void print_error(const char* error_message, ...) {
+    va_list list;
+    va_start(list,error_message);
+    vfprintf(stderr, error_message,list);
+    va_end(list);
+    print_usage();
+    exit(EXIT_FAILURE);
+}
+
+/**
+* Error function:
+* 1. Print error message
+* 2. EXIT program
+*/
+void print_file_error(const char* error_message, char* file) {
+    fprintf(stderr, error_message,file);
+    exit(EXIT_FAILURE);
+}
+
+/**
+* This function will combine multiple files created by the invidual threads if number of threads > 1;
+*/
+void combine(){
         /* create output file name */
         strcpy(aa_file, out_header);
         strcat(aa_file, ".faa");
@@ -279,11 +282,11 @@ int main (int argc, char **argv) {
         remove (aa_file);
         remove (dna_file);
 
-        FILE * fp_aa = fopen (aa_file, "w");
-        FILE * fp_out = fopen (out_file, "w");
-        FILE * fp_dna = fopen (dna_file, "w");
-        char ** lastline = malloc(threadnum*sizeof(char*));
-        char ** currline =  malloc(threadnum*sizeof(char*));
+        fp_aa = fopen (aa_file, "w");
+        fp_out = fopen (out_file, "w");
+        fp_dna = fopen (dna_file, "w");
+    char **        lastline = malloc(threadnum* sizeof(char*));
+        char ** currline =  malloc(threadnum* sizeof(char*));
 
         for (int i = 0; i < threadnum; i++) {
             sprintf(mystring, "%s.out.tmp.%d", out_header, i);
@@ -384,9 +387,9 @@ int main (int argc, char **argv) {
         fclose(fp_out);
         fclose(fp_aa);
         fclose(fp_dna);
-
-        free(lastline);
-        free(currline);
-    
+        
+    free(lastline);
+    free(currline);
+    }
 
 }

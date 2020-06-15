@@ -31,4 +31,6 @@ void print_error(const char* error_message, ...);
 
 void print_file_error(const char* error_message, char* file);
 
+void combine(int threadnum,char* out_file,thread_data *threadarr);
+
 #endif
