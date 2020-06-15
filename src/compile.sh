@@ -1,4 +1,4 @@
 #!/bin/bash
 
 make clean
-make fgs
+make fgs --always-make
