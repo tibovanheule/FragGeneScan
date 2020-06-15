@@ -4,7 +4,6 @@
 #include <time.h>
 #include "run_hmm.h"
 #include "util_lib.h"
-#include <stdio.h>
 
 #include <pthread.h>
 
@@ -18,8 +17,8 @@
 */
 int main (int argc, char **argv) {
     /*Initialization datastructures*/
-    TRAIN train;
-    HMM hmm;
+    TRAIN *train = malloc(sizeof(TRAIN));
+    HMM *hmm = malloc(sizeof(HMM));
 
     clock_t start = clock();
 
@@ -119,10 +118,10 @@ int main (int argc, char **argv) {
 
     /* read all initial model */
     /* Read the given files and give HMM and TRAIN */
-    get_train_from_file(hmm_file, &hmm, mstate_file, rstate_file, nstate_file, sstate_file, pstate_file,s1state_file, p1state_file, dstate_file, &train);
+    get_train_from_file(hmm_file, hmm, mstate_file, rstate_file, nstate_file, sstate_file, pstate_file,s1state_file, p1state_file, dstate_file, train);
 
     // Initialize thread data structure
-    thread_data *threadarr = (thread_data*) malloc(sizeof(thread_data)* threadnum);
+    thread_data *threadarr = malloc(sizeof(thread_data)* threadnum);
 
     for (int i = 0; i < threadnum; i++)   {
         if(threadnum > 1) {
@@ -141,10 +140,8 @@ int main (int argc, char **argv) {
             threadarr[i].dna = fopen(mystring, "w");
         }
 
-        threadarr[i].hmm = (HMM*) malloc(sizeof(HMM));
-        threadarr[i].hmm = &hmm;
-        threadarr[i].train = (TRAIN*) malloc(sizeof(TRAIN));
-        threadarr[i].train = &train;
+        threadarr[i].hmm = hmm;
+        threadarr[i].train = train;
 
         threadarr[i].wholegenome = wholegenome;
         threadarr[i].format = format;
@@ -160,7 +157,7 @@ int main (int argc, char **argv) {
     //open file handler
     FILE *fp = fopen (seq_file, "r");
     // initial size of sequentie string, this will increase if there are strings in the
-    size_t size = 50;
+    size_t size = 150;
     char* sequentie = malloc(size* sizeof(char));
     while ( fgets (mystring, sizeof mystring, fp)  ) {
         if (mystring[0] == '>' || feof(fp)) {

@@ -19,7 +19,6 @@ typedef struct thread_data {
     char *obs_head;
     char *obs_seq;
     int wholegenome;
-    int cg;
     int format;
     HMM *hmm;
     TRAIN *train;
