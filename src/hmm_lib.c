@@ -737,8 +737,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char codon[4], utr[65];
     char *dna = malloc(300000*sizeof(char));
     char *dna1 = malloc(300000*sizeof(char));
-    char *dna_f = malloc(300000*sizeof(char));
-    char *protein = malloc(100000*sizeof(char));
+    char *dna_f = calloc(300000,sizeof(char));
+    char *protein = calloc(100000,sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
     for (int t=0; t<len_seq; t++) {
 
