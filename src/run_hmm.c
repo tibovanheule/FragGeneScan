@@ -163,7 +163,7 @@ int main (int argc, char **argv) {
         if (mystring[0] == '>' || feof(fp)) {
 
             if (total > 0) {
-                threadarr[total % threadnum].obs_seq = strdup(sequentie);
+                threadarr[(total-1) % threadnum].obs_seq = strdup(sequentie);
                 sequence_offset = 0;
             }
             if (total > 0 && (total % threadnum == 0 || feof(fp))) {
@@ -190,8 +190,8 @@ int main (int argc, char **argv) {
                 }
             }
             if (!feof(fp)) {
-                total++;
                 threadarr[total % threadnum].obs_head = strdup(strtok(mystring, DELIMI));
+                total++;
             }
             continue;
         } else {
@@ -207,183 +207,186 @@ int main (int argc, char **argv) {
         }
     }
     fclose(fp);
-    printf("no. of seqs: %d\n", total);
+    // print is uselless since all work is done, note total counts also the sequences that are of length 0!
+    // printf("no. of seqs: %d\n", total);
 
+    // close all file descriptors present in the data array of the threads. 
     for (int i = 0; i < threadnum; i++)  {
         fclose(threadarr[i].out);
         fclose(threadarr[i].aa);
         fclose(threadarr[i].dna);
     }
+    if(threadnum > 1) combine(threadnum,out_header,threadarr);
+    free(threadarr);
+    printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
+    return 0;
+}
 
-    if(threadnum > 1) combine(threadnum,strdup(out_header),threadarr);
-        free(threadarr);
-        printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
-        return 0;
-    }
+/**
+* Function given to a thread during his creation. This thread will then execute this function.
+*/
+void* thread_func(void *threadarr) {
+    thread_data *d = (thread_data*) threadarr;
+    int cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);
+    if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, cg, d->format);
+    return NULL;
+}
 
-    /**
-    * Function given to a thread during his creation. This thread will then execute this function.
-    */
-    void* thread_func(void *threadarr) {
-        thread_data *d = (thread_data*) threadarr;
-        int cg = get_prob_from_cg(d->hmm, d->train, d->obs_seq);
-        if (strlen(d->obs_seq)>70) viterbi(d->hmm, d->train, d->obs_seq, d->out, d->aa, d->dna, d->obs_head, d->wholegenome, cg, d->format);
-        return NULL;
-    }
+/**
+* Error function:
+* 1. Print error message
+* 2. Call print_usage() from util_lib
+* 3. EXIT program
+*/
+void print_error(const char* error_message, ...) {
+    va_list list;
+    va_start(list,error_message);
+    vfprintf(stderr, error_message,list);
+    va_end(list);
+    print_usage();
+    exit(EXIT_FAILURE);
+}
 
-    /**
-    * Error function:
-    * 1. Print error message
-    * 2. Call print_usage() from util_lib
-    * 3. EXIT program
-    */
-    void print_error(const char* error_message, ...) {
-        va_list list;
-        va_start(list,error_message);
-        vfprintf(stderr, error_message,list);
-        va_end(list);
-        print_usage();
-        exit(EXIT_FAILURE);
-    }
+/**
+* Error function:
+* 1. Print error message
+* 2. EXIT program
+*/
+void print_file_error(const char* error_message, char* file) {
+    fprintf(stderr, error_message,file);
+    exit(EXIT_FAILURE);
+}
 
-    /**
-    * Error function:
-    * 1. Print error message
-    * 2. EXIT program
-    */
-    void print_file_error(const char* error_message, char* file) {
-        fprintf(stderr, error_message,file);
-        exit(EXIT_FAILURE);
-    }
-
-    /**
-    * This function will combine multiple files created by the invidual threads if number of threads > 1;
-    */
-    void combine(int threadnum,char* out_header, thread_data *threadarr) {
+/**
+* This function will combine multiple files created by the invidual threads if number of threads > 1;
+*/
+void combine(int threadnum,char* out_header, thread_data *threadarr) {
     char aa_file[STRINGLEN] = "";
     char out_file[STRINGLEN] = "";
     char dna_file[STRINGLEN] = "";
     char mystring[STRINGLEN] = "";
-        /* create output file name */
-        strcpy(aa_file, out_header);
-        strcat(aa_file, ".faa");
-        strcpy(dna_file, out_header);
-        strcat(dna_file, ".ffn");
-        strcpy(out_file, out_header);
-        strcat(out_file, ".out");
+    /* create output file name */
+    strcpy(aa_file, out_header);
+    strcat(aa_file, ".faa");
+    strcpy(dna_file, out_header);
+    strcat(dna_file, ".ffn");
+    strcpy(out_file, out_header);
+    strcat(out_file, ".out");
 
-        remove (out_file);
-        remove (aa_file);
-        remove (dna_file);
+    remove (out_file);
+    remove (aa_file);
+    remove (dna_file);
 
-        FILE * fp_aa = fopen (aa_file, "w");
-        FILE * fp_out = fopen (out_file, "w");
-        FILE * fp_dna = fopen (dna_file, "w");
-        char ** lastline = malloc(threadnum*sizeof(char*));
-        char ** currline =  malloc(threadnum*sizeof(char*));
+    FILE * fp_aa = fopen (aa_file, "w");
+    FILE * fp_out = fopen (out_file, "w");
+    FILE * fp_dna = fopen (dna_file, "w");
 
+    char ** lastline = malloc(threadnum* sizeof(char*));
+    char ** currline =  malloc(threadnum* sizeof(char*));
+
+    int j =0;
+
+    for (int i = 0; i < threadnum; i++) {
+        sprintf(mystring, "%s.out.tmp.%d", out_header, i);
+        threadarr[i].out = fopen(mystring, "r");
+        sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+        threadarr[i].aa = fopen(mystring, "r");
+        sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+        threadarr[i].dna = fopen(mystring, "r");
+
+        lastline[i] = malloc(STRINGLEN + 1);
+        currline[i] = malloc(STRINGLEN + 1);
+    }
+    // Organize out file
+    while (1) {
+        j = 0;
         for (int i = 0; i < threadnum; i++) {
-            sprintf(mystring, "%s.out.tmp.%d", out_header, i);
-            threadarr[i].out = fopen(mystring, "r");
-            sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
-            threadarr[i].aa = fopen(mystring, "r");
-            sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
-            threadarr[i].dna = fopen(mystring, "r");
+            if (lastline[i][0] != '\0') {
+                fputs(lastline[i], fp_out);
+                lastline[i][0] = '\0';
+            }
+            while(fgets(currline[i], STRINGLEN, threadarr[i].out)) {
+                if (currline[i][0] == '>') {
+                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+                    break;
+                } else fputs(currline[i], fp_out);
+            }
+            if (feof(threadarr[i].out)) j++;
+        }
+        if (j == threadnum) {
+            break;
+        }
+    }
+    // Organize faa file
+    for (int i = 0; i < threadnum; i++) lastline[i][0] = '\0';
+    while (1)    {
+        j = 0;
+        for (int i = 0; i < threadnum; i++) {
+            if (lastline[i][0] != '\0') {
+                fputs(lastline[i], fp_aa);
+                lastline[i][0] = '\0';
+            }
+            while(fgets(currline[i], STRINGLEN, threadarr[i].aa)) {
+                if (currline[i][0] == '>') {
+                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+                    break;
+                }
+                else {
+                    fputs(currline[i], fp_aa);
+                }
+            }
+            if (feof(threadarr[i].aa)) j++;
+        }
+        if (j == threadnum)
+        {
+            break;
+        }
+    }
 
-            lastline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
-            currline[i] = (char*) malloc(STRINGLEN + 1* sizeof(char));
-        }
-        int j =0;
-        // Organize out file
-        while (1) {
-            j = 0;
-            for (int i = 0; i < threadnum; i++) {
-                if (lastline[i][0] != '\0') {
-                    fputs(lastline[i], fp_out);
-                    lastline[i][0] = '\0';
-                }
-                while(fgets(currline[i], STRINGLEN, threadarr[i].out)) {
-                    if (currline[i][0] == '>') {
-                        memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
-                        break;
-                    } else fputs(currline[i], fp_out);
-                }
-                if (feof(threadarr[i].out)) j++;
+    // Organize dna file
+    for (int i = 0; i < threadnum; i++) {
+        lastline[i][0] = '\0';
+    }
+    while (j != threadnum) {
+        j = 0;
+        for (int i = 0; i < threadnum; i++) {
+            if (lastline[i][0] != '\0') {
+                fputs(lastline[i], fp_dna);
+                lastline[i][0] = '\0';
             }
-            if (j == threadnum) {
-                break;
-            }
-        }
-        // Organize faa file
-        for (int i = 0; i < threadnum; i++) lastline[i][0] = '\0';
-        while (1)    {
-            j = 0;
-            for (int i = 0; i < threadnum; i++) {
-                if (lastline[i][0] != '\0') {
-                    fputs(lastline[i], fp_aa);
-                    lastline[i][0] = '\0';
+            while(fgets(currline[i], STRINGLEN, threadarr[i].dna)) {
+                if (currline[i][0] == '>') {
+                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+                    break;
+                } else {
+                    fputs(currline[i], fp_dna);
                 }
-                while(fgets(currline[i], STRINGLEN, threadarr[i].aa)) {
-                    if (currline[i][0] == '>') {
-                        memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
-                        break;
-                    }
-                    else {
-                        fputs(currline[i], fp_aa);
-                    }
-                }
-                if (feof(threadarr[i].aa)) j++;
             }
-            if (j == threadnum)
+            if (feof(threadarr[i].dna))
             {
-                break;
+                j++;
             }
         }
+    }
 
-        // Organize dna file
-        for (int i = 0; i < threadnum; i++) {
-            lastline[i][0] = '\0';
-        }
-        while (j != threadnum) {
-            j = 0;
-            for (int i = 0; i < threadnum; i++) {
-                if (lastline[i][0] != '\0') {
-                    fputs(lastline[i], fp_dna);
-                    lastline[i][0] = '\0';
-                }
-                while(fgets(currline[i], STRINGLEN, threadarr[i].dna)) {
-                    if (currline[i][0] == '>') {
-                        memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
-                        break;
-                    } else {
-                        fputs(currline[i], fp_dna);
-                    }
-                }
-                if (feof(threadarr[i].dna))
-                {
-                    j++;
-                }
-            }
-        }
+    //FREE
+    for (int i = 0; i < threadnum; i++) {
+        fclose(threadarr[i].out);
+        fclose(threadarr[i].aa);
+        fclose(threadarr[i].dna);
+        sprintf(mystring, "%s.out.tmp.%d", out_header, i);
+        sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+        sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+        free(lastline[i]);
+        free(currline[i]);
+    }
 
-        //FREE
-        for (int i = 0; i < threadnum; i++) {
-            fclose(threadarr[i].out);
-            fclose(threadarr[i].aa);
-            fclose(threadarr[i].dna);
-            sprintf(mystring, "%s.out.tmp.%d", out_header, i);
-            sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
-            sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
-            free(lastline[i]);
-            free(currline[i]);
-        }
+    fclose(fp_out);
+    fclose(fp_aa);
+    fclose(fp_dna);
 
-        fclose(fp_out);
-        fclose(fp_aa);
-        fclose(fp_dna);
+    free(lastline);
+    free(currline);
 
-        free(lastline);
-        free(currline);
-    
 
 }
