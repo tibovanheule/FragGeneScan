@@ -1,4 +1,6 @@
 #!/bin/bash
 
-cd ../src/
-pwd
+cd ./src/
+make fgs
+./FragGeneScan -w 0 -t train/454_10 < example/NC_000913-454.fna -o test.faa
+
