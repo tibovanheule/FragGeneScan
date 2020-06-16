@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <sys/resource.h>
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
@@ -734,8 +733,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char dna_f[3000000];
     char protein[100000];
 #elif defined(_WIN32) || defined(_WIN64) || defined(__APPLE__)
-    char *dna_f = malloc((len_seq+1)*sizeof(char));
-    char *protein = malloc(100000*sizeof(char));
+    char *dna_f = malloc(3000000*sizeof(char));
+    char *protein = malloc(100001*sizeof(char));
 #endif
     int dna_id=0,dna_f_id=0,frame;
     for (int t=0; t<len_seq; t++) {
