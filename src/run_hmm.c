@@ -14,6 +14,8 @@
 * Entry point of program
 * 1. Initialization of variables and datatypes
 * 2. Check File acessiblity
+* 3. call get_train_from_file, load hmm and train structswith data
+* 4. 
 */
 int main (int argc, char **argv) {
     /*Initialization datastructures*/
@@ -26,7 +28,7 @@ int main (int argc, char **argv) {
     int threadnum = 1;
 
     char hmm_file[STRINGLEN] = "";
-    char out_header[STRINGLEN] = "";
+    char out_header[STRINGLEN-500] = "";
 
     char seq_file[STRINGLEN] = "";
 
@@ -315,7 +317,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
     while (j != threadnum)    {
         for (int i = 0; i < threadnum; i++) {
             if (lastline[i][0] != '\0') {
-                fputs(lastline[i], fp_aa);
+                printf("%s\n",lastline[i]);
                 lastline[i][0] = '\0';
             }
             while(fgets(currline, STRINGLEN, threadarr[i].aa)) {
@@ -324,7 +326,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
                     break;
                 }
                 else {
-                    fputs(currline, fp_aa);
+                    printf("%s\n",currline);
                 }
             }
             if (feof(threadarr[i].aa)) j++;
