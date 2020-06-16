@@ -5,7 +5,7 @@
 #include "run_hmm.h"
 #include "util_lib.h"
 
-#include "thpool.h"
+#include <pthread.h>
 
 #define ADD_LEN 1024
 #define STRINGLEN 4096+1
@@ -159,8 +159,6 @@ int main (int argc, char **argv) {
     // initial size of sequentie string, this will increase if there are strings in the
     size_t size = 150;
     char* sequentie = malloc(size* sizeof(char));
-
-    threadpool thpool = thpool_init(threadnum);
     while ( fgets (mystring, sizeof mystring, fp)  ) {
         if (mystring[0] == '>' || feof(fp)) {
 
@@ -171,11 +169,20 @@ int main (int argc, char **argv) {
             if (total > 0 && (total % threadnum == 0 || feof(fp))) {
                 // Deal with the thread
                 for (int i = 0; i < threadnum; i++) {
-                    thpool_add_work(thpool, (void*) thread_func, (void*)&threadarr[i]);
-                    
+                    int rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
+                    if (rc) {
+                        printf("Error: Unable to create thread, %d\n", rc);
+                        exit(-1);
+                    }
                 }
                 // let threads join (wait)
-                thpool_wait(thpool);
+                for (int i = 0; i < threadnum; i++) {
+                    int rc = pthread_join(thread[i], NULL);
+                    if (rc) {
+                        printf("Error: Unable to join threads, %d\n", rc);
+                        exit(-1);
+                    }
+                }
                 // free threads seq
                 for (int i = 0; i < threadnum; i++) {
                     free(threadarr[i].obs_head);
@@ -199,7 +206,6 @@ int main (int argc, char **argv) {
             sequentie[sequence_offset] = '\0';
         }
     }
-    thpool_destroy(thpool);
     fclose(fp);
     // print is uselless since all work is done, note total counts also the sequences that are of length 0!
     // printf("no. of seqs: %d\n", total);
