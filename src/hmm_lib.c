@@ -731,7 +731,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char *dna = malloc((len_seq+1)*sizeof(char));
     char *dna1 = malloc(300000*sizeof(char));
 #if defined(__linux__)
-    char dna_f[len_seq+1];
+    char dna_f[3000000];
     char protein[100000];
 #elif defined(_WIN32) || defined(_WIN64) || defined(__APPLE__)
     char *dna_f = malloc((len_seq+1)*sizeof(char));
