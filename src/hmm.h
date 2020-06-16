@@ -72,22 +72,11 @@ typedef struct {
 
     double tr[14];                 /* transition probability from a (delete/insert/match) state to a state */
 
-    double e_M_1[6][16][4];      /* transition probability from a lowest-level state  to a  lowest-level state*/
-    double e_M[6][16][4];
 
-    double tr_R_R[4][4];
     double tr_I_I[4][4];
     double tr_M_I[4][4];
 
-    double tr_S[61][64];
-    double tr_E[61][64];
-    double tr_S_1[61][64];
-    double tr_E_1[61][64];
 
-    double S_dist[6];  /*sigma, mu,alpha, sigma_r, mu_r, alpha_r */
-    double E_dist[6];
-    double S1_dist[6];
-    double E1_dist[6];
 } HMM;
 
 

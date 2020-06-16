@@ -1,7 +1,7 @@
 CC=	gcc
 CFLAG= -Ofast
-SRCS=	util_lib.c hmm_lib.c run_hmm.c thpool.c
-OBJ=	util_lib.o hmm_lib.o run_hmm.o thpool.o
+SRCS=	util_lib.c hmm_lib.c run_hmm.c
+OBJ=	util_lib.o hmm_lib.o run_hmm.o
 
 hmm.obj:	$(SRCS)
 	$(CC) $(CFLAG) -c $(SRCS)
