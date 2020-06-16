@@ -68,7 +68,6 @@
 typedef struct {
 
     double  pi[29];    /* pi[1..N] pi[i] is the initial state distribution. */
-    int N;               /* number of state */
 
     double tr[14];                 /* transition probability from a (delete/insert/match) state to a state */
 
