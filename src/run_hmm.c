@@ -45,8 +45,8 @@ int main (int argc, char **argv) {
 
 
 
-    strncpy(train_dir, argv[0], strlen(argv[0])-12);
-    strcat(train_dir, "train/");
+    getcwd(train_dir,STRINGLEN);
+    strcat(train_dir, "/train/");
     strcpy(mstate_file, train_dir);
     strcat(mstate_file, "gene");
     strcpy(rstate_file, train_dir);
