@@ -738,8 +738,6 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char *dna = malloc(300000*sizeof(char));
     char *dna1 = malloc(300000*sizeof(char));
     char *dna_f = malloc(300000*sizeof(char));
-    
-    char *protein = malloc(300000*sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
     for (int t=0; t<len_seq; t++) {
 
@@ -852,18 +850,14 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     strncpy(dna, O + dna_start_t - 1, dna_end_t - dna_start_t + 1);
                     dna[dna_end_t - dna_start_t + 1] = '\0';
                     //end of update dna
-
+                    
+                    char *protein = malloc(300000*sizeof(char));
                     get_protein(dna,protein,1, whole_genome);
-                    /*
-                    if(!(strlen(protein) * 3 == strlen(dna) || strlen(protein) * 3 == strlen(dna) - 3)) {
-                    printf("inconsistent protein/dna length: %d %d\n", strlen(protein), strlen(dna));
-                    exit(0);
-                    }
-                    */
+
                     fprintf(fp_aa, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     fprintf(fp_aa, "%s\n", protein);
-
+                    free(protein);
                     if (format==0) {
                         fprintf(fp_dna, "%s\n", dna);
                     } else if (format==1) {
@@ -879,7 +873,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                         //find the optimal start codon within 30bp up- and downstream of start codon
                         double e_save = 0;
                         int s_save = 0; //initialization, YY July 25, 2018
-                        while((!(!strcmp(codon, "TTA") || !strcmp(codon, "CTA") || !strcmp(codon, "TCA"))) && (end_old-2+s+35 < len_seq)) {
+                        while((!(!strcmp(codon, "TTA") || !strcmp(codon, "CTA") || !strcmp(codon, "TCA"))) && (end_old-2+s+35 < len_seq) ) {
                             if(!strcmp(codon, "CAT") || !strcmp(codon, "CAC") || !strcmp(codon, "CAA")) {
                                 utr[0] = 0;
                                 strncpy(utr, O+end_old-1-2+s-30,63);
@@ -923,8 +917,9 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     strncpy(dna, O + dna_start_t_withstop - 1, dna_end_t - dna_start_t_withstop + 1);
                     dna[dna_end_t - dna_start_t_withstop + 1] = '\0';
                     //end of update dna
-
-                    get_protein(dna,protein,-1, whole_genome); //YY July 18, 2018, introduce adjust
+                    
+                    char *protein = malloc(300000*sizeof(char));
+                    get_protein(dna,protein,-1, whole_genome); 
 
                     fprintf(fp_aa, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
                     fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
@@ -932,6 +927,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     get_rc_dna(dna, dna1);
                     
                     fprintf(fp_aa, "%s\n", protein);
+                    free(protein);
                     if (format==1) {
                         char *dna_f1 = malloc(300000*sizeof(char));
                         get_rc_dna_indel(dna_f, dna_f1);
@@ -997,11 +993,11 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     free(dna);
     free(dna1);
     free(dna_f);
-    free(protein);
 }
 
 /* get_prob_from_cg
-* takes a pointer to HMM datastructure and a point to a Train datastructure
+* This function determines the cg-ratio in a sequence.
+* To determine the best chances of some transitions.
 *
 */
 int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O) {
@@ -1010,12 +1006,7 @@ int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O) {
         if ((O[i] == 'C'||O[i] =='c') || (O[i] == 'G'||O[i] == 'g') ) cg++;
     }
     cg = floor((cg*1.0/len_seq)*100)-26;
-    if (cg < 0) cg = 0;
-    else if (cg > 43)     cg = 43;
-
-    memcpy(train_ptr->S1_dist[cg], train_ptr->S1_dist[cg], sizeof(train_ptr->S1_dist[cg]));
-
-    return cg;
+    return (cg < 0)?0:((cg > 43)?43:cg);
 }
 
 

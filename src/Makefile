@@ -16,4 +16,5 @@ pool:   $(OBJPOOL)
 	$(CC) $(CFLAG) -o FragGeneScan util_lib.o hmm_lib.o run_hmm_pool.o thpool.o -lm -lpthread
 
 clean:
+	rm -rf example/*.tmp.*
 	rm -rf *.o FragGeneScan* *~

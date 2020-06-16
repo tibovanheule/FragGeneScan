@@ -280,12 +280,8 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
     remove (aa_file);
     remove (dna_file);
 
-    FILE * fp_aa = fopen (aa_file, "w");
-    FILE * fp_out = fopen (out_file, "w");
-    FILE * fp_dna = fopen (dna_file, "w");
-
     char ** lastline = malloc(threadnum* sizeof(char*));
-    char ** currline =  malloc(threadnum* sizeof(char*));
+    char * currline =  malloc(STRINGLEN* sizeof(char));
 
     int j =0;
 
@@ -298,20 +294,26 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
         threadarr[i].dna = fopen(mystring, "r");
 
         lastline[i] = malloc(STRINGLEN + 1);
-        currline[i] = malloc(STRINGLEN + 1);
     }
+    FILE * fp_aa = fopen (aa_file, "w");
+    FILE * fp_out = fopen (out_file, "w");
+    FILE * fp_dna = fopen (dna_file, "w");
+
     // Organize out file
+
     while (j != threadnum) {
         for (int i = 0; i < threadnum; i++) {
             if (lastline[i][0] != '\0') {
                 fputs(lastline[i], fp_out);
                 lastline[i][0] = '\0';
             }
-            while(fgets(currline[i], STRINGLEN, threadarr[i].out)) {
-                if (currline[i][0] == '>') {
-                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+            while(fgets(currline, STRINGLEN, threadarr[i].out)) {
+                if (currline[0] == '>') {
+                    memcpy(lastline[i], currline, strlen(currline) + 1);
                     break;
-                } else fputs(currline[i], fp_out);
+                } else {
+                    fputs(currline, fp_out);
+                }
             }
             if (feof(threadarr[i].out)) j++;
         }
@@ -325,13 +327,13 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
                 fputs(lastline[i], fp_aa);
                 lastline[i][0] = '\0';
             }
-            while(fgets(currline[i], STRINGLEN, threadarr[i].aa)) {
-                if (currline[i][0] == '>') {
-                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+            while(fgets(currline, STRINGLEN, threadarr[i].aa)) {
+                if (currline[0] == '>') {
+                    memcpy(lastline[i], currline, strlen(currline) + 1);
                     break;
                 }
                 else {
-                    fputs(currline[i], fp_aa);
+                    fputs(currline, fp_aa);
                 }
             }
             if (feof(threadarr[i].aa)) j++;
@@ -350,18 +352,15 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
                 fputs(lastline[i], fp_dna);
                 lastline[i][0] = '\0';
             }
-            while(fgets(currline[i], STRINGLEN, threadarr[i].dna)) {
-                if (currline[i][0] == '>') {
-                    memcpy(lastline[i], currline[i], strlen(currline[i]) + 1);
+            while(fgets(currline, STRINGLEN, threadarr[i].dna)) {
+                if (currline[0] == '>') {
+                    memcpy(lastline[i], currline, strlen(currline) + 1);
                     break;
                 } else {
-                    fputs(currline[i], fp_dna);
+                    fputs(currline, fp_dna);
                 }
             }
-            if (feof(threadarr[i].dna))
-            {
-                j++;
-            }
+            if (feof(threadarr[i].dna)) j++;
         }
     }
 
@@ -371,10 +370,12 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
         fclose(threadarr[i].aa);
         fclose(threadarr[i].dna);
         sprintf(mystring, "%s.out.tmp.%d", out_header, i);
+        remove(mystring);
         sprintf(mystring, "%s.faa.tmp.%d", out_header, i);
+        remove(mystring);
         sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
+        remove(mystring);
         free(lastline[i]);
-        free(currline[i]);
     }
 
     fclose(fp_out);
