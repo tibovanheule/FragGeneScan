@@ -1,0 +1,222 @@
+\hypertarget{thpool_8c}{}\doxysection{src/thpool.c Bestand Referentie}
+\label{thpool_8c}\index{src/thpool.c@{src/thpool.c}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}thpool.\+h\char`\"{}}\newline
+Include afhankelijkheidsgraaf voor thpool.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thpool_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbsem}{bsem}}
+\item 
+struct \mbox{\hyperlink{structjob}{job}}
+\item 
+struct \mbox{\hyperlink{structjobqueue}{jobqueue}}
+\item 
+struct \mbox{\hyperlink{structthread}{thread}}
+\item 
+struct \mbox{\hyperlink{structthpool__}{thpool\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thpool_8c_a3024ccd4a9af5109d24e6c57565d74a1}{\+\_\+\+P\+O\+S\+I\+X\+\_\+\+C\+\_\+\+S\+O\+U\+R\+CE}}~200809L
+\item 
+\#define \mbox{\hyperlink{thpool_8c_ae05b8324d0df0d2f03abdee6919bfc4b}{T\+H\+P\+O\+O\+L\+\_\+\+D\+E\+B\+UG}}~0
+\item 
+\#define \mbox{\hyperlink{thpool_8c_ada8afd8462ce3a222a6d77a7d86115d8}{err}}(str)~fprintf(stderr, str)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structbsem}{bsem}} \mbox{\hyperlink{thpool_8c_a6d91482004cdcb54c540a277c74b153e}{bsem}}
+\item 
+typedef struct \mbox{\hyperlink{structjob}{job}} \mbox{\hyperlink{thpool_8c_a7e76c3b43901a65c2e31e18292700f77}{job}}
+\item 
+typedef struct \mbox{\hyperlink{structjobqueue}{jobqueue}} \mbox{\hyperlink{thpool_8c_a3565ff50371ac64dcce7ac97208c8a1e}{jobqueue}}
+\item 
+typedef struct \mbox{\hyperlink{structthread}{thread}} \mbox{\hyperlink{thpool_8c_ad25116f5b7d2fc3440bba1b4766d0a78}{thread}}
+\item 
+typedef struct \mbox{\hyperlink{structthpool__}{thpool\+\_\+}} \mbox{\hyperlink{thpool_8c_a38b9923cffb708762ac261b550639ecf}{thpool\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functies}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$ \mbox{\hyperlink{thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8}{thpool\+\_\+init}} (int num\+\_\+threads)
+\item 
+int \mbox{\hyperlink{thpool_8c_ad3587d247f5458dc2c75539715665b7a}{thpool\+\_\+add\+\_\+work}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p, void($\ast$function\+\_\+p)(void $\ast$), void $\ast$arg\+\_\+p)
+\item 
+void \mbox{\hyperlink{thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3}{thpool\+\_\+wait}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p)
+\item 
+void \mbox{\hyperlink{thpool_8c_ae35764bc7ae46da374abd9d44db547ae}{thpool\+\_\+destroy}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p)
+\item 
+void \mbox{\hyperlink{thpool_8c_abf8fa61b319a14f1f7e7f7a17dd0692d}{thpool\+\_\+pause}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p)
+\item 
+void \mbox{\hyperlink{thpool_8c_aa4ab3968a4ee39e301cde9f71568181f}{thpool\+\_\+resume}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p)
+\item 
+int \mbox{\hyperlink{thpool_8c_a470300f14659db6251602a98981e7ada}{thpool\+\_\+num\+\_\+threads\+\_\+working}} (\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$thpool\+\_\+p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentatie van macro\textquotesingle{}s}
+\mbox{\Hypertarget{thpool_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{thpool_8c_a3024ccd4a9af5109d24e6c57565d74a1}} 
+\index{thpool.c@{thpool.c}!\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}}
+\index{\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{\_POSIX\_C\_SOURCE}{\_POSIX\_C\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+P\+O\+S\+I\+X\+\_\+\+C\+\_\+\+S\+O\+U\+R\+CE~200809L}
+
+\mbox{\Hypertarget{thpool_8c_ada8afd8462ce3a222a6d77a7d86115d8}\label{thpool_8c_ada8afd8462ce3a222a6d77a7d86115d8}} 
+\index{thpool.c@{thpool.c}!err@{err}}
+\index{err@{err}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily \#define err(\begin{DoxyParamCaption}\item[{}]{str }\end{DoxyParamCaption})~fprintf(stderr, str)}
+
+\mbox{\Hypertarget{thpool_8c_ae05b8324d0df0d2f03abdee6919bfc4b}\label{thpool_8c_ae05b8324d0df0d2f03abdee6919bfc4b}} 
+\index{thpool.c@{thpool.c}!THPOOL\_DEBUG@{THPOOL\_DEBUG}}
+\index{THPOOL\_DEBUG@{THPOOL\_DEBUG}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{THPOOL\_DEBUG}{THPOOL\_DEBUG}}
+{\footnotesize\ttfamily \#define T\+H\+P\+O\+O\+L\+\_\+\+D\+E\+B\+UG~0}
+
+
+
+\doxysubsection{Documentatie van typedefs}
+\mbox{\Hypertarget{thpool_8c_a6d91482004cdcb54c540a277c74b153e}\label{thpool_8c_a6d91482004cdcb54c540a277c74b153e}} 
+\index{thpool.c@{thpool.c}!bsem@{bsem}}
+\index{bsem@{bsem}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{bsem}{bsem}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbsem}{bsem}} \mbox{\hyperlink{structbsem}{bsem}}}
+
+\mbox{\Hypertarget{thpool_8c_a7e76c3b43901a65c2e31e18292700f77}\label{thpool_8c_a7e76c3b43901a65c2e31e18292700f77}} 
+\index{thpool.c@{thpool.c}!job@{job}}
+\index{job@{job}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{job}{job}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structjob}{job}} \mbox{\hyperlink{structjob}{job}}}
+
+\mbox{\Hypertarget{thpool_8c_a3565ff50371ac64dcce7ac97208c8a1e}\label{thpool_8c_a3565ff50371ac64dcce7ac97208c8a1e}} 
+\index{thpool.c@{thpool.c}!jobqueue@{jobqueue}}
+\index{jobqueue@{jobqueue}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{jobqueue}{jobqueue}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structjobqueue}{jobqueue}} \mbox{\hyperlink{structjobqueue}{jobqueue}}}
+
+\mbox{\Hypertarget{thpool_8c_a38b9923cffb708762ac261b550639ecf}\label{thpool_8c_a38b9923cffb708762ac261b550639ecf}} 
+\index{thpool.c@{thpool.c}!thpool\_@{thpool\_}}
+\index{thpool\_@{thpool\_}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_}{thpool\_}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structthpool__}{thpool\+\_\+}} \mbox{\hyperlink{structthpool__}{thpool\+\_\+}}}
+
+\mbox{\Hypertarget{thpool_8c_ad25116f5b7d2fc3440bba1b4766d0a78}\label{thpool_8c_ad25116f5b7d2fc3440bba1b4766d0a78}} 
+\index{thpool.c@{thpool.c}!thread@{thread}}
+\index{thread@{thread}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structthread}{thread}} \mbox{\hyperlink{structthread}{thread}}}
+
+
+
+\doxysubsection{Documentatie van functies}
+\mbox{\Hypertarget{thpool_8c_ad3587d247f5458dc2c75539715665b7a}\label{thpool_8c_ad3587d247f5458dc2c75539715665b7a}} 
+\index{thpool.c@{thpool.c}!thpool\_add\_work@{thpool\_add\_work}}
+\index{thpool\_add\_work@{thpool\_add\_work}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_add\_work()}{thpool\_add\_work()}}
+{\footnotesize\ttfamily int thpool\+\_\+add\+\_\+work (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p,  }\item[{void($\ast$)(void $\ast$)}]{function\+\_\+p,  }\item[{void $\ast$}]{arg\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{thpool_8c_ad3587d247f5458dc2c75539715665b7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{thpool_8c_ae35764bc7ae46da374abd9d44db547ae}\label{thpool_8c_ae35764bc7ae46da374abd9d44db547ae}} 
+\index{thpool.c@{thpool.c}!thpool\_destroy@{thpool\_destroy}}
+\index{thpool\_destroy@{thpool\_destroy}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_destroy()}{thpool\_destroy()}}
+{\footnotesize\ttfamily void thpool\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{thpool_8c_ae35764bc7ae46da374abd9d44db547ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8}\label{thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8}} 
+\index{thpool.c@{thpool.c}!thpool\_init@{thpool\_init}}
+\index{thpool\_init@{thpool\_init}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_init()}{thpool\_init()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structthpool__}{thpool\+\_\+}}$\ast$ thpool\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+threads }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{thpool_8c_a470300f14659db6251602a98981e7ada}\label{thpool_8c_a470300f14659db6251602a98981e7ada}} 
+\index{thpool.c@{thpool.c}!thpool\_num\_threads\_working@{thpool\_num\_threads\_working}}
+\index{thpool\_num\_threads\_working@{thpool\_num\_threads\_working}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_num\_threads\_working()}{thpool\_num\_threads\_working()}}
+{\footnotesize\ttfamily int thpool\+\_\+num\+\_\+threads\+\_\+working (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+\mbox{\Hypertarget{thpool_8c_abf8fa61b319a14f1f7e7f7a17dd0692d}\label{thpool_8c_abf8fa61b319a14f1f7e7f7a17dd0692d}} 
+\index{thpool.c@{thpool.c}!thpool\_pause@{thpool\_pause}}
+\index{thpool\_pause@{thpool\_pause}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_pause()}{thpool\_pause()}}
+{\footnotesize\ttfamily void thpool\+\_\+pause (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+\mbox{\Hypertarget{thpool_8c_aa4ab3968a4ee39e301cde9f71568181f}\label{thpool_8c_aa4ab3968a4ee39e301cde9f71568181f}} 
+\index{thpool.c@{thpool.c}!thpool\_resume@{thpool\_resume}}
+\index{thpool\_resume@{thpool\_resume}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_resume()}{thpool\_resume()}}
+{\footnotesize\ttfamily void thpool\+\_\+resume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+\mbox{\Hypertarget{thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3}\label{thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3}} 
+\index{thpool.c@{thpool.c}!thpool\_wait@{thpool\_wait}}
+\index{thpool\_wait@{thpool\_wait}!thpool.c@{thpool.c}}
+\doxysubsubsection{\texorpdfstring{thpool\_wait()}{thpool\_wait()}}
+{\footnotesize\ttfamily void thpool\+\_\+wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthpool__}{thpool\+\_\+}} $\ast$}]{thpool\+\_\+p }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3_icgraph}
+\end{center}
+\end{figure}

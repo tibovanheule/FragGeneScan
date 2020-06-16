@@ -10,18 +10,20 @@
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}hmm.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$pthread.\+h$>$}\newline
-Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+h\+:\nopagebreak
+Include afhankelijkheidsgraaf voor run\+\_\+hmm.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{run__hmm_8h__incl}
 \end{center}
 \end{figure}
-Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:\nopagebreak
+Deze graaf geeft aan welke bestanden direct of indirect afhankelijk zijn van dit bestand\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=162pt]{run__hmm_8h__dep__incl}
+\includegraphics[width=286pt]{run__hmm_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Klassen}
@@ -42,6 +44,8 @@ void $\ast$ \mbox{\hyperlink{run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8}{thre
 void \mbox{\hyperlink{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}{print\+\_\+error}} (const char $\ast$error\+\_\+message,...)
 \item 
 void \mbox{\hyperlink{run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256}{print\+\_\+file\+\_\+error}} (const char $\ast$error\+\_\+message, char $\ast$file)
+\item 
+void \mbox{\hyperlink{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}{combine}} (int threadnum, char $\ast$out\+\_\+file, \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$threadarr)
 \end{DoxyCompactItemize}
 
 
@@ -55,6 +59,20 @@ void \mbox{\hyperlink{run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256}{print\+\_\+
 
 
 \doxysubsection{Documentatie van functies}
+\mbox{\Hypertarget{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}\label{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}} 
+\index{run\_hmm.h@{run\_hmm.h}!combine@{combine}}
+\index{combine@{combine}!run\_hmm.h@{run\_hmm.h}}
+\doxysubsubsection{\texorpdfstring{combine()}{combine()}}
+{\footnotesize\ttfamily void combine (\begin{DoxyParamCaption}\item[{int}]{threadnum,  }\item[{char $\ast$}]{out\+\_\+header,  }\item[{\mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$}]{threadarr }\end{DoxyParamCaption})}
+
+This function will combine multiple files created by the invidual threads if number of threads $>$ 1; Hier is de caller graaf voor deze functie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}\label{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}} 
 \index{run\_hmm.h@{run\_hmm.h}!print\_error@{print\_error}}
 \index{print\_error@{print\_error}!run\_hmm.h@{run\_hmm.h}}
@@ -103,8 +121,7 @@ Error function\+:
 \doxysubsubsection{\texorpdfstring{thread\_func()}{thread\_func()}}
 {\footnotesize\ttfamily void$\ast$ thread\+\_\+func (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadarr }\end{DoxyParamCaption})}
 
-Function given to a thread during his creation. This thread will then execute this function. Hier is de call graaf voor deze functie\+:
-\nopagebreak
+Function given to a thread during his creation. This thread will then execute this function. Hier is de call graaf voor deze functie\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

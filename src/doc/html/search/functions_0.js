@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dmatrix_149',['dmatrix',['../util__lib_8c.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c']]],
-  ['dvector_150',['dvector',['../util__lib_8c.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c']]]
+  ['combine_182',['combine',['../run__hmm_8c.html#a0e3c6b0a109ecd3d39179fbd15689371',1,'combine(int threadnum, char *out_header, thread_data *threadarr):&#160;run_hmm.c'],['../run__hmm_8h.html#a9ce254e1476c72152a83802ad9191773',1,'combine(int threadnum, char *out_file, thread_data *threadarr):&#160;run_hmm.c'],['../run__hmm__pool_8c.html#a0e3c6b0a109ecd3d39179fbd15689371',1,'combine(int threadnum, char *out_header, thread_data *threadarr):&#160;run_hmm_pool.c']]]
 ];

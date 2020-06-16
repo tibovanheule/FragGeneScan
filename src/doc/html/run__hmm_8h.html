@@ -109,17 +109,17 @@ $(document).ready(function(){initNavTree('run__hmm_8h.html',''); initResizable()
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h__incl.png" border="0" usemap="#src_2run__hmm_8h" alt=""/></div>
 <map name="src_2run__hmm_8h" id="src_2run__hmm_8h">
-<area shape="rect" title=" " alt="" coords="279,5,389,32"/>
+<area shape="rect" title=" " alt="" coords="383,5,493,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,71,107"/>
-<area shape="rect" title=" " alt="" coords="85,155,146,181"/>
-<area shape="rect" title=" " alt="" coords="174,155,238,181"/>
-<area shape="rect" title=" " alt="" coords="335,80,405,107"/>
-<area shape="rect" title=" " alt="" coords="264,155,327,181"/>
-<area shape="rect" title=" " alt="" coords="429,80,497,107"/>
-<area shape="rect" title=" " alt="" coords="521,80,587,107"/>
-<area shape="rect" title=" " alt="" coords="611,80,670,107"/>
-<area shape="rect" href="hmm_8h.html" title=" " alt="" coords="147,80,209,107"/>
-<area shape="rect" title=" " alt="" coords="695,80,771,107"/>
+<area shape="rect" title=" " alt="" coords="95,80,157,107"/>
+<area shape="rect" title=" " alt="" coords="181,80,245,107"/>
+<area shape="rect" title=" " alt="" coords="269,80,338,107"/>
+<area shape="rect" title=" " alt="" coords="363,80,425,107"/>
+<area shape="rect" title=" " alt="" coords="449,80,517,107"/>
+<area shape="rect" title=" " alt="" coords="541,80,607,107"/>
+<area shape="rect" title=" " alt="" coords="631,80,690,107"/>
+<area shape="rect" href="hmm_8h.html" title=" " alt="" coords="715,80,777,107"/>
+<area shape="rect" title=" " alt="" coords="801,80,877,107"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -129,8 +129,9 @@ $(document).ready(function(){initNavTree('run__hmm_8h.html',''); initResizable()
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h__dep__incl.png" border="0" usemap="#src_2run__hmm_8hdep" alt=""/></div>
 <map name="src_2run__hmm_8hdep" id="src_2run__hmm_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" title=" " alt="" coords="80,5,189,32"/>
 <area shape="rect" href="run__hmm_8c.html" title=" " alt="" coords="5,80,115,107"/>
+<area shape="rect" href="run__hmm__pool_8c.html" title=" " alt="" coords="139,80,279,107"/>
 </map>
 </div>
 </div>
@@ -154,6 +155,8 @@ Functies</h2></td></tr>
 <tr class="separator:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8h.html#a8ba3959a9af3a709d5ac2d90d6c7d256">print_file_error</a> (const char *error_message, char *file)</td></tr>
 <tr class="separator:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce254e1476c72152a83802ad9191773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8h.html#a9ce254e1476c72152a83802ad9191773">combine</a> (int threadnum, char *out_file, <a class="el" href="structthread__data.html">thread_data</a> *threadarr)</td></tr>
+<tr class="separator:a9ce254e1476c72152a83802ad9191773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentatie van typedefs</h2>
 <a id="afff3f9ce037efdce79ae2411f6f79714"></a>
@@ -171,6 +174,52 @@ Functies</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentatie van functies</h2>
+<a id="a9ce254e1476c72152a83802ad9191773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ce254e1476c72152a83802ad9191773">&#9670;&nbsp;</a></span>combine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void combine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>threadnum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>out_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structthread__data.html">thread_data</a> *&#160;</td>
+          <td class="paramname"><em>threadarr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function will combine multiple files created by the invidual threads if number of threads &gt; 1; </p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph.png" border="0" usemap="#run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph" alt=""/></div>
+<map name="run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph" id="run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,175,32"/>
+<area shape="rect" href="run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a5f590f6cc7bf5db3ae40e2e1c34f2262"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f590f6cc7bf5db3ae40e2e1c34f2262">&#9670;&nbsp;</a></span>print_error()</h2>
 
@@ -201,22 +250,22 @@ Functies</h2></td></tr>
 <li>Call <a class="el" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79">print_usage()</a> from util_lib</li>
 <li>EXIT program </li>
 </ol>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_cgraph.png" border="0" usemap="#run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_cgraph" alt=""/></div>
 <map name="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_cgraph" id="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,85,32"/>
 <area shape="rect" href="util__lib_8c.html#ae5ad5cbeccaedc03a48d3c7eaa803e79" title=" " alt="" coords="133,5,223,32"/>
 </map>
 </div>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph.png" border="0" usemap="#run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph" alt=""/></div>
 <map name="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph" id="run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,184,32"/>
@@ -255,11 +304,11 @@ Functies</h2></td></tr>
 <li>Print error message</li>
 <li>EXIT program </li>
 </ol>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph.png" border="0" usemap="#run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph" alt=""/></div>
 <map name="run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph" id="run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,208,32"/>
@@ -285,11 +334,11 @@ Functies</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Function given to a thread during his creation. This thread will then execute this function. </p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph.png" border="0" usemap="#run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph" alt=""/></div>
 <map name="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph" id="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,233,96,260"/>
@@ -311,11 +360,11 @@ Functies</h2></td></tr>
 <area shape="rect" href="util__lib_8c.html#a2952b88dfbbdb0fe37929e128a771855" title=" " alt="" coords="505,411,611,437"/>
 </map>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph.png" border="0" usemap="#run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph" alt=""/></div>
 <map name="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph" id="run__hmm_8h_af48b9cd1d1b40f874fae9bcfc15abad8_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,195,32"/>
@@ -331,7 +380,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="run__hmm_8h.html">run_hmm.h</a></li>
-    <li class="footer">Gegenereerd op Za 13 Jun 2020 23:47:41 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Di 16 Jun 2020 19:54:07 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

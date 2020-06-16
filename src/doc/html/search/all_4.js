@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['format_19',['format',['../structthread__data.html#a317afff57d87a89158c2b038d37b2b08',1,'thread_data']]],
-  ['free_5fdmatrix_20',['free_dmatrix',['../util__lib_8c.html#a314ff0abb6d5444bd2037acbede4f0ed',1,'free_dmatrix(double **m, int num_row):&#160;util_lib.c'],['../util__lib_8h.html#a314ff0abb6d5444bd2037acbede4f0ed',1,'free_dmatrix(double **m, int num_row):&#160;util_lib.c']]],
-  ['free_5fdvector_21',['free_dvector',['../util__lib_8c.html#ac2288cb3514168160c68cec8f09a99be',1,'free_dvector(double *v):&#160;util_lib.c'],['../util__lib_8h.html#ac2288cb3514168160c68cec8f09a99be',1,'free_dvector(double *v):&#160;util_lib.c']]],
-  ['free_5fimatrix_22',['free_imatrix',['../util__lib_8c.html#af6b81a4eebc7d8772422bfdd05f5834e',1,'free_imatrix(int **m, int num_row):&#160;util_lib.c'],['../util__lib_8h.html#af6b81a4eebc7d8772422bfdd05f5834e',1,'free_imatrix(int **m, int num_row):&#160;util_lib.c']]],
-  ['free_5fivector_23',['free_ivector',['../util__lib_8c.html#afd89b5e675116707ce66556b376bc41a',1,'free_ivector(int *v):&#160;util_lib.c'],['../util__lib_8h.html#afd89b5e675116707ce66556b376bc41a',1,'free_ivector(int *v):&#160;util_lib.c']]]
+  ['delimi_13',['DELIMI',['../run__hmm_8c.html#ac5d80f9f8a9c084b4f9e80da4d1583aa',1,'DELIMI():&#160;run_hmm.c'],['../run__hmm__pool_8c.html#ac5d80f9f8a9c084b4f9e80da4d1583aa',1,'DELIMI():&#160;run_hmm_pool.c']]],
+  ['dmatrix_14',['dmatrix',['../util__lib_8c.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#abda1f5b59156796bbd775359d171d921',1,'dmatrix(int num_row, int num_col):&#160;util_lib.c']]],
+  ['dna_15',['dna',['../structthread__data.html#aa0a989b6f84875c78d243e052aae7f9d',1,'thread_data']]],
+  ['dvector_16',['dvector',['../util__lib_8c.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#abd5fe78d731314dedfc83195699fbe7e',1,'dvector(int nh):&#160;util_lib.c']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_163',['main',['../run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'run_hmm.c']]]
+  ['imatrix_194',['imatrix',['../util__lib_8c.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c']]],
+  ['ivector_195',['ivector',['../util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c']]]
 ];

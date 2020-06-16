@@ -1,4 +1,4 @@
-.TH "src/run_hmm.c" 3 "Za 13 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
+.TH "src/run_hmm.c" 3 "Di 16 Jun 2020" "Version 0.1" "FragScanTibo" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,8 +17,6 @@ src/run_hmm.c
 \fC#include 'run_hmm\&.h'\fP
 .br
 \fC#include 'util_lib\&.h'\fP
-.br
-\fC#include 'sprintf_irc\&.h'\fP
 .br
 \fC#include <pthread\&.h>\fP
 .br
@@ -51,6 +49,9 @@ src/run_hmm.c
 .ti -1c
 .RI "void \fBprint_file_error\fP (const char *error_message, char *file)"
 .br
+.ti -1c
+.RI "void \fBcombine\fP (int threadnum, char *out_header, \fBthread_data\fP *threadarr)"
+.br
 .in -1c
 .SH "Documentatie van macro's"
 .PP 
@@ -62,6 +63,8 @@ src/run_hmm.c
 
 .SH "Documentatie van functies"
 .PP 
+.SS "void combine (int threadnum, char * out_header, \fBthread_data\fP * threadarr)"
+This function will combine multiple files created by the invidual threads if number of threads > 1; 
 .SS "int main (int argc, char ** argv)"
 Entry point of program
 .IP "1." 4

@@ -1,13 +1,13 @@
 <map id="src/run_hmm.h" name="src/run_hmm.h">
-<area shape="rect" id="node1" title=" " alt="" coords="279,5,389,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="383,5,493,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,71,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="85,155,146,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="174,155,238,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="335,80,405,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="264,155,327,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="429,80,497,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="521,80,587,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="611,80,670,107"/>
-<area shape="rect" id="node10" href="$hmm_8h.html" title=" " alt="" coords="147,80,209,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="695,80,771,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="95,80,157,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="181,80,245,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="269,80,338,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="363,80,425,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="449,80,517,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="541,80,607,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="631,80,690,107"/>
+<area shape="rect" id="node10" href="$hmm_8h.html" title=" " alt="" coords="715,80,777,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="801,80,877,107"/>
 </map>

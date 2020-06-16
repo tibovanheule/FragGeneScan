@@ -1,0 +1,63 @@
+\hypertarget{structjobqueue}{}\doxysection{jobqueue Struct Referentie}
+\label{structjobqueue}\index{jobqueue@{jobqueue}}
+
+
+Collaboratie diagram voor jobqueue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{structjobqueue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributen}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structjobqueue_ab1f6826b08d06210c8274d37e9941ca4}{rwmutex}}
+\item 
+\mbox{\hyperlink{structjob}{job}} $\ast$ \mbox{\hyperlink{structjobqueue_a865a3fab21c8b698ea0762463e40e08e}{front}}
+\item 
+\mbox{\hyperlink{structjob}{job}} $\ast$ \mbox{\hyperlink{structjobqueue_a88ae6a845e53552acf895dbc5b02055d}{rear}}
+\item 
+\mbox{\hyperlink{structbsem}{bsem}} $\ast$ \mbox{\hyperlink{structjobqueue_ac709c7d83252a3b2d83e5f72304c4f33}{has\+\_\+jobs}}
+\item 
+int \mbox{\hyperlink{structjobqueue_afed088663f8704004425cdae2120b9b3}{len}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentatie van data members}
+\mbox{\Hypertarget{structjobqueue_a865a3fab21c8b698ea0762463e40e08e}\label{structjobqueue_a865a3fab21c8b698ea0762463e40e08e}} 
+\index{jobqueue@{jobqueue}!front@{front}}
+\index{front@{front}!jobqueue@{jobqueue}}
+\doxysubsubsection{\texorpdfstring{front}{front}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjob}{job}}$\ast$ front}
+
+\mbox{\Hypertarget{structjobqueue_ac709c7d83252a3b2d83e5f72304c4f33}\label{structjobqueue_ac709c7d83252a3b2d83e5f72304c4f33}} 
+\index{jobqueue@{jobqueue}!has\_jobs@{has\_jobs}}
+\index{has\_jobs@{has\_jobs}!jobqueue@{jobqueue}}
+\doxysubsubsection{\texorpdfstring{has\_jobs}{has\_jobs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbsem}{bsem}}$\ast$ has\+\_\+jobs}
+
+\mbox{\Hypertarget{structjobqueue_afed088663f8704004425cdae2120b9b3}\label{structjobqueue_afed088663f8704004425cdae2120b9b3}} 
+\index{jobqueue@{jobqueue}!len@{len}}
+\index{len@{len}!jobqueue@{jobqueue}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int len}
+
+\mbox{\Hypertarget{structjobqueue_a88ae6a845e53552acf895dbc5b02055d}\label{structjobqueue_a88ae6a845e53552acf895dbc5b02055d}} 
+\index{jobqueue@{jobqueue}!rear@{rear}}
+\index{rear@{rear}!jobqueue@{jobqueue}}
+\doxysubsubsection{\texorpdfstring{rear}{rear}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjob}{job}}$\ast$ rear}
+
+\mbox{\Hypertarget{structjobqueue_ab1f6826b08d06210c8274d37e9941ca4}\label{structjobqueue_ab1f6826b08d06210c8274d37e9941ca4}} 
+\index{jobqueue@{jobqueue}!rwmutex@{rwmutex}}
+\index{rwmutex@{rwmutex}!jobqueue@{jobqueue}}
+\doxysubsubsection{\texorpdfstring{rwmutex}{rwmutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t rwmutex}
+
+
+
+De documentatie voor deze struct is gegenereerd op grond van het volgende bestand\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{thpool_8c}{thpool.\+c}}\end{DoxyCompactItemize}

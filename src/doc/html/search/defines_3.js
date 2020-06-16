@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['e_5fstate_228',['E_STATE',['../hmm_8h.html#ad3d5abc76ddb51a713b76212f8f9ce04',1,'hmm.h']]],
-  ['e_5fstate_5f1_229',['E_STATE_1',['../hmm_8h.html#ac1f3f1c3810a4341e8d252d72f6f0996',1,'hmm.h']]]
+  ['delimi_285',['DELIMI',['../run__hmm_8c.html#ac5d80f9f8a9c084b4f9e80da4d1583aa',1,'DELIMI():&#160;run_hmm.c'],['../run__hmm__pool_8c.html#ac5d80f9f8a9c084b4f9e80da4d1583aa',1,'DELIMI():&#160;run_hmm_pool.c']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['c_4',['C',['../hmm_8h.html#ac4cf4b2ab929bd23951a8676eeac086b',1,'hmm.h']]],
-  ['cg_5',['cg',['../structthread__data.html#adabc7d9e8400947f15312e3c3b1ddf54',1,'thread_data']]],
-  ['codon11_6',['codon11',['../util__lib_8c.html#a15f2a4633573b98404a1f99b4d41167b',1,'util_lib.c']]],
-  ['codon5_7',['codon5',['../util__lib_8c.html#a8530b1953dadcb055e162c53239d9bc5',1,'util_lib.c']]],
-  ['codon_5fcode_8',['codon_code',['../util__lib_8c.html#a49c40e3eb8772994263c249ff94a5f36',1,'util_lib.c']]]
+  ['a_1',['A',['../hmm_8h.html#a955f504eccf76b4eb2489c0adab03121',1,'hmm.h']]],
+  ['aa_2',['aa',['../structthread__data.html#a2bdc5c5d7992dc786ee26a02eb4d717b',1,'thread_data']]],
+  ['add_5flen_3',['ADD_LEN',['../run__hmm_8c.html#ab76fbb1f1b2031f52c2a805e49aaa23b',1,'ADD_LEN():&#160;run_hmm.c'],['../run__hmm__pool_8c.html#ab76fbb1f1b2031f52c2a805e49aaa23b',1,'ADD_LEN():&#160;run_hmm_pool.c']]],
+  ['anti_5fcodon_5fcode_4',['anti_codon_code',['../util__lib_8c.html#a3e1eef8ef9bb2032aeb2a83b0e8e02be',1,'util_lib.c']]],
+  ['arg_5',['arg',['../structjob.html#a9ce2ec4812a92cb6ab39f6e81e9173a9',1,'job']]]
 ];

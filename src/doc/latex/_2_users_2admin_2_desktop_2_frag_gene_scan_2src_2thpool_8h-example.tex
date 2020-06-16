@@ -1,0 +1,65 @@
+\hypertarget{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{}\doxysection{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}
+Initialize threadpool\+Initializes a threadpool. This function will not return until all threads have initialized successfully.
+
+.. threadpool thpool; //\+First we declare a threadpool thpool = thpool\+\_\+init(4); //then we initialize it to 4 threads ..
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+threads} & number of threads to be created in the threadpool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retourneert}
+threadpool created threadpool on success, N\+U\+LL on error
+\end{DoxyReturn}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{comment}{/**********************************}}
+\DoxyCodeLine{\textcolor{comment}{ * @author      Johan Hanssen Seferidis}}
+\DoxyCodeLine{\textcolor{comment}{ * License:     MIT}}
+\DoxyCodeLine{\textcolor{comment}{ *}}
+\DoxyCodeLine{\textcolor{comment}{ **********************************/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef \_THPOOL\_}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_THPOOL\_}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{thpool_8h_a875bf457e1d1153f5c32451f6022a3d4}{pthread\_setname\_np}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *thread\_name);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* =================================== API ======================================= */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structthpool__}{thpool\_}}* \mbox{\hyperlink{thpool_8h_a615a4a9fc352172af6db87f6787dc65f}{threadpool}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{structthpool__}{threadpool}} \mbox{\hyperlink{thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8}{thpool\_init}}(\textcolor{keywordtype}{int} num\_threads);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{thpool_8c_ad3587d247f5458dc2c75539715665b7a}{thpool\_add\_work}}(\mbox{\hyperlink{structthpool__}{threadpool}}, \textcolor{keywordtype}{void} (*function\_p)(\textcolor{keywordtype}{void}*), \textcolor{keywordtype}{void}* arg\_p);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3}{thpool\_wait}}(\mbox{\hyperlink{structthpool__}{threadpool}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{thpool_8c_abf8fa61b319a14f1f7e7f7a17dd0692d}{thpool\_pause}}(\mbox{\hyperlink{structthpool__}{threadpool}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{thpool_8c_aa4ab3968a4ee39e301cde9f71568181f}{thpool\_resume}}(\mbox{\hyperlink{structthpool__}{threadpool}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{thpool_8c_ae35764bc7ae46da374abd9d44db547ae}{thpool\_destroy}}(\mbox{\hyperlink{structthpool__}{threadpool}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{thpool_8c_a470300f14659db6251602a98981e7ada}{thpool\_num\_threads\_working}}(\mbox{\hyperlink{structthpool__}{threadpool}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\end{DoxyCodeInclude}
+ 

@@ -42,13 +42,14 @@ var NAVTREE =
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Voorbeelden", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html"
 ];
 
 var SYNCONMSG = 'klik hier de paneel synchronisatie uit the schakelen';

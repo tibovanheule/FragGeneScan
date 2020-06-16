@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['g_24',['G',['../hmm_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54',1,'hmm.h']]],
-  ['get_5fprob_5ffrom_5fcg_25',['get_prob_from_cg',['../hmm_8h.html#aa5d13d79b8ed4466bcacfcc4184ee399',1,'get_prob_from_cg(HMM *hmm, TRAIN *train, char *O):&#160;hmm_lib.c'],['../hmm__lib_8c.html#a74ab9667dd58ee40b21f227394b5e54f',1,'get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O):&#160;hmm_lib.c']]],
-  ['get_5fprotein_26',['get_protein',['../hmm_8h.html#a66ceabacbfe397e6d70025814a0c3882',1,'get_protein(char *dna, char *protein, int strand, int whole_genome):&#160;util_lib.c'],['../util__lib_8c.html#a66ceabacbfe397e6d70025814a0c3882',1,'get_protein(char *dna, char *protein, int strand, int whole_genome):&#160;util_lib.c'],['../util__lib_8h.html#a66ceabacbfe397e6d70025814a0c3882',1,'get_protein(char *dna, char *protein, int strand, int whole_genome):&#160;util_lib.c']]],
-  ['get_5frc_5fdna_27',['get_rc_dna',['../hmm_8h.html#a4bb170d07b8af8e326242f06b922bd80',1,'get_rc_dna(char *dna, char *dna1):&#160;util_lib.c'],['../util__lib_8c.html#a4bb170d07b8af8e326242f06b922bd80',1,'get_rc_dna(char *dna, char *dna1):&#160;util_lib.c']]],
-  ['get_5frc_5fdna_5findel_28',['get_rc_dna_indel',['../hmm__lib_8h.html#ae185818a4965c1c67f67abfbbf60436a',1,'get_rc_dna_indel(char *dna_f, char *dna_f1):&#160;util_lib.c'],['../util__lib_8c.html#ace3dceb07b9556e404f8eedde73e4d61',1,'get_rc_dna_indel(char *dna, char *dna1):&#160;util_lib.c']]],
-  ['get_5ftrain_5ffrom_5ffile_29',['get_train_from_file',['../hmm_8h.html#acef94cf960e200f7ec1b4619510461a1',1,'get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename, char *sfilename, char *pfilename, char *s1filename, char *p1filename, char *dfilename, TRAIN *train_ptr):&#160;hmm_lib.c'],['../hmm__lib_8c.html#acef94cf960e200f7ec1b4619510461a1',1,'get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mfilename1, char *nfilename, char *sfilename, char *pfilename, char *s1filename, char *p1filename, char *dfilename, TRAIN *train_ptr):&#160;hmm_lib.c']]]
+  ['e1_5fdist_17',['E1_dist',['../struct_t_r_a_i_n.html#ab0fac1339a461e6f02522ba2799b74de',1,'TRAIN']]],
+  ['e_5fdist_18',['E_dist',['../struct_t_r_a_i_n.html#a492ffd3f28e017b1a83ea286fc2b8590',1,'TRAIN']]],
+  ['e_5fstate_19',['E_STATE',['../hmm_8h.html#ad3d5abc76ddb51a713b76212f8f9ce04',1,'hmm.h']]],
+  ['e_5fstate_5f1_20',['E_STATE_1',['../hmm_8h.html#ac1f3f1c3810a4341e8d252d72f6f0996',1,'hmm.h']]],
+  ['err_21',['err',['../thpool_8c.html#ada8afd8462ce3a222a6d77a7d86115d8',1,'thpool.c']]]
 ];

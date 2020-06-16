@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FragScanTibo: /Users/admin/Desktop/FragGeneScan/src/thpool.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FragScanTibo
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A fork of FragScan</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">/Users/admin/Desktop/FragGeneScan/src/thpool.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Initialize threadpoolInitializes a threadpool. This function will not return until all threads have initialized successfully.</p>
+<p>.. threadpool thpool; //First we declare a threadpool thpool = thpool_init(4); //then we initialize it to 4 threads ..</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_threads</td><td>number of threads to be created in the threadpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retourneert</dt><dd>threadpool created threadpool on success, NULL on error</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">/**********************************</span></div>
+<div class="line"><span class="comment"> * @author      Johan Hanssen Seferidis</span></div>
+<div class="line"><span class="comment"> * License:     MIT</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> **********************************/</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef _THPOOL_</span></div>
+<div class="line"><span class="preprocessor">#define _THPOOL_</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="thpool_8h.html#a875bf457e1d1153f5c32451f6022a3d4">pthread_setname_np</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *thread_name);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* =================================== API ======================================= */</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a name="_a1"></a><a class="code" href="structthpool__.html">thpool_</a>* <a name="a2"></a><a class="code" href="thpool_8h.html#a615a4a9fc352172af6db87f6787dc65f">threadpool</a>;</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="structthpool__.html">threadpool</a> <a name="a3"></a><a class="code" href="thpool_8c.html#a3e6ebbdd6aecc6fc0035e5780c9878c8">thpool_init</a>(<span class="keywordtype">int</span> num_threads);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a name="a4"></a><a class="code" href="thpool_8c.html#ad3587d247f5458dc2c75539715665b7a">thpool_add_work</a>(<a class="code" href="structthpool__.html">threadpool</a>, <span class="keywordtype">void</span> (*function_p)(<span class="keywordtype">void</span>*), <span class="keywordtype">void</span>* arg_p);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a name="a5"></a><a class="code" href="thpool_8c.html#a94f118e460b8f15dd42b5fbe9009b0b3">thpool_wait</a>(<a class="code" href="structthpool__.html">threadpool</a>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a name="a6"></a><a class="code" href="thpool_8c.html#abf8fa61b319a14f1f7e7f7a17dd0692d">thpool_pause</a>(<a class="code" href="structthpool__.html">threadpool</a>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a name="a7"></a><a class="code" href="thpool_8c.html#aa4ab3968a4ee39e301cde9f71568181f">thpool_resume</a>(<a class="code" href="structthpool__.html">threadpool</a>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a name="a8"></a><a class="code" href="thpool_8c.html#ae35764bc7ae46da374abd9d44db547ae">thpool_destroy</a>(<a class="code" href="structthpool__.html">threadpool</a>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a name="a9"></a><a class="code" href="thpool_8c.html#a470300f14659db6251602a98981e7ada">thpool_num_threads_working</a>(<a class="code" href="structthpool__.html">threadpool</a>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="athpool_8c_html_ae35764bc7ae46da374abd9d44db547ae"><div class="ttname"><a href="thpool_8c.html#ae35764bc7ae46da374abd9d44db547ae">thpool_destroy</a></div><div class="ttdeci">void thpool_destroy(thpool_ *thpool_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:207</div></div>
+<div class="ttc" id="astructthpool___html"><div class="ttname"><a href="structthpool__.html">thpool_</a></div><div class="ttdef"><b>Definition:</b> thpool.c:80</div></div>
+<div class="ttc" id="athpool_8c_html_a470300f14659db6251602a98981e7ada"><div class="ttname"><a href="thpool_8c.html#a470300f14659db6251602a98981e7ada">thpool_num_threads_working</a></div><div class="ttdeci">int thpool_num_threads_working(thpool_ *thpool_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:265</div></div>
+<div class="ttc" id="athpool_8c_html_abf8fa61b319a14f1f7e7f7a17dd0692d"><div class="ttname"><a href="thpool_8c.html#abf8fa61b319a14f1f7e7f7a17dd0692d">thpool_pause</a></div><div class="ttdeci">void thpool_pause(thpool_ *thpool_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:246</div></div>
+<div class="ttc" id="athpool_8c_html_a3e6ebbdd6aecc6fc0035e5780c9878c8"><div class="ttname"><a href="thpool_8c.html#a3e6ebbdd6aecc6fc0035e5780c9878c8">thpool_init</a></div><div class="ttdeci">struct thpool_ * thpool_init(int num_threads)</div><div class="ttdef"><b>Definition:</b> thpool.c:121</div></div>
+<div class="ttc" id="athpool_8c_html_aa4ab3968a4ee39e301cde9f71568181f"><div class="ttname"><a href="thpool_8c.html#aa4ab3968a4ee39e301cde9f71568181f">thpool_resume</a></div><div class="ttdeci">void thpool_resume(thpool_ *thpool_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:255</div></div>
+<div class="ttc" id="athpool_8h_html_a875bf457e1d1153f5c32451f6022a3d4"><div class="ttname"><a href="thpool_8h.html#a875bf457e1d1153f5c32451f6022a3d4">pthread_setname_np</a></div><div class="ttdeci">int pthread_setname_np(const char *thread_name)</div></div>
+<div class="ttc" id="athpool_8c_html_a94f118e460b8f15dd42b5fbe9009b0b3"><div class="ttname"><a href="thpool_8c.html#a94f118e460b8f15dd42b5fbe9009b0b3">thpool_wait</a></div><div class="ttdeci">void thpool_wait(thpool_ *thpool_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:197</div></div>
+<div class="ttc" id="athpool_8h_html_a615a4a9fc352172af6db87f6787dc65f"><div class="ttname"><a href="thpool_8h.html#a615a4a9fc352172af6db87f6787dc65f">threadpool</a></div><div class="ttdeci">struct thpool_ * threadpool</div><div class="ttdef"><b>Definition:</b> thpool.h:20</div></div>
+<div class="ttc" id="athpool_8c_html_ad3587d247f5458dc2c75539715665b7a"><div class="ttname"><a href="thpool_8c.html#ad3587d247f5458dc2c75539715665b7a">thpool_add_work</a></div><div class="ttdeci">int thpool_add_work(thpool_ *thpool_p, void(*function_p)(void *), void *arg_p)</div><div class="ttdef"><b>Definition:</b> thpool.c:176</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gegenereerd op Di 16 Jun 2020 19:54:06 voor FragScanTibo door
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

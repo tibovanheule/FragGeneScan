@@ -1,16 +1,18 @@
 var searchData=
 [
-  ['m1_5fstate_57',['M1_STATE',['../hmm_8h.html#a59dd3126d6fc18b51517659e4b2ebded',1,'hmm.h']]],
-  ['m1_5fstate_5f1_58',['M1_STATE_1',['../hmm_8h.html#a7414b79bb31f61b74e3c44e5c8d1ebd1',1,'hmm.h']]],
-  ['m2_5fstate_59',['M2_STATE',['../hmm_8h.html#a0272e7e145b11d6cd857d0df5ba2d407',1,'hmm.h']]],
-  ['m2_5fstate_5f1_60',['M2_STATE_1',['../hmm_8h.html#a83a18bf4196eda08bc1ff5f71f85af3c',1,'hmm.h']]],
-  ['m3_5fstate_61',['M3_STATE',['../hmm_8h.html#a8a728842e5b5423977a16cb9b0ab0f5b',1,'hmm.h']]],
-  ['m3_5fstate_5f1_62',['M3_STATE_1',['../hmm_8h.html#aaebb6e1c33556852a9159c0768e3f2e6',1,'hmm.h']]],
-  ['m4_5fstate_63',['M4_STATE',['../hmm_8h.html#acbc17d0564820ce08b37ac6f24b9f30b',1,'hmm.h']]],
-  ['m4_5fstate_5f1_64',['M4_STATE_1',['../hmm_8h.html#aa595187a0eefe91a0e2d48985fe23a08',1,'hmm.h']]],
-  ['m5_5fstate_65',['M5_STATE',['../hmm_8h.html#a979710800ad0379b3afa38aa0a0bedab',1,'hmm.h']]],
-  ['m5_5fstate_5f1_66',['M5_STATE_1',['../hmm_8h.html#a387c64e65347b212c22cfefad72fa719',1,'hmm.h']]],
-  ['m6_5fstate_67',['M6_STATE',['../hmm_8h.html#ac7603a77a02a1e088eded55f326b400c',1,'hmm.h']]],
-  ['m6_5fstate_5f1_68',['M6_STATE_1',['../hmm_8h.html#a9fdb2004810618487d99ac891d8b51db',1,'hmm.h']]],
-  ['main_69',['main',['../run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'run_hmm.c']]]
+  ['i1_5fstate_40',['I1_STATE',['../hmm_8h.html#a0a2e3e173cd6cd75e6c35737686165da',1,'hmm.h']]],
+  ['i1_5fstate_5f1_41',['I1_STATE_1',['../hmm_8h.html#a114564fe0fc45cdc013d1c28389ba857',1,'hmm.h']]],
+  ['i2_5fstate_42',['I2_STATE',['../hmm_8h.html#af14b4554ab0cbfff9d0098381cc4478c',1,'hmm.h']]],
+  ['i2_5fstate_5f1_43',['I2_STATE_1',['../hmm_8h.html#a875899db1149941d61aa96da38127321',1,'hmm.h']]],
+  ['i3_5fstate_44',['I3_STATE',['../hmm_8h.html#ac6023df2d34f18277a2859ae88ac5244',1,'hmm.h']]],
+  ['i3_5fstate_5f1_45',['I3_STATE_1',['../hmm_8h.html#a6eed169af202c9cec565ddf0a5564e72',1,'hmm.h']]],
+  ['i4_5fstate_46',['I4_STATE',['../hmm_8h.html#ac39b1c815b8196ea1bddc20d26d1d1df',1,'hmm.h']]],
+  ['i4_5fstate_5f1_47',['I4_STATE_1',['../hmm_8h.html#abe8633e6756ef7b2af5422e865344456',1,'hmm.h']]],
+  ['i5_5fstate_48',['I5_STATE',['../hmm_8h.html#ae03a9f2c669ad23713309d1bf8d502f6',1,'hmm.h']]],
+  ['i5_5fstate_5f1_49',['I5_STATE_1',['../hmm_8h.html#a51ab8ac42de36544861399049794426b',1,'hmm.h']]],
+  ['i6_5fstate_50',['I6_STATE',['../hmm_8h.html#ad8990c2eee7a2c6c41437a6f043bcb30',1,'hmm.h']]],
+  ['i6_5fstate_5f1_51',['I6_STATE_1',['../hmm_8h.html#af17bc72974a1083c3f0f59874df96c78',1,'hmm.h']]],
+  ['id_52',['id',['../structthread.html#a7441ef0865bcb3db9b8064dd7375c1ea',1,'thread']]],
+  ['imatrix_53',['imatrix',['../util__lib_8c.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c'],['../util__lib_8h.html#aa4be6d2998bec55044c271fea2ae7176',1,'imatrix(int num_row, int num_col):&#160;util_lib.c']]],
+  ['ivector_54',['ivector',['../util__lib_8c.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c'],['../util__lib_8h.html#aacdd22a5bafdab2b445e84bbc01eb495',1,'ivector(int nh):&#160;util_lib.c']]]
 ];

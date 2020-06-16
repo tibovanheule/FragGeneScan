@@ -1,7 +1,6 @@
 var structthread__data =
 [
     [ "aa", "structthread__data.html#a2bdc5c5d7992dc786ee26a02eb4d717b", null ],
-    [ "cg", "structthread__data.html#adabc7d9e8400947f15312e3c3b1ddf54", null ],
     [ "dna", "structthread__data.html#aa0a989b6f84875c78d243e052aae7f9d", null ],
     [ "format", "structthread__data.html#a317afff57d87a89158c2b038d37b2b08", null ],
     [ "hmm", "structthread__data.html#acd974f95417e60d75ce6a26cb2aeeadb", null ],

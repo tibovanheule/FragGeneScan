@@ -1,0 +1,77 @@
+\hypertarget{structthpool__}{}\doxysection{thpool\+\_\+ Struct Referentie}
+\label{structthpool__}\index{thpool\_@{thpool\_}}
+
+
+Collaboratie diagram voor thpool\+\_\+\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{structthpool____coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributen}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structthread}{thread}} $\ast$$\ast$ \mbox{\hyperlink{structthpool___a93709c98f47ac6e664e1d448694f4b2f}{threads}}
+\item 
+volatile int \mbox{\hyperlink{structthpool___af0e4c29a130b271441d0f64d93330106}{num\+\_\+threads\+\_\+alive}}
+\item 
+volatile int \mbox{\hyperlink{structthpool___a6ecc6ef9e7c6859836f109cad7b691fb}{num\+\_\+threads\+\_\+working}}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{structthpool___ac9d60fbaeba82ef669841d2009bd58d3}{thcount\+\_\+lock}}
+\item 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{structthpool___aa9df7cf9f1d68b4032772cf0205a98bb}{threads\+\_\+all\+\_\+idle}}
+\item 
+\mbox{\hyperlink{structjobqueue}{jobqueue}} \mbox{\hyperlink{structthpool___a9412aa67a0de6d5e93fd55c4c383a233}{jobqueue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Gedetailleerde Beschrijving}
+\begin{Desc}
+\item[Voorbeelden]\par
+\mbox{\hyperlink{_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example}{/\+Users/admin/\+Desktop/\+Frag\+Gene\+Scan/src/thpool.\+h}}.\end{Desc}
+
+
+\doxysubsection{Documentatie van data members}
+\mbox{\Hypertarget{structthpool___a9412aa67a0de6d5e93fd55c4c383a233}\label{structthpool___a9412aa67a0de6d5e93fd55c4c383a233}} 
+\index{thpool\_@{thpool\_}!jobqueue@{jobqueue}}
+\index{jobqueue@{jobqueue}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{jobqueue}{jobqueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjobqueue}{jobqueue}} \mbox{\hyperlink{structjobqueue}{jobqueue}}}
+
+\mbox{\Hypertarget{structthpool___af0e4c29a130b271441d0f64d93330106}\label{structthpool___af0e4c29a130b271441d0f64d93330106}} 
+\index{thpool\_@{thpool\_}!num\_threads\_alive@{num\_threads\_alive}}
+\index{num\_threads\_alive@{num\_threads\_alive}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{num\_threads\_alive}{num\_threads\_alive}}
+{\footnotesize\ttfamily volatile int num\+\_\+threads\+\_\+alive}
+
+\mbox{\Hypertarget{structthpool___a6ecc6ef9e7c6859836f109cad7b691fb}\label{structthpool___a6ecc6ef9e7c6859836f109cad7b691fb}} 
+\index{thpool\_@{thpool\_}!num\_threads\_working@{num\_threads\_working}}
+\index{num\_threads\_working@{num\_threads\_working}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{num\_threads\_working}{num\_threads\_working}}
+{\footnotesize\ttfamily volatile int num\+\_\+threads\+\_\+working}
+
+\mbox{\Hypertarget{structthpool___ac9d60fbaeba82ef669841d2009bd58d3}\label{structthpool___ac9d60fbaeba82ef669841d2009bd58d3}} 
+\index{thpool\_@{thpool\_}!thcount\_lock@{thcount\_lock}}
+\index{thcount\_lock@{thcount\_lock}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{thcount\_lock}{thcount\_lock}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t thcount\+\_\+lock}
+
+\mbox{\Hypertarget{structthpool___a93709c98f47ac6e664e1d448694f4b2f}\label{structthpool___a93709c98f47ac6e664e1d448694f4b2f}} 
+\index{thpool\_@{thpool\_}!threads@{threads}}
+\index{threads@{threads}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structthread}{thread}}$\ast$$\ast$ threads}
+
+\mbox{\Hypertarget{structthpool___aa9df7cf9f1d68b4032772cf0205a98bb}\label{structthpool___aa9df7cf9f1d68b4032772cf0205a98bb}} 
+\index{thpool\_@{thpool\_}!threads\_all\_idle@{threads\_all\_idle}}
+\index{threads\_all\_idle@{threads\_all\_idle}!thpool\_@{thpool\_}}
+\doxysubsubsection{\texorpdfstring{threads\_all\_idle}{threads\_all\_idle}}
+{\footnotesize\ttfamily pthread\+\_\+cond\+\_\+t threads\+\_\+all\+\_\+idle}
+
+
+
+De documentatie voor deze struct is gegenereerd op grond van het volgende bestand\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{thpool_8c}{thpool.\+c}}\end{DoxyCompactItemize}

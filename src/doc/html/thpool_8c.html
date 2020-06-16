@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FragScanTibo: src/thpool.c Bestand Referentie</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FragScanTibo
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">A fork of FragScan</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gegenereerd door Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Zoeken');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Zoeken');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('thpool_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Klassen</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functies</a>  </div>
+  <div class="headertitle">
+<div class="title">thpool.c Bestand Referentie</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="thpool_8h_source.html">thpool.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include afhankelijkheidsgraaf voor thpool.c:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="thpool_8c__incl.png" border="0" usemap="#src_2thpool_8c" alt=""/></div>
+<map name="src_2thpool_8c" id="src_2thpool_8c">
+<area shape="rect" title=" " alt="" coords="307,5,398,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,73,107"/>
+<area shape="rect" title=" " alt="" coords="98,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="189,80,250,107"/>
+<area shape="rect" title=" " alt="" coords="274,80,338,107"/>
+<area shape="rect" title=" " alt="" coords="363,80,439,107"/>
+<area shape="rect" title=" " alt="" coords="463,80,525,107"/>
+<area shape="rect" title=" " alt="" coords="550,80,609,107"/>
+<area shape="rect" href="thpool_8h.html" title=" " alt="" coords="633,80,701,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Klassen</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbsem.html">bsem</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjob.html">job</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjobqueue.html">jobqueue</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structthread.html">thread</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structthpool__.html">thpool_</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3024ccd4a9af5109d24e6c57565d74a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a3024ccd4a9af5109d24e6c57565d74a1">_POSIX_C_SOURCE</a>&#160;&#160;&#160;200809L</td></tr>
+<tr class="separator:a3024ccd4a9af5109d24e6c57565d74a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05b8324d0df0d2f03abdee6919bfc4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#ae05b8324d0df0d2f03abdee6919bfc4b">THPOOL_DEBUG</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ae05b8324d0df0d2f03abdee6919bfc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8afd8462ce3a222a6d77a7d86115d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#ada8afd8462ce3a222a6d77a7d86115d8">err</a>(str)&#160;&#160;&#160;fprintf(stderr, str)</td></tr>
+<tr class="separator:ada8afd8462ce3a222a6d77a7d86115d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6d91482004cdcb54c540a277c74b153e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structbsem.html">bsem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a6d91482004cdcb54c540a277c74b153e">bsem</a></td></tr>
+<tr class="separator:a6d91482004cdcb54c540a277c74b153e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e76c3b43901a65c2e31e18292700f77"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structjob.html">job</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a7e76c3b43901a65c2e31e18292700f77">job</a></td></tr>
+<tr class="separator:a7e76c3b43901a65c2e31e18292700f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3565ff50371ac64dcce7ac97208c8a1e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structjobqueue.html">jobqueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a3565ff50371ac64dcce7ac97208c8a1e">jobqueue</a></td></tr>
+<tr class="separator:a3565ff50371ac64dcce7ac97208c8a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25116f5b7d2fc3440bba1b4766d0a78"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structthread.html">thread</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#ad25116f5b7d2fc3440bba1b4766d0a78">thread</a></td></tr>
+<tr class="separator:ad25116f5b7d2fc3440bba1b4766d0a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b9923cffb708762ac261b550639ecf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structthpool__.html">thpool_</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a38b9923cffb708762ac261b550639ecf">thpool_</a></td></tr>
+<tr class="separator:a38b9923cffb708762ac261b550639ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functies</h2></td></tr>
+<tr class="memitem:a3e6ebbdd6aecc6fc0035e5780c9878c8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structthpool__.html">thpool_</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a3e6ebbdd6aecc6fc0035e5780c9878c8">thpool_init</a> (int num_threads)</td></tr>
+<tr class="separator:a3e6ebbdd6aecc6fc0035e5780c9878c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3587d247f5458dc2c75539715665b7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#ad3587d247f5458dc2c75539715665b7a">thpool_add_work</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p, void(*function_p)(void *), void *arg_p)</td></tr>
+<tr class="separator:ad3587d247f5458dc2c75539715665b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f118e460b8f15dd42b5fbe9009b0b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a94f118e460b8f15dd42b5fbe9009b0b3">thpool_wait</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p)</td></tr>
+<tr class="separator:a94f118e460b8f15dd42b5fbe9009b0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35764bc7ae46da374abd9d44db547ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#ae35764bc7ae46da374abd9d44db547ae">thpool_destroy</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p)</td></tr>
+<tr class="separator:ae35764bc7ae46da374abd9d44db547ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8fa61b319a14f1f7e7f7a17dd0692d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#abf8fa61b319a14f1f7e7f7a17dd0692d">thpool_pause</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p)</td></tr>
+<tr class="separator:abf8fa61b319a14f1f7e7f7a17dd0692d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ab3968a4ee39e301cde9f71568181f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#aa4ab3968a4ee39e301cde9f71568181f">thpool_resume</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p)</td></tr>
+<tr class="separator:aa4ab3968a4ee39e301cde9f71568181f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470300f14659db6251602a98981e7ada"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thpool_8c.html#a470300f14659db6251602a98981e7ada">thpool_num_threads_working</a> (<a class="el" href="structthpool__.html">thpool_</a> *thpool_p)</td></tr>
+<tr class="separator:a470300f14659db6251602a98981e7ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentatie van macro's</h2>
+<a id="a3024ccd4a9af5109d24e6c57565d74a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3024ccd4a9af5109d24e6c57565d74a1">&#9670;&nbsp;</a></span>_POSIX_C_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _POSIX_C_SOURCE&#160;&#160;&#160;200809L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada8afd8462ce3a222a6d77a7d86115d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8afd8462ce3a222a6d77a7d86115d8">&#9670;&nbsp;</a></span>err</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define err</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">str</td><td>)</td>
+          <td>&#160;&#160;&#160;fprintf(stderr, str)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae05b8324d0df0d2f03abdee6919bfc4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05b8324d0df0d2f03abdee6919bfc4b">&#9670;&nbsp;</a></span>THPOOL_DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THPOOL_DEBUG&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentatie van typedefs</h2>
+<a id="a6d91482004cdcb54c540a277c74b153e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d91482004cdcb54c540a277c74b153e">&#9670;&nbsp;</a></span>bsem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structbsem.html">bsem</a> <a class="el" href="structbsem.html">bsem</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e76c3b43901a65c2e31e18292700f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e76c3b43901a65c2e31e18292700f77">&#9670;&nbsp;</a></span>job</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structjob.html">job</a> <a class="el" href="structjob.html">job</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3565ff50371ac64dcce7ac97208c8a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3565ff50371ac64dcce7ac97208c8a1e">&#9670;&nbsp;</a></span>jobqueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structjobqueue.html">jobqueue</a> <a class="el" href="structjobqueue.html">jobqueue</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38b9923cffb708762ac261b550639ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b9923cffb708762ac261b550639ecf">&#9670;&nbsp;</a></span>thpool_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structthpool__.html">thpool_</a> <a class="el" href="structthpool__.html">thpool_</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad25116f5b7d2fc3440bba1b4766d0a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25116f5b7d2fc3440bba1b4766d0a78">&#9670;&nbsp;</a></span>thread</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structthread.html">thread</a> <a class="el" href="structthread.html">thread</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentatie van functies</h2>
+<a id="ad3587d247f5458dc2c75539715665b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3587d247f5458dc2c75539715665b7a">&#9670;&nbsp;</a></span>thpool_add_work()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int thpool_add_work </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>function_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a4">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="thpool_8c_ad3587d247f5458dc2c75539715665b7a_icgraph.png" border="0" usemap="#thpool_8c_ad3587d247f5458dc2c75539715665b7a_icgraph" alt=""/></div>
+<map name="thpool_8c_ad3587d247f5458dc2c75539715665b7a_icgraph" id="thpool_8c_ad3587d247f5458dc2c75539715665b7a_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,224,32"/>
+<area shape="rect" href="run__hmm__pool_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae35764bc7ae46da374abd9d44db547ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35764bc7ae46da374abd9d44db547ae">&#9670;&nbsp;</a></span>thpool_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void thpool_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a8">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="thpool_8c_ae35764bc7ae46da374abd9d44db547ae_icgraph.png" border="0" usemap="#thpool_8c_ae35764bc7ae46da374abd9d44db547ae_icgraph" alt=""/></div>
+<map name="thpool_8c_ae35764bc7ae46da374abd9d44db547ae_icgraph" id="thpool_8c_ae35764bc7ae46da374abd9d44db547ae_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,211,32"/>
+<area shape="rect" href="run__hmm__pool_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3e6ebbdd6aecc6fc0035e5780c9878c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6ebbdd6aecc6fc0035e5780c9878c8">&#9670;&nbsp;</a></span>thpool_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structthpool__.html">thpool_</a>* thpool_init </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_threads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a3">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8_icgraph.png" border="0" usemap="#thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8_icgraph" alt=""/></div>
+<map name="thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8_icgraph" id="thpool_8c_a3e6ebbdd6aecc6fc0035e5780c9878c8_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,185,32"/>
+<area shape="rect" href="run__hmm__pool_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a470300f14659db6251602a98981e7ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a470300f14659db6251602a98981e7ada">&#9670;&nbsp;</a></span>thpool_num_threads_working()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int thpool_num_threads_working </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a9">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="abf8fa61b319a14f1f7e7f7a17dd0692d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8fa61b319a14f1f7e7f7a17dd0692d">&#9670;&nbsp;</a></span>thpool_pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void thpool_pause </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a6">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="aa4ab3968a4ee39e301cde9f71568181f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ab3968a4ee39e301cde9f71568181f">&#9670;&nbsp;</a></span>thpool_resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void thpool_resume </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a7">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a94f118e460b8f15dd42b5fbe9009b0b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f118e460b8f15dd42b5fbe9009b0b3">&#9670;&nbsp;</a></span>thpool_wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void thpool_wait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structthpool__.html">thpool_</a> *&#160;</td>
+          <td class="paramname"><em>thpool_p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Voorbeelden</dt><dd><a class="el" href="_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html#a5">/Users/admin/Desktop/FragGeneScan/src/thpool.h</a>.</dd>
+</dl>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Hier is de caller graaf voor deze functie:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3_icgraph.png" border="0" usemap="#thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3_icgraph" alt=""/></div>
+<map name="thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3_icgraph" id="thpool_8c_a94f118e460b8f15dd42b5fbe9009b0b3_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,192,32"/>
+<area shape="rect" href="run__hmm__pool_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="thpool_8c.html">thpool.c</a></li>
+    <li class="footer">Gegenereerd op Di 16 Jun 2020 19:54:07 voor FragScanTibo door
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>
