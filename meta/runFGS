@@ -2,5 +2,5 @@
 
 cd ./src/
 make fgs
-./FragGeneScan -w 0 -t train/454_10 -o test.faa < example/NC_000913-454.fna
+./FragGeneScan -w 0 -t train/454_10 -o test.faa -p 1 < example/NC_000913-454.fna
 
