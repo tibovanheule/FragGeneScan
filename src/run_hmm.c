@@ -206,6 +206,7 @@ int main (int argc, char **argv) {
             sequentie[sequence_offset] = '\0';
         }
     }
+free(sequentie);
     fclose(fp);
     // print is uselless since all work is done, note total counts also the sequences that are of length 0!
     // printf("no. of seqs: %d\n", total);
@@ -218,6 +219,8 @@ int main (int argc, char **argv) {
     }
     if(threadnum > 1) combine(threadnum,out_header,threadarr);
     free(threadarr);
+free(hmm);
+free(train);
     printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
     return 0;
 }
@@ -377,7 +380,6 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
     fclose(fp_out);
     fclose(fp_aa);
     fclose(fp_dna);
-
     free(lastline);
     free(currline);
 
