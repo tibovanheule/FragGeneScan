@@ -737,9 +737,11 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char codon[4], utr[65];
     char *dna = malloc(300000*sizeof(char));
     char *dna1 = malloc(300000*sizeof(char));
-    char *dna_f = calloc(300000,sizeof(char));
+    char *dna_f = malloc(300000*sizeof(char));
     char *protein = calloc(100000,sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
+    free(dna_f);
+    printf("HIER FREEEN GAAT WEL");
     for (int t=0; t<len_seq; t++) {
 
         if (codon_start==0 && start_t < 0 && ((vpath[t]>=M1_STATE && vpath[t]<=M6_STATE) || (vpath[t]>=M1_STATE_1 && vpath[t]<=M6_STATE_1) || vpath[t] == S_STATE || vpath[t] == S_STATE_1 )) {
@@ -991,8 +993,9 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     free_ivector(vpath);
     free(dna);
     free(dna1);
+    
     free(dna_f);
-    memset(protein,0, 100000);
+    memset(protein,0, 100000*sizeof(int);
     free(protein);
 }
 
