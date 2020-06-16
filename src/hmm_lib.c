@@ -23,13 +23,12 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     int ** path = imatrix(NUM_STATE, len_seq);                          /* viterbi path array */
     int j;
     int temp_t;
-    double prob_save, start_freq;
+    double start_freq;
     int from, from0, to;   /*from0: i-2 position, from: i-1 position */
     int from2;             /* from2: i-2, i-1 for condition in emission probability */
     double temp_alpha;
     int gene_len = 60;
     int num_d;          /* the number of delete */
-    int freq_id;
     double h_kd, r_kd, p_kd;
 
 
@@ -466,10 +465,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                 /* adjustment based on probability distribution */
                 start_freq=0;
-                freq_id = 0;
 
                 double sub_sum = 0;
-                int sub_count = 0;
 
                 if (t>=60) { /* bug reported by Yu-Wei */
                     for(int i=-60; i<=-3; i++) {
@@ -548,7 +545,6 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                 /* adjustment based on probability distribution */
                 start_freq=0;
-                freq_id = 0;
                 for(int i=3; i<=60; i++) {
                     if (t+i+2 < len_seq)
                     {
@@ -608,9 +604,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                 /* adjustment based on probability distribution */
                 start_freq=0;
-                freq_id = 0;
                 double sub_sum = 0;
-                int sub_count = 0;
 
                 if (t>=30) {
                     for(int i=-30; i<=30; i++) {
@@ -673,10 +667,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                 /* adjustment based on probability distribution */
                 start_freq=0;
-                freq_id = 0;
 
                 double sub_sum = 0;
-                int sub_count = 0;
 
                 if (t>=30) {
                     for(int i=-30; i<=30; i++) {
@@ -740,8 +732,6 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     char *dna_f = malloc(300000*sizeof(char));
     char *protein = calloc(100000,sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
-    free(dna_f);
-    printf("HIER FREEEN GAAT WEL");
     for (int t=0; t<len_seq; t++) {
 
         if (codon_start==0 && start_t < 0 && ((vpath[t]>=M1_STATE && vpath[t]<=M6_STATE) || (vpath[t]>=M1_STATE_1 && vpath[t]<=M6_STATE_1) || vpath[t] == S_STATE || vpath[t] == S_STATE_1 )) {
@@ -995,7 +985,6 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     free(dna1);
     
     free(dna_f);
-    memset(protein,0, 100000*sizeof(int);
     free(protein);
 }
 
