@@ -145,7 +145,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                         /* from M state */
                         j = M6_STATE;
-                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_GG] - hmm_ptr->tr[TR_MM] - hmm_ptr->e_M[0][from2][to];
+                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_GG] - hmm_ptr->tr[TR_MM] - train_ptr->trans[cg][0][from2][to];
                         path[i][t] = j;
 
                         /* from D state */
@@ -159,7 +159,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                                     num_d = -10;
                                 }
                                 if(num_d>0) {
-                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - hmm_ptr->e_M[0][from2][to]
+                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - train_ptr->trans[cg][0][from2][to]
                                                  - log25*(num_d-1) - hmm_ptr->tr[TR_DD]*(num_d-2) - hmm_ptr->tr[TR_DM];
                                     if ( temp_alpha < alpha[i][t]) {
                                         alpha[i][t] = temp_alpha;
@@ -170,7 +170,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                         }
 
                         /* from Start state */
-                        temp_alpha = alpha[S_STATE][t-1] - hmm_ptr->e_M[0][from2][to];
+                        temp_alpha = alpha[S_STATE][t-1] - train_ptr->trans[cg][0][from2][to];
                         if ( temp_alpha < alpha[i][t] ) {
                             alpha[i][t] = temp_alpha;
                             path[i][t] = S_STATE;
@@ -180,7 +180,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                         /* from M state */
                         j = i - 1;
-                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_MM] - hmm_ptr->e_M[i-M1_STATE][from2][to];
+                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_MM] - train_ptr->trans[cg][i-M1_STATE][from2][to];
                         path[i][t] = j;
 
 
@@ -195,7 +195,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                                     num_d = -10;
                                 }
                                 if (num_d > 0) {
-                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - hmm_ptr->e_M[i-M1_STATE][from2][to]
+                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - train_ptr->trans[cg][i-M1_STATE][from2][to]
                                                  - log25*(num_d-1) - hmm_ptr->tr[TR_DD]*(num_d-2) - hmm_ptr->tr[TR_DM];
                                     if ( temp_alpha < alpha[i][t]) {
                                         alpha[i][t] = temp_alpha;
@@ -269,7 +269,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                      ((O[t-3] == 'T'||O[t-3] == 't') && (O[t-2] == 'C'||O[t-2] == 'c') && (O[t-1] == 'A'||O[t-1] =='a')))) {
 
                 /* from Start state  since this is actually stop codon in minus strand */
-                alpha[i][t] = alpha[S_STATE_1][t-1] - hmm_ptr->e_M_1[i-M1_STATE_1][from2][to];
+                alpha[i][t] = alpha[S_STATE_1][t-1] - train_ptr->rtrans[cg][i-M1_STATE_1][from2][to];
                 path[i][t] = S_STATE_1;
 
             } else {
@@ -279,7 +279,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                         /* from M state */
                         j = M6_STATE_1;
-                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_GG] - hmm_ptr->tr[TR_MM] - hmm_ptr->e_M_1[0][from2][to];
+                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_GG] - hmm_ptr->tr[TR_MM] - train_ptr->rtrans[cg][0][from2][to];
                         path[i][t] = j;
 
                         /* from D state */
@@ -293,7 +293,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                                     num_d = -10;
                                 }
                                 if (num_d > 0) {
-                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - hmm_ptr->e_M_1[0][from2][to]
+                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - train_ptr->rtrans[cg][0][from2][to]
                                                  - log25*(num_d-1) - hmm_ptr->tr[TR_DD]*(num_d-2) - hmm_ptr->tr[TR_DM];
                                     if ( temp_alpha < alpha[i][t]) {
                                         alpha[i][t] = temp_alpha;
@@ -307,7 +307,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 
                         /* from M state */
                         j = i - 1;
-                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_MM] - hmm_ptr->e_M_1[i-M1_STATE_1][from2][to];
+                        alpha[i][t] = alpha[j][t-1] - hmm_ptr->tr[TR_MM] - train_ptr->rtrans[cg][i-M1_STATE_1][from2][to];
                         path[i][t] = j;
 
                         /* from D state */
@@ -321,7 +321,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                                     num_d = -10;
                                 }
                                 if (num_d>0) {
-                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - hmm_ptr->e_M_1[i-M1_STATE_1][from2][to]
+                                    temp_alpha = alpha[j][t-1] - hmm_ptr->tr[TR_MD] - train_ptr->rtrans[cg][i-M1_STATE_1][from2][to]
                                                  - log25*(num_d-1) - hmm_ptr->tr[TR_DD]*(num_d-2) - hmm_ptr->tr[TR_DM];
                                     if ( temp_alpha < alpha[i][t]) {
                                         alpha[i][t] = temp_alpha;
@@ -399,7 +399,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
         /***********************/
 
         if (t!=0) {
-            alpha[R_STATE][t] = alpha[R_STATE][t-1] - hmm_ptr->tr_R_R[from][to] - hmm_ptr->tr[TR_RR];
+            alpha[R_STATE][t] = alpha[R_STATE][t-1] - train_ptr->noncoding[cg][from][to] - hmm_ptr->tr[TR_RR];
             path[R_STATE][t] = R_STATE;
 
             temp_alpha = alpha[E_STATE][t-1]  - hmm_ptr->tr[TR_ER];
@@ -475,22 +475,22 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     for(int i=-60; i<=-3; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            start_freq -= hmm_ptr->tr_E[i+60][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            start_freq -= train_ptr->stop[cg][i+60][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                 } else {
                     for(int i=(-1*t); i<=-3; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            sub_sum += hmm_ptr->tr_E[i+60][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            sub_sum += train_ptr->stop[cg][i+60][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                     sub_sum = sub_sum * 58 / (-3 + t + 1);
                     start_freq -= sub_sum;
                 }
 
-                h_kd = hmm_ptr->E_dist[2] * exp(-1*pow(start_freq-hmm_ptr->E_dist[1],2)/(2*pow(hmm_ptr->E_dist[0],2)));
-                r_kd = hmm_ptr->E_dist[5] * exp(-1*pow(start_freq-hmm_ptr->E_dist[4],2)/(2*pow(hmm_ptr->E_dist[3],2)));
+                h_kd = train_ptr->E_dist[cg][2] * exp(-1*pow(start_freq-train_ptr->E_dist[cg][1],2)/(2*pow(train_ptr->E_dist[cg][0],2)));
+                r_kd = train_ptr->E_dist[cg][5] * exp(-1*pow(start_freq-train_ptr->E_dist[cg][4],2)/(2*pow(train_ptr->E_dist[cg][3],2)));
                 p_kd = h_kd / (h_kd + r_kd);
                 if (p_kd<0.01) {
                     p_kd=0.01;
@@ -552,11 +552,11 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                 for(int i=3; i<=60; i++) {
                     if (t+i+2 < len_seq)
                     {
-                        start_freq -= hmm_ptr->tr_S_1[i-3][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                        start_freq -= train_ptr->start1[cg][i-3][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                     }
                 }
-                h_kd = hmm_ptr->S1_dist[2] * exp(-1*pow(start_freq-hmm_ptr->S1_dist[1],2)/(2*pow(hmm_ptr->S1_dist[0],2)));
-                r_kd = hmm_ptr->S1_dist[5] * exp(-1*pow(start_freq-hmm_ptr->S1_dist[4],2)/(2*pow(hmm_ptr->S1_dist[3],2)));
+                h_kd = train_ptr->S1_dist[cg][2] * exp(-1*pow(start_freq-train_ptr->S1_dist[cg][1],2)/(2*pow(train_ptr->S1_dist[cg][0],2)));
+                r_kd = train_ptr->S1_dist[cg][5] * exp(-1*pow(start_freq-train_ptr->S1_dist[cg][4],2)/(2*pow(train_ptr->S1_dist[cg][3],2)));
                 p_kd = h_kd / (h_kd + r_kd);
                 if (p_kd<0.01) {
                     p_kd=0.01;
@@ -616,22 +616,22 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     for(int i=-30; i<=30; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            start_freq -= hmm_ptr->tr_S[i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            start_freq -= train_ptr->start[cg][i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                 } else {
                     for(int i=(-1*t); i<=30; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            sub_sum += hmm_ptr->tr_S[i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            sub_sum += train_ptr->start[cg][i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                     sub_sum = sub_sum * 61 / (30 + t + 1);
                     start_freq -= sub_sum;
                 }
 
-                h_kd = hmm_ptr->S_dist[2] * exp(-1*pow(start_freq-hmm_ptr->S_dist[1],2)/(2*pow(hmm_ptr->S_dist[0],2)));
-                r_kd = hmm_ptr->S_dist[5] * exp(-1*pow(start_freq-hmm_ptr->S_dist[4],2)/(2*pow(hmm_ptr->S_dist[3],2)));
+                h_kd = train_ptr->S_dist[cg][2] * exp(-1*pow(start_freq-train_ptr->S_dist[cg][1],2)/(2*pow(train_ptr->S_dist[cg][0],2)));
+                r_kd = train_ptr->S_dist[cg][5] * exp(-1*pow(start_freq-train_ptr->S_dist[cg][4],2)/(2*pow(train_ptr->S_dist[cg][3],2)));
                 p_kd = h_kd / (h_kd + r_kd);
                 if (p_kd<0.01) {
                     p_kd=0.01;
@@ -682,22 +682,22 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     for(int i=-30; i<=30; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            start_freq -= hmm_ptr->tr_E_1[i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            start_freq -= train_ptr->stop1[cg][i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                 } else {
                     for(int i=(-1*t); i<=30; i++) {
                         if (t+i+2 < len_seq)
                         {
-                            sub_sum += hmm_ptr->tr_E_1[i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
+                            sub_sum += train_ptr->stop1[cg][i+30][trinucleotide(O[t+i], O[t+i+1], O[t+i+2])];
                         }
                     }
                     sub_sum = sub_sum * 61 / (30 + t + 1);
                     start_freq -= sub_sum;
                 }
 
-                h_kd = hmm_ptr->E1_dist[2] * exp(-1*pow(start_freq-hmm_ptr->E1_dist[1],2)/(2*pow(hmm_ptr->E1_dist[0],2)));
-                r_kd = hmm_ptr->E1_dist[5] * exp(-1*pow(start_freq-hmm_ptr->E1_dist[4],2)/(2*pow(hmm_ptr->E1_dist[3],2)));
+                h_kd = train_ptr->E1_dist[cg][2] * exp(-1*pow(start_freq-train_ptr->E1_dist[cg][1],2)/(2*pow(train_ptr->E1_dist[cg][0],2)));
+                r_kd = train_ptr->E1_dist[cg][5] * exp(-1*pow(start_freq-train_ptr->E1_dist[cg][4],2)/(2*pow(train_ptr->E1_dist[cg][3],2)));
                 p_kd = h_kd / (h_kd + r_kd);
 
                 if (p_kd<0.01) {
@@ -1003,27 +1003,17 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
 *
 */
 int get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, char *O) {
-    int cg_count=0, len_seq= strlen(O);
+    int cg=0, len_seq= strlen(O);
     for (int i=0; i<len_seq; i++) {
-        if ((O[i] == 'C'||O[i] =='c') || (O[i] == 'G'||O[i] == 'g') ) cg_count++;
+        if ((O[i] == 'C'||O[i] =='c') || (O[i] == 'G'||O[i] == 'g') ) cg++;
     }
-    cg_count = floor((cg_count*1.0/len_seq)*100)-26;
-    if (cg_count < 0) cg_count = 0;
-    else if (cg_count > 43)     cg_count = 43;
+    cg = floor((cg*1.0/len_seq)*100)-26;
+    if (cg < 0) cg = 0;
+    else if (cg > 43)     cg = 43;
 
-    memcpy(hmm_ptr->e_M, train_ptr->trans[cg_count], sizeof(hmm_ptr->e_M));
-    memcpy(hmm_ptr->e_M_1, train_ptr->rtrans[cg_count], sizeof(hmm_ptr->e_M_1));
-    memcpy(hmm_ptr->tr_R_R, train_ptr->noncoding[cg_count], sizeof(hmm_ptr->tr_R_R));
-    memcpy(hmm_ptr->tr_S, train_ptr->start[cg_count], sizeof(hmm_ptr->tr_S));
-    memcpy(hmm_ptr->tr_E, train_ptr->stop[cg_count], sizeof(hmm_ptr->tr_E));
-    memcpy(hmm_ptr->tr_S_1, train_ptr->start1[cg_count], sizeof(hmm_ptr->tr_S_1));
-    memcpy(hmm_ptr->tr_E_1, train_ptr->stop1[cg_count], sizeof(hmm_ptr->tr_E_1));
-    memcpy(hmm_ptr->S_dist, train_ptr->S_dist[cg_count], sizeof(hmm_ptr->S_dist));
-    memcpy(hmm_ptr->E_dist, train_ptr->E_dist[cg_count], sizeof(hmm_ptr->E_dist));
-    memcpy(hmm_ptr->S1_dist, train_ptr->S1_dist[cg_count], sizeof(hmm_ptr->S1_dist));
-    memcpy(hmm_ptr->E1_dist, train_ptr->E1_dist[cg_count], sizeof(hmm_ptr->E1_dist));
+    memcpy(train_ptr->S1_dist[cg], train_ptr->S1_dist[cg], sizeof(train_ptr->S1_dist[cg]));
 
-    return cg_count;
+    return cg;
 }
 
 
