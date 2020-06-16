@@ -735,10 +735,10 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     start_t=-1;
 
     char codon[4], utr[65];
-    char *dna = malloc(len_seq+1);
+    char *dna = malloc(300000*sizeof(char));
     char *dna1 = malloc(300000*sizeof(char));
-    char *dna_f = malloc(len_seq+1);
-    char *dna_f1 = malloc(300000*sizeof(char));
+    char *dna_f = malloc(300000*sizeof(char));
+    
     char *protein = malloc(300000*sizeof(char));
     int dna_id=0,dna_f_id=0,frame;
     for (int t=0; t<len_seq; t++) {
@@ -930,10 +930,13 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
 
                     get_rc_dna(dna, dna1);
-                    get_rc_dna_indel(dna_f, dna_f1);
+                    
                     fprintf(fp_aa, "%s\n", protein);
                     if (format==1) {
+                        char *dna_f1 = malloc(300000*sizeof(char));
+                        get_rc_dna_indel(dna_f, dna_f1);
                         fprintf(fp_dna, "%s\n", dna_f1);
+                        free(dna_f1);
                     } else {
                         fprintf(fp_dna, "%s\n", dna1);
                     }
@@ -994,7 +997,6 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     free(dna);
     free(dna1);
     free(dna_f);
-    free(dna_f1);
     free(protein);
 }
 
