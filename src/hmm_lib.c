@@ -559,7 +559,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                 } else if (p_kd>0.99) {
                     p_kd=0.99;
                 }
-                alpha[S_STATE_1][t+2] = alpha[S_STATE_1][t+2] - log(p_kd);
+                alpha[S_STATE_1][t+2] -= log(p_kd);
             }
         }
 
@@ -849,7 +849,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     strncpy(dna, O + dna_start_t - 1, dna_end_t - dna_start_t + 1);
                     dna[dna_end_t - dna_start_t + 1] = '\0';
                     //end of update dna
-
+                    
                     get_protein(dna,protein,1, whole_genome);
 
                     fprintf(fp_aa, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
@@ -914,15 +914,15 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     strncpy(dna, O + dna_start_t_withstop - 1, dna_end_t - dna_start_t_withstop + 1);
                     dna[dna_end_t - dna_start_t_withstop + 1] = '\0';
                     //end of update dna
-
-
-                    get_protein(dna,protein,-1, whole_genome);
+                    
+                    
+                    get_protein(dna,protein,-1, whole_genome); 
 
                     fprintf(fp_aa, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
                     fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
 
                     get_rc_dna(dna, dna1);
-
+                    
                     fprintf(fp_aa, "%s\n", protein);
                     if (format==1) {
                         char *dna_f1 = malloc(300000*sizeof(char));

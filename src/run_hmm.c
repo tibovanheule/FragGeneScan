@@ -77,10 +77,6 @@ int main (int argc, char **argv) {
     int c;
     while ((c=getopt(argc, argv, "fs:o:w:t:p:")) != -1) {
         switch (c) {
-        case 's':
-            strcpy(seq_file, optarg);
-            if (access(seq_file, F_OK)==-1) print_error("ERROR: Sequence file [%s] does not exist\n",seq_file);
-            break;
         case 'w':
             wholegenome = atoi(optarg);
             if (wholegenome != 0 && wholegenome != 1)	print_error("ERROR: An incorrect value for the option -w was entered\n");
@@ -154,19 +150,17 @@ int main (int argc, char **argv) {
     int  total=0;
     // array of threads (variables needed for pthreads)
     pthread_t thread[threadnum];
-    //open file handler
-    FILE *fp = fopen (seq_file, "r");
     // initial size of sequentie string, this will increase if there are strings in the
     size_t size = 150;
     char* sequentie = malloc(size* sizeof(char));
-    while ( fgets (mystring, sizeof mystring, fp)  ) {
-        if (mystring[0] == '>' || feof(fp)) {
+    while ( fgets (mystring, sizeof mystring, stdin)  ) {
+        if (mystring[0] == '>') {
 
             if (total > 0) {
                 threadarr[(total-1) % threadnum].obs_seq = strdup(sequentie);
                 sequence_offset = 0;
             }
-            if (total > 0 && (total % threadnum == 0 || feof(fp))) {
+            if (total > 0 && total % threadnum == 0 ) {
                 // Deal with the thread
                 for (int i = 0; i < threadnum; i++) {
                     int rc = pthread_create(&thread[i], NULL, thread_func, (void*)&threadarr[i]);
@@ -189,10 +183,8 @@ int main (int argc, char **argv) {
                     free(threadarr[i].obs_seq);
                 }
             }
-            if (!feof(fp)) {
-                threadarr[total % threadnum].obs_head = strdup(strtok(mystring, DELIMI));
-                total++;
-            }
+            threadarr[total % threadnum].obs_head = strdup(strtok(mystring, DELIMI));
+            total++;
             continue;
         } else {
             int bpcount = strlen(mystring);
@@ -207,7 +199,6 @@ int main (int argc, char **argv) {
         }
     }
     free(sequentie);
-    fclose(fp);
     // print is uselless since all work is done, note total counts also the sequences that are of length 0!
     // printf("no. of seqs: %d\n", total);
 
