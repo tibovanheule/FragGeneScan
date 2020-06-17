@@ -22,15 +22,13 @@ int main (int argc, char **argv) {
     TRAIN *train = malloc(sizeof(TRAIN));
     HMM *hmm = malloc(sizeof(HMM));
 
-    clock_t start = clock();
+//    clock_t start = clock();
 
     /* number of threads */
     int threadnum = 1;
 
-    char hmm_file[STRINGLEN] = "";
+    char hmm_file[STRINGLEN*2] = "";
     char out_header[STRINGLEN-500] = "";
-
-    char seq_file[STRINGLEN] = "";
 
     char train_file[STRINGLEN] = "";
     char mstate_file[STRINGLEN] = "";
