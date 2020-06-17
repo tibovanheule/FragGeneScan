@@ -67,11 +67,6 @@ int main (int argc, char **argv) {
     strcat(dstate_file, "pwm");
 
 
-    /* If there is less then 9 arguments, then we halt because not everything is given. */
-    if (argc <= 8) {
-        print_error("ERROR: You missed some parameters for input\n");
-    }
-
     // arguments variables
     int wholegenome, format=0;
 
@@ -87,9 +82,6 @@ int main (int argc, char **argv) {
             threadnum = atoi(optarg);
             if (threadnum < 1) print_error("ERROR: An incorrect value [%d] for the option -p was entered\n", threadnum);
             //printf("Using %d threads.\n", threadnum);
-            break;
-        case 'o':
-            strcpy(out_header, optarg);
             break;
         case 't':
             strcpy(train_file, optarg);
