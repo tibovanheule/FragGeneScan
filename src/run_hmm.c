@@ -81,8 +81,7 @@ int main (int argc, char **argv) {
             break;
         case 't':
             strcpy(train_file, optarg);
-            strcpy(hmm_file, train_dir);
-            strcat(hmm_file, train_file);
+	    snprintf(hmm_file,STRINGLEN,"%s/%s",train_dir,train_file);
             break;
         case 'f':
             format = 1;
