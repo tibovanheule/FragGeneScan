@@ -86,7 +86,7 @@ int main (int argc, char **argv) {
         case 'p':
             threadnum = atoi(optarg);
             if (threadnum < 1) print_error("ERROR: An incorrect value [%d] for the option -p was entered\n", threadnum);
-            printf("Using %d threads.\n", threadnum);
+            //printf("Using %d threads.\n", threadnum);
             break;
         case 'o':
             strcpy(out_header, optarg);
@@ -133,7 +133,7 @@ int main (int argc, char **argv) {
             sprintf(mystring, "%s.out", out_header);
             threadarr[i].out = fopen(mystring, "w");
             sprintf(mystring, "%s.faa", out_header);
-            threadarr[i].aa = fopen(mystring, "w");
+            threadarr[i].aa = stdout;
             sprintf(mystring, "%s.ffn", out_header);
             threadarr[i].dna = fopen(mystring, "w");
         }
@@ -214,7 +214,7 @@ int main (int argc, char **argv) {
     free(threadarr);
     free(hmm);
     free(train);
-    printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
+    //printf("Clock time used (by %d threads) = %.2f mins\n", threadnum, (clock() - start) / (60.0 * CLOCKS_PER_SEC));
     return 0;
 }
 
@@ -274,7 +274,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
     remove (dna_file);
 
     char ** lastline = malloc(threadnum* sizeof(char*));
-    char * currline =  malloc(STRINGLEN* sizeof(char));
+    char * currline =  calloc(STRINGLEN* sizeof(char));
 
     int j =0;
 
@@ -286,7 +286,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
         sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
         threadarr[i].dna = fopen(mystring, "r");
 
-        lastline[i] = malloc(STRINGLEN + 1);
+        lastline[i] = calloc(STRINGLEN + 1);
     }
     FILE * fp_aa = fopen (aa_file, "w");
     FILE * fp_out = fopen (out_file, "w");
