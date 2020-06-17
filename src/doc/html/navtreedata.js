@@ -49,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_2_users_2admin_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html"
+"_c_1_2_users_2seven_2_desktop_2_frag_gene_scan_2src_2thpool_8h-example.html"
 ];
 
 var SYNCONMSG = 'klik hier de paneel synchronisatie uit the schakelen';
