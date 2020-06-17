@@ -394,7 +394,5 @@ void combine(int threadnum,char* out_header,char* dna_file,char* out_file, threa
     if(d)    fclose(fp_dna);
     free(lastline);
     free(currline);
-
-
 }
 
