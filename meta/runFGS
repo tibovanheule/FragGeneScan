@@ -2,5 +2,4 @@
 
 cd ./src/
 make fgs --silent --always-make
-./FragGeneScan -w 0 -t 454_10 -p 1 
-
+./FragGeneScan  $@
