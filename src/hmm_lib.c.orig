@@ -833,36 +833,36 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     }
 
                     dna_end_t = end_t;
-                    if(e) {
-                        fprintf(fp_out, "%d\t%d\t+\t%d\t%lf\t", dna_start_t, dna_end_t, frame, final_score);
-                        fprintf(fp_out, "I:");
-                        for (int i=0; i<insert_id; i++) {
-                            fprintf(fp_out, "%d,", insert[i]);
-                        }
-                        fprintf(fp_out, "\tD:");
-                        for (int i=0; i<delete_id; i++) {
-                            fprintf(fp_out, "%d,", delete[i]);
-                        }
-                        fprintf(fp_out, "\n");
+                    if(e){
+		    fprintf(fp_out, "%d\t%d\t+\t%d\t%lf\t", dna_start_t, dna_end_t, frame, final_score);
+                    fprintf(fp_out, "I:");
+                    for (int i=0; i<insert_id; i++) {
+                        fprintf(fp_out, "%d,", insert[i]);
                     }
+                    fprintf(fp_out, "\tD:");
+                    for (int i=0; i<delete_id; i++) {
+                        fprintf(fp_out, "%d,", delete[i]);
+                    }
+                    fprintf(fp_out, "\n");
+		    }
                     //update dna before calling get_protein, YY July 2018
                     dna[0] = '\0';
                     strncpy(dna, O + dna_start_t - 1, dna_end_t - dna_start_t + 1);
                     dna[dna_end_t - dna_start_t + 1] = '\0';
                     //end of update dna
-
+                    
                     get_protein(dna,protein,1, whole_genome);
 
                     fprintf(fp_aa, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     fprintf(fp_aa, "%s\n", protein);
                     if (d) {
-                        fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
-                        if (format==0) {
-                            fprintf(fp_dna, "%s\n", dna);
-                        } else if (format==1) {
-                            fprintf(fp_dna, "%s\n", dna_f);
-                        }
+			fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
+                    if (format==0) {
+                        fprintf(fp_dna, "%s\n", dna);
+                    } else if (format==1) {
+                        fprintf(fp_dna, "%s\n", dna_f);
                     }
+}
                 } else if (codon_start==-1) {
                     if(refine) { //add refinement of the start codons here, Ye, April 16, 2016
                         int end_old = end_t; //reverse
@@ -904,41 +904,41 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     }
 
                     dna_end_t = end_t;
-                    if(e) {
-                        fprintf(fp_out, "%d\t%d\t-\t%d\t%lf\t", dna_start_t_withstop, dna_end_t, frame, final_score);
-                        fprintf(fp_out, "I:");
-                        for (int i=0; i<insert_id; i++) fprintf(fp_out, "%d,", insert[i]);
-                        fprintf(fp_out, "\tD:");
-                        for (int i=0; i<delete_id; i++) fprintf(fp_out, "%d,", delete[i]);
-                        fprintf(fp_out, "\n");
-                    }
+		    if(e){
+                    fprintf(fp_out, "%d\t%d\t-\t%d\t%lf\t", dna_start_t_withstop, dna_end_t, frame, final_score);
+                    fprintf(fp_out, "I:");
+                    for (int i=0; i<insert_id; i++) fprintf(fp_out, "%d,", insert[i]);
+                    fprintf(fp_out, "\tD:");
+                    for (int i=0; i<delete_id; i++) fprintf(fp_out, "%d,", delete[i]);
+                    fprintf(fp_out, "\n");
+			}
                     //update dna before calling get_protein, YY July 2018
                     //use dna_end_t & dna_start_w_withstop to avoid incomplete codons & include start/stop codons
                     dna[0] = '\0';
                     strncpy(dna, O + dna_start_t_withstop - 1, dna_end_t - dna_start_t_withstop + 1);
                     dna[dna_end_t - dna_start_t_withstop + 1] = '\0';
                     //end of update dna
-
-                    get_protein(dna,protein,-1, whole_genome);
+                    
+                    get_protein(dna,protein,-1, whole_genome); 
 
                     fprintf(fp_aa, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
                     fprintf(fp_aa, "%s\n", protein);
 
-                    if(d) {
-                        fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
+                     if(d){
+                   fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
 
 
-                        get_rc_dna(dna, dna1);
-
-                        if (format==1) {
-                            char *dna_f1 = malloc(300000*sizeof(char));
-                            get_rc_dna_indel(dna_f, dna_f1);
-                            fprintf(fp_dna, "%s\n", dna_f1);
-                            free(dna_f1);
-                        } else {
-                            fprintf(fp_dna, "%s\n", dna1);
-                        }
+                    get_rc_dna(dna, dna1);
+                    
+                    if (format==1) {
+                        char *dna_f1 = malloc(300000*sizeof(char));
+                        get_rc_dna_indel(dna_f, dna_f1);
+                        fprintf(fp_dna, "%s\n", dna_f1);
+                        free(dna_f1);
+                    } else {
+                        fprintf(fp_dna, "%s\n", dna1);
                     }
+}
                 }
             }
             codon_start=0;
