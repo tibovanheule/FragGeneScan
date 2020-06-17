@@ -22,6 +22,8 @@ typedef struct thread_data {
     int format;
     HMM *hmm;
     TRAIN *train;
+    int d;
+    int e;
 } thread_data;
 
 void* thread_func(void *threadarr);
@@ -30,6 +32,6 @@ void print_error(const char* error_message, ...);
 
 void print_file_error(const char* error_message, char* file);
 
-void combine(int threadnum,char* out_file,thread_data *threadarr);
+void combine(int threadnum,char* out_header,char* dna_file,char* out_file,thread_data *threadarr,int d,int e);
 
 #endif

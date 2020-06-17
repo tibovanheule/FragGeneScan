@@ -16,7 +16,7 @@ const double log54 = -0.616186; //log(0.54);
 const double log83 = -0.186330; //log(0.83);
 const double log07 = -2.659260; //log(0.07);
 
-void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format) {
+void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format,int d,int e) {
     double max_dbl = INFINITY;
     int len_seq = strlen(O);
     double ** alpha = dmatrix(NUM_STATE, len_seq);                      /* viterbi prob array */
@@ -712,7 +712,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
     /* backtrack array to find the optimal path                */
     /***********************************************************/
 
-    fprintf(fp_out, "%s\n", head);
+    if(e) fprintf(fp_out, "%s\n", head);
 
     /* find the state for O[N] with the highest probability */
     for (int i = 0; i < NUM_STATE; i++) if (alpha[i][len_seq-1] < max_dbl) {
@@ -833,7 +833,8 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     }
 
                     dna_end_t = end_t;
-                    fprintf(fp_out, "%d\t%d\t+\t%d\t%lf\t", dna_start_t, dna_end_t, frame, final_score);
+                    if(e){
+		    fprintf(fp_out, "%d\t%d\t+\t%d\t%lf\t", dna_start_t, dna_end_t, frame, final_score);
                     fprintf(fp_out, "I:");
                     for (int i=0; i<insert_id; i++) {
                         fprintf(fp_out, "%d,", insert[i]);
@@ -843,7 +844,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                         fprintf(fp_out, "%d,", delete[i]);
                     }
                     fprintf(fp_out, "\n");
-
+		    }
                     //update dna before calling get_protein, YY July 2018
                     dna[0] = '\0';
                     strncpy(dna, O + dna_start_t - 1, dna_end_t - dna_start_t + 1);
@@ -853,13 +854,15 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     get_protein(dna,protein,1, whole_genome);
 
                     fprintf(fp_aa, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
-                    fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     fprintf(fp_aa, "%s\n", protein);
+                    if (d) {
+			fprintf(fp_dna, "%s_%d_%d_+\n", head, dna_start_t, dna_end_t);
                     if (format==0) {
                         fprintf(fp_dna, "%s\n", dna);
                     } else if (format==1) {
                         fprintf(fp_dna, "%s\n", dna_f);
                     }
+}
                 } else if (codon_start==-1) {
                     if(refine) { //add refinement of the start codons here, Ye, April 16, 2016
                         int end_old = end_t; //reverse
@@ -901,13 +904,14 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     }
 
                     dna_end_t = end_t;
+		    if(e){
                     fprintf(fp_out, "%d\t%d\t-\t%d\t%lf\t", dna_start_t_withstop, dna_end_t, frame, final_score);
                     fprintf(fp_out, "I:");
                     for (int i=0; i<insert_id; i++) fprintf(fp_out, "%d,", insert[i]);
                     fprintf(fp_out, "\tD:");
                     for (int i=0; i<delete_id; i++) fprintf(fp_out, "%d,", delete[i]);
                     fprintf(fp_out, "\n");
-
+			}
                     //update dna before calling get_protein, YY July 2018
                     //use dna_end_t & dna_start_w_withstop to avoid incomplete codons & include start/stop codons
                     dna[0] = '\0';
@@ -915,15 +919,17 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     dna[dna_end_t - dna_start_t_withstop + 1] = '\0';
                     //end of update dna
                     
-                    
                     get_protein(dna,protein,-1, whole_genome); 
 
                     fprintf(fp_aa, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
-                    fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
+                    fprintf(fp_aa, "%s\n", protein);
+
+                     if(d){
+                   fprintf(fp_dna, "%s_%d_%d_-\n", head, dna_start_t_withstop, dna_end_t);
+
 
                     get_rc_dna(dna, dna1);
                     
-                    fprintf(fp_aa, "%s\n", protein);
                     if (format==1) {
                         char *dna_f1 = malloc(300000*sizeof(char));
                         get_rc_dna_indel(dna_f, dna_f1);
@@ -932,6 +938,7 @@ void viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa,
                     } else {
                         fprintf(fp_dna, "%s\n", dna1);
                     }
+}
                 }
             }
             codon_start=0;
