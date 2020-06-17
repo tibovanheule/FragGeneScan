@@ -44,11 +44,7 @@ int main (int argc, char **argv) {
     char train_dir[STRINGLEN] = "";
     char mystring[STRINGLEN] = "";
 
-
-
-
     getcwd(train_dir,STRINGLEN);
-    strcat(train_dir, "/train/");
     strcpy(mstate_file, train_dir);
     strcat(mstate_file, "gene");
     strcpy(rstate_file, train_dir);
