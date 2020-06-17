@@ -46,21 +46,21 @@ int main (int argc, char **argv) {
 
     getcwd(train_dir,STRINGLEN);
     strcpy(mstate_file, train_dir);
-    strcat(mstate_file, "/gene");
+    strcat(mstate_file, "/train/gene");
     strcpy(rstate_file, train_dir);
-    strcat(rstate_file, "/rgene");
+    strcat(rstate_file, "/train/rgene");
     strcpy(nstate_file, train_dir);
-    strcat(nstate_file, "/noncoding");
+    strcat(nstate_file, "/train/noncoding");
     strcpy(sstate_file, train_dir);
-    strcat(sstate_file, "/start");
+    strcat(sstate_file, "/train/start");
     strcpy(pstate_file, train_dir);
-    strcat(pstate_file, "/stop");
+    strcat(pstate_file, "/train/stop");
     strcpy(s1state_file, train_dir);
-    strcat(s1state_file, "/stop1");
+    strcat(s1state_file, "/train/stop1");
     strcpy(p1state_file, train_dir);
-    strcat(p1state_file, "/start1");
+    strcat(p1state_file, "/train/start1");
     strcpy(dstate_file, train_dir);
-    strcat(dstate_file, "/pwm");
+    strcat(dstate_file, "/train/pwm");
 
 
     // arguments variables
