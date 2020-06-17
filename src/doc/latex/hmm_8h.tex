@@ -122,7 +122,7 @@ int \mbox{\hyperlink{hmm_8h_aa5d13d79b8ed4466bcacfcc4184ee399}{get\+\_\+prob\+\_
 \item 
 void \mbox{\hyperlink{hmm_8h_acef94cf960e200f7ec1b4619510461a1}{get\+\_\+train\+\_\+from\+\_\+file}} (char $\ast$filename, \mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, char $\ast$mfilename, char $\ast$mfilename1, char $\ast$nfilename, char $\ast$sfilename, char $\ast$pfilename, char $\ast$s1filename, char $\ast$p1filename, char $\ast$dfilename, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr)
 \item 
-void \mbox{\hyperlink{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36}{viterbi}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr, char $\ast$O, F\+I\+LE $\ast$out\+\_\+filename, F\+I\+LE $\ast$log\+\_\+filename, F\+I\+LE $\ast$dna\+\_\+filename, char $\ast$head, int metagene, int cg, int format)
+void \mbox{\hyperlink{hmm_8h_a302ec5e370c35486d7838005a75b599a}{viterbi}} (\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$hmm\+\_\+ptr, \mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$train\+\_\+ptr, char $\ast$O, F\+I\+LE $\ast$out\+\_\+filename, F\+I\+LE $\ast$log\+\_\+filename, F\+I\+LE $\ast$dna\+\_\+filename, char $\ast$head, int metagene, int cg, int format, int d, int e)
 \item 
 void \mbox{\hyperlink{hmm_8h_a66ceabacbfe397e6d70025814a0c3882}{get\+\_\+protein}} (char $\ast$dna, char $\ast$protein, int strand, int whole\+\_\+genome)
 \item 
@@ -450,7 +450,8 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{get\_protein()}{get\_protein()}}
 {\footnotesize\ttfamily void get\+\_\+protein (\begin{DoxyParamCaption}\item[{char $\ast$}]{dna,  }\item[{char $\ast$}]{protein,  }\item[{int}]{strand,  }\item[{int}]{whole\+\_\+genome }\end{DoxyParamCaption})}
 
-Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short read and stop early. Hier is de caller graaf voor deze functie\+:\nopagebreak
+Get a protein of dna if Whole\+\_\+genome equals to zero, then we want a short read and stop early. Hier is de caller graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -470,7 +471,8 @@ copies dna to dna1 in reverse. and Hier is de call graaf voor deze functie\+:\no
 \includegraphics[width=235pt]{hmm_8h_a4bb170d07b8af8e326242f06b922bd80_cgraph}
 \end{center}
 \end{figure}
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -500,23 +502,25 @@ Hier is de caller graaf voor deze functie\+:\nopagebreak
 \includegraphics[width=251pt]{hmm_8h_acef94cf960e200f7ec1b4619510461a1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36}\label{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36}} 
+\mbox{\Hypertarget{hmm_8h_a302ec5e370c35486d7838005a75b599a}\label{hmm_8h_a302ec5e370c35486d7838005a75b599a}} 
 \index{hmm.h@{hmm.h}!viterbi@{viterbi}}
 \index{viterbi@{viterbi}!hmm.h@{hmm.h}}
 \doxysubsubsection{\texorpdfstring{viterbi()}{viterbi()}}
-{\footnotesize\ttfamily void viterbi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr,  }\item[{char $\ast$}]{O,  }\item[{F\+I\+LE $\ast$}]{out\+\_\+filename,  }\item[{F\+I\+LE $\ast$}]{log\+\_\+filename,  }\item[{F\+I\+LE $\ast$}]{dna\+\_\+filename,  }\item[{char $\ast$}]{head,  }\item[{int}]{metagene,  }\item[{int}]{cg,  }\item[{int}]{format }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void viterbi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_h_m_m}{H\+MM}} $\ast$}]{hmm\+\_\+ptr,  }\item[{\mbox{\hyperlink{struct_t_r_a_i_n}{T\+R\+A\+IN}} $\ast$}]{train\+\_\+ptr,  }\item[{char $\ast$}]{O,  }\item[{F\+I\+LE $\ast$}]{out\+\_\+filename,  }\item[{F\+I\+LE $\ast$}]{log\+\_\+filename,  }\item[{F\+I\+LE $\ast$}]{dna\+\_\+filename,  }\item[{char $\ast$}]{head,  }\item[{int}]{metagene,  }\item[{int}]{cg,  }\item[{int}]{format,  }\item[{int}]{d,  }\item[{int}]{e }\end{DoxyParamCaption})}
 
-Hier is de call graaf voor deze functie\+:\nopagebreak
+Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_cgraph}
+\includegraphics[width=350pt]{hmm_8h_a302ec5e370c35486d7838005a75b599a_cgraph}
 \end{center}
 \end{figure}
-Hier is de caller graaf voor deze functie\+:\nopagebreak
+Hier is de caller graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=301pt]{hmm_8h_ad5256334c4b449b8ed86f428fc0c7a36_icgraph}
+\includegraphics[width=301pt]{hmm_8h_a302ec5e370c35486d7838005a75b599a_icgraph}
 \end{center}
 \end{figure}

@@ -140,8 +140,8 @@ Functies</h2></td></tr>
 <tr class="separator:a5f590f6cc7bf5db3ae40e2e1c34f2262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256">print_file_error</a> (const char *error_message, char *file)</td></tr>
 <tr class="separator:a8ba3959a9af3a709d5ac2d90d6c7d256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e3c6b0a109ecd3d39179fbd15689371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a0e3c6b0a109ecd3d39179fbd15689371">combine</a> (int threadnum, char *out_header, <a class="el" href="structthread__data.html">thread_data</a> *threadarr)</td></tr>
-<tr class="separator:a0e3c6b0a109ecd3d39179fbd15689371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5100b50d7877bd175a2ae163d5ae3bc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="run__hmm_8c.html#a5100b50d7877bd175a2ae163d5ae3bc7">combine</a> (int threadnum, char *out_header, char *dna_file, char *out_file, <a class="el" href="structthread__data.html">thread_data</a> *threadarr, int d, int e)</td></tr>
+<tr class="separator:a5100b50d7877bd175a2ae163d5ae3bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentatie van macro's</h2>
 <a id="ab76fbb1f1b2031f52c2a805e49aaa23b"></a>
@@ -187,8 +187,8 @@ Functies</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentatie van functies</h2>
-<a id="a0e3c6b0a109ecd3d39179fbd15689371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e3c6b0a109ecd3d39179fbd15689371">&#9670;&nbsp;</a></span>combine()</h2>
+<a id="a5100b50d7877bd175a2ae163d5ae3bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5100b50d7877bd175a2ae163d5ae3bc7">&#9670;&nbsp;</a></span>combine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,8 +208,32 @@ Functies</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dna_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>out_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="structthread__data.html">thread_data</a> *&#160;</td>
-          <td class="paramname"><em>threadarr</em>&#160;</td>
+          <td class="paramname"><em>threadarr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,8 +248,8 @@ Functies</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="run__hmm_8c_a0e3c6b0a109ecd3d39179fbd15689371_icgraph.png" border="0" usemap="#run__hmm_8c_a0e3c6b0a109ecd3d39179fbd15689371_icgraph" alt=""/></div>
-<map name="run__hmm_8c_a0e3c6b0a109ecd3d39179fbd15689371_icgraph" id="run__hmm_8c_a0e3c6b0a109ecd3d39179fbd15689371_icgraph">
+<div class="center"><img src="run__hmm_8c_a5100b50d7877bd175a2ae163d5ae3bc7_icgraph.png" border="0" usemap="#run__hmm_8c_a5100b50d7877bd175a2ae163d5ae3bc7_icgraph" alt=""/></div>
+<map name="run__hmm_8c_a5100b50d7877bd175a2ae163d5ae3bc7_icgraph" id="run__hmm_8c_a5100b50d7877bd175a2ae163d5ae3bc7_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,175,32"/>
 <area shape="rect" href="run__hmm_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
 </map>
@@ -262,7 +286,8 @@ Functies</h2></td></tr>
 <li>Initialization of variables and datatypes</li>
 <li>Check File acessiblity</li>
 <li>call get_train_from_file, load hmm and train structswith data</li>
-<li></li>
+<li>read sequence file, start threads, run viterbi (in thread)</li>
+<li>combine viterbi output files if nessecersairy. </li>
 </ol>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Hier is de call graaf voor deze functie:</div>
@@ -272,7 +297,7 @@ Functies</h2></td></tr>
 <div class="center"><img src="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="run__hmm_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
 <area shape="rect" title=" " alt="" coords="5,107,56,133"/>
-<area shape="rect" href="run__hmm_8c.html#a0e3c6b0a109ecd3d39179fbd15689371" title=" " alt="" coords="133,5,204,32"/>
+<area shape="rect" href="run__hmm_8c.html#a5100b50d7877bd175a2ae163d5ae3bc7" title=" " alt="" coords="133,5,204,32"/>
 <area shape="rect" href="hmm_8h.html#acef94cf960e200f7ec1b4619510461a1" title=" " alt="" coords="104,56,233,83"/>
 <area shape="rect" href="run__hmm_8c.html#a5f590f6cc7bf5db3ae40e2e1c34f2262" title=" " alt="" coords="129,107,209,133"/>
 <area shape="rect" href="run__hmm_8c.html#a8ba3959a9af3a709d5ac2d90d6c7d256" title=" " alt="" coords="117,157,221,184"/>
@@ -407,7 +432,7 @@ Functies</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="run__hmm_8c.html">run_hmm.c</a></li>
-    <li class="footer">Gegenereerd op Wo 17 Jun 2020 14:28:58 voor FragScanTibo door
+    <li class="footer">Gegenereerd op Wo 17 Jun 2020 16:57:49 voor FragScanTibo door
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

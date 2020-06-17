@@ -43,7 +43,7 @@ void \mbox{\hyperlink{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}{print\+\_\+
 \item 
 void \mbox{\hyperlink{run__hmm_8h_a8ba3959a9af3a709d5ac2d90d6c7d256}{print\+\_\+file\+\_\+error}} (const char $\ast$error\+\_\+message, char $\ast$file)
 \item 
-void \mbox{\hyperlink{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}{combine}} (int threadnum, char $\ast$out\+\_\+file, \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$threadarr)
+void \mbox{\hyperlink{run__hmm_8h_a5100b50d7877bd175a2ae163d5ae3bc7}{combine}} (int threadnum, char $\ast$out\+\_\+header, char $\ast$dna\+\_\+file, char $\ast$out\+\_\+file, \mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$threadarr, int d, int e)
 \end{DoxyCompactItemize}
 
 
@@ -57,17 +57,18 @@ void \mbox{\hyperlink{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}{combine}} (
 
 
 \doxysubsection{Documentatie van functies}
-\mbox{\Hypertarget{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}\label{run__hmm_8h_a9ce254e1476c72152a83802ad9191773}} 
+\mbox{\Hypertarget{run__hmm_8h_a5100b50d7877bd175a2ae163d5ae3bc7}\label{run__hmm_8h_a5100b50d7877bd175a2ae163d5ae3bc7}} 
 \index{run\_hmm.h@{run\_hmm.h}!combine@{combine}}
 \index{combine@{combine}!run\_hmm.h@{run\_hmm.h}}
 \doxysubsubsection{\texorpdfstring{combine()}{combine()}}
-{\footnotesize\ttfamily void combine (\begin{DoxyParamCaption}\item[{int}]{threadnum,  }\item[{char $\ast$}]{out\+\_\+header,  }\item[{\mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$}]{threadarr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void combine (\begin{DoxyParamCaption}\item[{int}]{threadnum,  }\item[{char $\ast$}]{out\+\_\+header,  }\item[{char $\ast$}]{dna\+\_\+file,  }\item[{char $\ast$}]{out\+\_\+file,  }\item[{\mbox{\hyperlink{structthread__data}{thread\+\_\+data}} $\ast$}]{threadarr,  }\item[{int}]{d,  }\item[{int}]{e }\end{DoxyParamCaption})}
 
-This function will combine multiple files created by the invidual threads if number of threads $>$ 1; Hier is de caller graaf voor deze functie\+:\nopagebreak
+This function will combine multiple files created by the invidual threads if number of threads $>$ 1; Hier is de caller graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{run__hmm_8h_a9ce254e1476c72152a83802ad9191773_icgraph}
+\includegraphics[width=207pt]{run__hmm_8h_a5100b50d7877bd175a2ae163d5ae3bc7_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}\label{run__hmm_8h_a5f590f6cc7bf5db3ae40e2e1c34f2262}} 
@@ -118,7 +119,8 @@ Error function\+:
 \doxysubsubsection{\texorpdfstring{thread\_func()}{thread\_func()}}
 {\footnotesize\ttfamily void$\ast$ thread\+\_\+func (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadarr }\end{DoxyParamCaption})}
 
-Function given to a thread during his creation. This thread will then execute this function. Hier is de call graaf voor deze functie\+:\nopagebreak
+Function given to a thread during his creation. This thread will then execute this function. Hier is de call graaf voor deze functie\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

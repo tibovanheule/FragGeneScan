@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['v_161',['v',['../structbsem.html#ac8859e8c1ce357c4c8b37bbb1936ba1c',1,'bsem']]],
-  ['viterbi_162',['viterbi',['../hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *out_filename, FILE *log_filename, FILE *dna_filename, char *head, int metagene, int cg, int format):&#160;hmm_lib.c'],['../hmm__lib_8c.html#a66a36ec378618afca39e44147b742270',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format):&#160;hmm_lib.c']]]
+  ['v_163',['v',['../structbsem.html#ac8859e8c1ce357c4c8b37bbb1936ba1c',1,'bsem']]],
+  ['viterbi_164',['viterbi',['../hmm_8h.html#a302ec5e370c35486d7838005a75b599a',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *out_filename, FILE *log_filename, FILE *dna_filename, char *head, int metagene, int cg, int format, int d, int e):&#160;hmm_lib.c'],['../hmm__lib_8c.html#ace2535b3f7a598c97530b9e30a77589c',1,'viterbi(HMM *hmm_ptr, TRAIN *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format, int d, int e):&#160;hmm_lib.c']]]
 ];

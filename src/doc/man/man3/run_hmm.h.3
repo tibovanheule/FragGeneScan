@@ -54,7 +54,7 @@ src/run_hmm.h
 .RI "void \fBprint_file_error\fP (const char *error_message, char *file)"
 .br
 .ti -1c
-.RI "void \fBcombine\fP (int threadnum, char *out_file, \fBthread_data\fP *threadarr)"
+.RI "void \fBcombine\fP (int threadnum, char *out_header, char *dna_file, char *out_file, \fBthread_data\fP *threadarr, int d, int e)"
 .br
 .in -1c
 .SH "Documentatie van typedefs"
@@ -63,7 +63,7 @@ src/run_hmm.h
 
 .SH "Documentatie van functies"
 .PP 
-.SS "void combine (int threadnum, char * out_header, \fBthread_data\fP * threadarr)"
+.SS "void combine (int threadnum, char * out_header, char * dna_file, char * out_file, \fBthread_data\fP * threadarr, int d, int e)"
 This function will combine multiple files created by the invidual threads if number of threads > 1; 
 .SS "void print_error (const char * error_message,  \&.\&.\&.)"
 Error function:

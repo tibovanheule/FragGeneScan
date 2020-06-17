@@ -27,7 +27,7 @@ src/hmm_lib.c
 
 .in +1c
 .ti -1c
-.RI "void \fBviterbi\fP (\fBHMM\fP *hmm_ptr, \fBTRAIN\fP *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format)"
+.RI "void \fBviterbi\fP (\fBHMM\fP *hmm_ptr, \fBTRAIN\fP *train_ptr, char *O, FILE *fp_out, FILE *fp_aa, FILE *fp_dna, char *head, int whole_genome, int cg, int format, int d, int e)"
 .br
 .ti -1c
 .RI "int \fBget_prob_from_cg\fP (\fBHMM\fP *hmm_ptr, \fBTRAIN\fP *train_ptr, char *O)"
@@ -74,7 +74,7 @@ Reads files\&.
 Reads trasition file and store in hmm datastructure 
 .PP
 
-.SS "void viterbi (\fBHMM\fP * hmm_ptr, \fBTRAIN\fP * train_ptr, char * O, FILE * fp_out, FILE * fp_aa, FILE * fp_dna, char * head, int whole_genome, int cg, int format)"
+.SS "void viterbi (\fBHMM\fP * hmm_ptr, \fBTRAIN\fP * train_ptr, char * O, FILE * fp_out, FILE * fp_aa, FILE * fp_dna, char * head, int whole_genome, int cg, int format, int d, int e)"
 
 .SH "Documentatie van variabelen"
 .PP 

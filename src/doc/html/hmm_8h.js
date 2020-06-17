@@ -55,5 +55,5 @@ var hmm_8h =
     [ "get_protein", "hmm_8h.html#a66ceabacbfe397e6d70025814a0c3882", null ],
     [ "get_rc_dna", "hmm_8h.html#a4bb170d07b8af8e326242f06b922bd80", null ],
     [ "get_train_from_file", "hmm_8h.html#acef94cf960e200f7ec1b4619510461a1", null ],
-    [ "viterbi", "hmm_8h.html#ad5256334c4b449b8ed86f428fc0c7a36", null ]
+    [ "viterbi", "hmm_8h.html#a302ec5e370c35486d7838005a75b599a", null ]
 ];
