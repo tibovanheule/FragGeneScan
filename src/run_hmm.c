@@ -274,7 +274,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
     remove (dna_file);
 
     char ** lastline = malloc(threadnum* sizeof(char*));
-    char * currline =  calloc(STRINGLEN* sizeof(char));
+    char * currline =  calloc(STRINGLEN, sizeof(char));
 
     int j =0;
 
@@ -286,7 +286,7 @@ void combine(int threadnum,char* out_header, thread_data *threadarr) {
         sprintf(mystring, "%s.ffn.tmp.%d", out_header, i);
         threadarr[i].dna = fopen(mystring, "r");
 
-        lastline[i] = calloc(STRINGLEN + 1);
+        lastline[i] = calloc(STRINGLEN, sizeof(char));
     }
     FILE * fp_aa = fopen (aa_file, "w");
     FILE * fp_out = fopen (out_file, "w");
